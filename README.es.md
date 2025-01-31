@@ -12,7 +12,7 @@ Asegúrate de tener instalados los siguientes elementos:
 - **Dart**
 - **Android Studio o VS Code** (Opcional pero recomendado)
 - **Dispositivo físico o emulador configurado**
-
+- **Java Version 17** (Opcional pero recomendado)
 ---
 
 ## 🚀 Comandos Útiles
@@ -33,27 +33,43 @@ Asegúrate de tener instalados los siguientes elementos:
 
 ## 📦 Paquetes Utilizados
 
-| Paquete | Descripción |
-|---------|-------------|
-<!--
-| `flutter_bloc` | Gestión de estado basada en BLoC |
-| `get_it` | Inyección de dependencias simple |
-| `equatable` | Facilita la comparación de objetos en Dart |
-| `dio` | Cliente HTTP potente y flexible |
-| `shared_preferences` | Almacenamiento de datos clave-valor en el dispositivo |
-| `flutter_localizations` | Soporte para múltiples idiomas |
-| `hive` | Base de datos local rápida y eficiente |
--->
+| Paquete                       | version  | Descripción                                                              |
+|-------------------------------|----------|--------------------------------------------------------------------------|
+| `animate_do`                  | ^3.3.4   | Proporciona animaciones simples y listas para usar en Flutter.           |
+| `dio`                         | ^5.8.0+1 | Cliente HTTP potente y flexible para realizar solicitudes a APIs.        |
+| `flutter_dotenv`              | ^5.2.1   | Permite cargar variables de entorno desde un archivo `.env`.             |
+| `go_router`                   | ^14.7.2  | Enrutador declarativo basado en URL para Flutter.                        |
+| `intl`                        | ^0.20.2  | Soporte para internacionalización y formateo de fechas/números.          |
+| `equatable`                   | ^2.0.7   | Facilita la comparación de objetos sin necesidad de sobrecargar `==`.    |
+| `flutter_bloc`                | ^9.0.0   | Implementación del patrón BLoC para gestionar el estado en Flutter.      |
+| `flutter_local_notifications` | ^18.0.1  | Permite mostrar notificaciones locales en dispositivos móviles.          |
+| `image_picker`                | ^1.1.2   | Permite seleccionar imágenes desde la galería o la cámara.               |
+| `formz`                       | ^0.8.0   | Simplifica la validación de formularios en Flutter.                      |
+| `google_fonts`                | ^6.2.1   | Permite usar fácilmente fuentes de Google en Flutter.                    |
+| `shared_preferences`          | ^2.5.1   | Proporciona almacenamiento persistente de clave-valor en el dispositivo. |
+
+### 📦 Dependencias de desarrollo:
+| Paquete                   | version | Descripción                                                       |
+|---------------------------|---------|-------------------------------------------------------------------|
+| `flutter_test`            |         | Framework de pruebas para aplicaciones Flutter.                   |
+| `flutter_lints`           | ^5.0.0  | Reglas y buenas prácticas de linting para Flutter.                |
+| `change_app_package_name` | ^1.4.0  | Permite cambiar el identificador de paquete de la app fácilmente. |
+| `flutter_launcher_icons`  | ^0.14.3 | Facilita la configuración de íconos de la app en Flutter.         |
+
 *(Puedes agregar más paquetes según lo requiera tu proyecto base.)*
 
 ---
 ## 🔧 Antes de ejecutar tu proyecto
 Después de crear tu proyecto de Flutter en base a esta plantilla por favor realize los siguientes pasos
 
-### 🌐 1. Variables de entorno
+### 🌐 1. Variables de entorno y varios
 
 1. Crear el archivo .env basado en el archivo .env.template
-2. Cambia el valor de tu variable API_URL
+2. Cambia el valor de tu variable API_URL}
+3. **(Opcional)** Si utilizas fvm ubica el archivo `local.properties` dentro de la carpeta `android` y cambia el valor de `flutter.sdk` a
+   ```
+   flutter.sdk=<ruta_de_tu_proyecto>\\.fvm\\versions\\<tu_version_de_flutter>
+   ```
 
 ### ✏️ 2. Cambiar nombre del paquete
 

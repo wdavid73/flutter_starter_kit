@@ -14,6 +14,7 @@ Make sure you have the following items installed:
 - **Dart**
 - **Android Studio or VS Code** (Optional but recommended)
 - **Physical device or emulator configured** **Flutter** (Optional but recommended)
+- **Java Version 17** (Optional but recommended)
 
 ---
 
@@ -33,19 +34,30 @@ Make sure you have the following items installed:
 
 ---
 
+## 📦 Packages Used
 
+| Package                       | Version  | Description                                                       |
+|-------------------------------|----------|-------------------------------------------------------------------|
+| `animate_do`                  | ^3.3.4   | Provides simple and ready-to-use animations in Flutter.           |
+| `dio`                         | ^5.8.0+1 | Powerful and flexible HTTP client for making API requests.        |
+| `flutter_dotenv`              | ^5.2.1   | Loads environment variables from a `.env` file.                   |
+| `go_router`                   | ^14.7.2  | Declarative URL-based router for Flutter.                         |
+| `intl`                        | ^0.20.2  | Support for internationalization and formatting of dates/numbers. |
+| `equatable`                   | ^2.0.7   | Simplifies object comparison without overriding `==`.             |
+| `flutter_bloc`                | ^9.0.0   | BLoC pattern implementation for state management in Flutter.      |
+| `flutter_local_notifications` | ^18.0.1  | Displays local notifications on mobile devices.                   |
+| `image_picker`                | ^1.1.2   | Allows selecting images from the gallery or camera.               |
+| `formz`                       | ^0.8.0   | Simplifies form validation in Flutter.                            |
+| `google_fonts`                | ^6.2.1   | Easily integrates Google Fonts into Flutter.                      |
+| `shared_preferences`          | ^2.5.1   | Provides persistent key-value storage on the device.              |
 
-| Package Description | |
-|---------------------|-|
-<!--
-| `flutter_bloc` | BLoC-based state management |
-|  `get_it` | Simple dependency injection | |
-|  `equatable` | Facilitates object comparison in Dart | |
-| `dio` | Powerful and flexible HTTP client | |
-| `shared_preferences` | Key-value data storage on the device | `flutter_localizations` | `flutter_localizations` | `flutter_localizations
-| `flutter_localizations` |  Multi-language support | |
-|  `hive` | Fast and efficient local database | `hive` | Local database | | | `hive` | Local database | |hive` | Local database
--->
+### 📦 Development Dependencies:
+| Package                   | Version      | Description                                   |
+|---------------------------|--------------|-----------------------------------------------|
+| `flutter_test`            | sdk: flutter | Testing framework for Flutter applications.   |
+| `flutter_lints`           | ^5.0.0       | Linting rules and best practices for Flutter. |
+| `change_app_package_name` | ^1.4.0       | Easily changes the app's package identifier.  |
+| `flutter_launcher_icons`  | ^0.14.3      | Simplifies app icon configuration in Flutter. |
 *(You can add more packages as required by your base project).
 
 ---
@@ -56,6 +68,10 @@ After creating your Flutter project based on this template please perform the fo
 
 1. Create the .env file based on the .env.template file
 2. Change the value of your API_URL variable.
+3. **(Optional)** If you use fvm locate the `local.properties` file inside the `android` folder and change the value of `flutter.sdk` to
+   ```
+   flutter.sdk=<path_your_project>\\.fvm\\versions\\<your_flutter_version>
+   ```
 
 ### ✏️ 2. Change package name
 
