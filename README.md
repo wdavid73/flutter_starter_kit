@@ -64,6 +64,38 @@ Make sure you have the following items installed:
 ## 🔧 Before running your project
 After creating your Flutter project based on this template please perform the following steps.
 
+###  ⚙️ (Optional) How to start the project with FVM
+To start working on this project, make sure you have FVM (Flutter Version Manager) installed. This ensures that you are using the correct version of Flutter according to the project configuration.
+
+#### Steps to get started:
+
+1. Install FVM: If you do not have FVM installed, you can do so by running the following command:
+   ```bash
+   dart pub global activate fvm
+   ```
+
+2. Install the version of Flutter for this project: Run the following command in the root of the project to install the specific version of Flutter:
+   ```bash
+   fvm install <version>
+   ```
+   
+3. Use the installed version: Make sure you are using the correct version of Flutter with the following command:
+   ```bash
+   fvm use <version>
+   ```
+
+4. Verify the Flutter version: Confirm that FVM is using the correct version of Flutter with:
+   ```bash
+   fvm flutter --version
+   ```
+   
+5. Create and configure the environment: Once you have the correct Flutter version, you can run the following command to make sure all dependencies are up to date:
+   ```bash
+   fvm flutter pub get
+   ```
+
+Now you are ready to start developing!
+
 ### 🌐 1. Environment variables.
 
 1. Create the .env file based on the .env.template file
