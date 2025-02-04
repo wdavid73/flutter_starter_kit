@@ -42,7 +42,7 @@ Make sure you have the following items installed:
 | `dio`                         | ^5.8.0+1 | Powerful and flexible HTTP client for making API requests.        |
 | `flutter_dotenv`              | ^5.2.1   | Loads environment variables from a `.env` file.                   |
 | `go_router`                   | ^14.7.2  | Declarative URL-based router for Flutter.                         |
-| `intl`                        | ^0.20.2  | Support for internationalization and formatting of dates/numbers. |
+| `intl`                        | ^0.19.0  | Support for internationalization and formatting of dates/numbers. |
 | `equatable`                   | ^2.0.7   | Simplifies object comparison without overriding `==`.             |
 | `flutter_bloc`                | ^9.0.0   | BLoC pattern implementation for state management in Flutter.      |
 | `flutter_local_notifications` | ^18.0.1  | Displays local notifications on mobile devices.                   |

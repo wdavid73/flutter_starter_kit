@@ -39,7 +39,7 @@ Asegúrate de tener instalados los siguientes elementos:
 | `dio`                         | ^5.8.0+1 | Cliente HTTP potente y flexible para realizar solicitudes a APIs.        |
 | `flutter_dotenv`              | ^5.2.1   | Permite cargar variables de entorno desde un archivo `.env`.             |
 | `go_router`                   | ^14.7.2  | Enrutador declarativo basado en URL para Flutter.                        |
-| `intl`                        | ^0.20.2  | Soporte para internacionalización y formateo de fechas/números.          |
+| `intl`                        | ^0.19.0  | Soporte para internacionalización y formateo de fechas/números.          |
 | `equatable`                   | ^2.0.7   | Facilita la comparación de objetos sin necesidad de sobrecargar `==`.    |
 | `flutter_bloc`                | ^9.0.0   | Implementación del patrón BLoC para gestionar el estado en Flutter.      |
 | `flutter_local_notifications` | ^18.0.1  | Permite mostrar notificaciones locales en dispositivos móviles.          |

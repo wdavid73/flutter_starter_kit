@@ -34,6 +34,9 @@ class WidgetsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  "Translate: ${context.translate('sign_up')}",
+                ),
                 _IconsWidget(),
                 const Divider(),
                 _ChipWidget(),
