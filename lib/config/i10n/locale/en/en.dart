@@ -2,6 +2,7 @@ Map<String, String> enBase = {
   'name': 'Name',
   'email': 'Email',
   'email_address': 'Email Address',
+  'home': 'Home',
   // AUTH
   'login': 'Login',
   'sign_up': 'Sign up',

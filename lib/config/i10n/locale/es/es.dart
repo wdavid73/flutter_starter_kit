@@ -2,6 +2,7 @@ Map<String, String> esBase = {
   'name': 'Nombre',
   'email': 'Correo',
   'email_address': 'Correo electrónico',
+  'home': 'Inicio',
   // AUTH
   'login': 'Iniciar Sesión',
   'sign_up': 'Regístrate',
