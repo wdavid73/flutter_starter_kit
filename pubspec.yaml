@@ -31,3 +31,18 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - .env
+    - assets/loaders/
+    - assets/icon/
+    - assets/fonts/
+
+  fonts:
+    - family: MontserratAlternates
+      fonts:
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Light.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Regular.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf
