@@ -9,3 +9,5 @@ export 'i10n/locale_config.dart';
 export 'helpers/extensions.dart';
 
 export 'router/app_router.dart';
+
+export 'constants/environment.dart';
