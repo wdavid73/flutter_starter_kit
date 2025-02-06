@@ -9,7 +9,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Responsive responsive = Responsive(context);
     return MultiRepositoryProvider(
       providers: buildRepositories(),
       child: MultiBlocProvider(

@@ -104,9 +104,7 @@ class WidgetsScreen extends StatelessWidget {
 }
 
 class _IconsWidget extends StatelessWidget {
-  const _IconsWidget({
-    super.key,
-  });
+  const _IconsWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +132,7 @@ class _IconsWidget extends StatelessWidget {
 }
 
 class _ChipWidget extends StatelessWidget {
-  const _ChipWidget({super.key});
+  const _ChipWidget();
 
   @override
   Widget build(BuildContext context) {

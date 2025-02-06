@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'responsive.dart';
 
 class AppTypography {
   // Font Family

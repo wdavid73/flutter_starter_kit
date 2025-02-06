@@ -22,7 +22,7 @@ class ButtonsView extends StatelessWidget {
 }
 
 class _ButtonsWidgets extends StatelessWidget {
-  const _ButtonsWidgets({super.key});
+  const _ButtonsWidgets();
 
   @override
   Widget build(BuildContext context) {

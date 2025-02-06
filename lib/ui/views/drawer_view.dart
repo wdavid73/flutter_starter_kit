@@ -22,9 +22,7 @@ class DrawerView extends StatelessWidget {
 }
 
 class _Drawer extends StatelessWidget {
-  const _Drawer({
-    super.key,
-  });
+  const _Drawer();
 
   @override
   Widget build(BuildContext context) {

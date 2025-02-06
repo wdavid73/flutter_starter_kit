@@ -20,7 +20,7 @@ class ExampleServiceScreen extends StatelessWidget {
 }
 
 class _ProductView extends StatefulWidget {
-  const _ProductView({super.key});
+  const _ProductView();
 
   @override
   State<_ProductView> createState() => _ProductViewState();
@@ -88,7 +88,7 @@ class _ProductViewState extends State<_ProductView> {
 
 class _ProductCard extends StatelessWidget {
   final Product product;
-  const _ProductCard({super.key, required this.product});
+  const _ProductCard({required this.product});
 
   @override
   Widget build(BuildContext context) {

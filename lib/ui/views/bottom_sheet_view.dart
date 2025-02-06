@@ -17,9 +17,7 @@ class BottomSheetView extends StatelessWidget {
 }
 
 class _BottomSheet extends StatelessWidget {
-  const _BottomSheet({
-    super.key,
-  });
+  const _BottomSheet();
 
   @override
   Widget build(BuildContext context) {

@@ -28,19 +28,18 @@ class KeyValueStorageServiceImpl extends KeyValueStorageService {
   Future<T?> getValue<T>(String key) async {
     final prefs = await getSharedPrefs();
 
-    switch (T) {
-      case int:
-        return prefs.getInt(key) as T?;
-      case String:
-        return prefs.getString(key) as T?;
-      case bool:
-        return prefs.getBool(key) as T?;
-      case double:
-        return prefs.getDouble(key) as T?;
-      default:
-        throw UnimplementedError(
-          "Get not implemented for type ${T.runtimeType}",
-        );
+    if (T == int) {
+      return prefs.getInt(key) as T?;
+    } else if (T == String) {
+      return prefs.getString(key) as T?;
+    } else if (T == bool) {
+      return prefs.getBool(key) as T?;
+    } else if (T == double) {
+      return prefs.getDouble(key) as T?;
+    } else {
+      throw UnimplementedError(
+        "Get not implemented for type ${T.runtimeType}",
+      );
     }
   }
 
@@ -77,23 +76,22 @@ class KeyValueStorageServiceImpl extends KeyValueStorageService {
   Future<void> setKeyValue<T>(String key, T value) async {
     final prefs = await getSharedPrefs();
 
-    switch (T) {
-      case int:
-        prefs.setInt(key, value as int);
-        break;
-      case String:
-        prefs.setString(key, value as String);
-        break;
-      case bool:
-        prefs.setBool(key, value as bool);
-        break;
-      case double:
-        prefs.setDouble(key, value as double);
-        break;
-      default:
-        throw UnimplementedError(
-          "Set not implemented for type ${T.runtimeType}",
-        );
+    if (T == int) {
+      prefs.setInt(key, value as int);
+      return;
+    } else if (T == String) {
+      prefs.setString(key, value as String);
+      return;
+    } else if (T == bool) {
+      prefs.setBool(key, value as bool);
+      return;
+    } else if (T == double) {
+      prefs.setDouble(key, value as double);
+      return;
+    } else {
+      throw UnimplementedError(
+        "Get not implemented for type ${T.runtimeType}",
+      );
     }
   }
 }
