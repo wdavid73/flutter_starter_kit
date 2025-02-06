@@ -39,6 +39,7 @@ flutter:
     - assets/loaders/
     - assets/icon/
     - assets/fonts/
+    - assets/images/
 
   fonts:
     - family: MontserratAlternates

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
 
+/// Represents a bad request error (HTTP 400).
 class BadRequestException extends DioException {
+  /// Creates a [BadRequestException].
   BadRequestException({
     required super.requestOptions,
     super.error,
@@ -11,14 +11,13 @@ class BadRequestException extends DioException {
 
   @override
   String toString() {
-    /*final context = requestOptions.extra['context'] as BuildContext?;
-    if (context == null)  return 'DioException [BadRequest]: $message';
-    return AppLocalizations.of(context).translate('badRequest');*/
     return 'DioException [BadRequest]: $message';
   }
 }
 
+/// Represents an unauthorized error (HTTP 401).
 class UnauthorizedException extends DioException {
+  /// Creates an [UnauthorizedException].
   UnauthorizedException({
     required super.requestOptions,
     super.error,
@@ -31,7 +30,9 @@ class UnauthorizedException extends DioException {
   }
 }
 
+/// Represents a not found error (HTTP 404).
 class NotFoundException extends DioException {
+  /// Creates a [NotFoundException].
   NotFoundException({
     required super.requestOptions,
     super.error,
@@ -44,7 +45,9 @@ class NotFoundException extends DioException {
   }
 }
 
+/// Represents a conflict error (HTTP 409).
 class ConflictException extends DioException {
+  /// Creates a [ConflictException].
   ConflictException({
     required super.requestOptions,
     super.error,
@@ -57,7 +60,9 @@ class ConflictException extends DioException {
   }
 }
 
+/// Represents an internal server error (HTTP 500).
 class InternalServerErrorException extends DioException {
+  /// Creates an [InternalServerErrorException].
   InternalServerErrorException({
     required super.requestOptions,
     super.error,
@@ -70,7 +75,9 @@ class InternalServerErrorException extends DioException {
   }
 }
 
+/// Represents an unknown error.
 class UnknownException extends DioException {
+  /// Creates an [UnknownException].
   UnknownException({
     required super.requestOptions,
     super.error,
@@ -83,7 +90,9 @@ class UnknownException extends DioException {
   }
 }
 
+/// Represents a no internet connection error.
 class NoInternetConnection extends DioException {
+  /// Creates a [NoInternetConnection].
   NoInternetConnection(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -92,7 +101,9 @@ class NoInternetConnection extends DioException {
   }
 }
 
+/// Represents a deadline exceeded error.
 class DeadlineExceeded extends DioException {
+  /// Creates a [DeadlineExceeded].
   DeadlineExceeded(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -101,7 +112,9 @@ class DeadlineExceeded extends DioException {
   }
 }
 
+/// Represents a bad certificate error.
 class BadCertificate extends DioException {
+  /// Creates a [BadCertificate].
   BadCertificate(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -110,7 +123,9 @@ class BadCertificate extends DioException {
   }
 }
 
+/// Represents a bad response error.
 class BadResponse extends DioException {
+  /// Creates a [BadResponse].
   BadResponse(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -119,7 +134,9 @@ class BadResponse extends DioException {
   }
 }
 
+/// Represents an unknown server error.
 class Unknown extends DioException {
+  /// Creates an [Unknown].
   Unknown(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -128,7 +145,9 @@ class Unknown extends DioException {
   }
 }
 
+/// Represents a connection timeout error.
 class ConnectionTimeout extends DioException {
+  /// Creates a [ConnectionTimeout].
   ConnectionTimeout(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -137,7 +156,9 @@ class ConnectionTimeout extends DioException {
   }
 }
 
+/// Represents a send timeout error.
 class SendTimeout extends DioException {
+  /// Creates a [SendTimeout].
   SendTimeout(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -146,7 +167,9 @@ class SendTimeout extends DioException {
   }
 }
 
+/// Represents a generic API exception.
 class ApiException extends DioException {
+  /// Creates an [ApiException].
   ApiException(RequestOptions r) : super(requestOptions: r);
 
   @override
@@ -155,9 +178,12 @@ class ApiException extends DioException {
   }
 }
 
+/// Represents a Google Sign In error.
 class GoogleSignInError {
+  /// The error message.
   final String message;
 
+  /// Creates a [GoogleSignInError].
   GoogleSignInError(this.message);
 
   @override

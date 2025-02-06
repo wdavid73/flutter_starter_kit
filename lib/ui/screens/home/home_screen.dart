@@ -29,6 +29,12 @@ class HomeScreen extends StatelessWidget {
               trailing: Icon(Icons.adaptive.arrow_forward),
               title: Text("go to widgets"),
               onTap: () => context.push('/widgets'),
+            ),
+            ListTile(
+              leading: Icon(Icons.api),
+              trailing: Icon(Icons.adaptive.arrow_forward),
+              title: Text("go to example api service implementation"),
+              onTap: () => context.push('/example_service'),
             )
           ],
         ),

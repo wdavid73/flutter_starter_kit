@@ -49,6 +49,11 @@ final appRouter = GoRouter(
       ],
     ),
 
+    GoRoute(
+      path: '/example_service',
+      builder: (context, state) => const ExampleServiceScreen(),
+    ),
+
     ///* AUTH ROUTES
     GoRoute(
       path: '/login',

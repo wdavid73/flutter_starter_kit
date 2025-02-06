@@ -1,3 +1,10 @@
+/// Serializes query parameters, removing null or empty values.
+///
+/// Parameters:
+///   - [queryParams]: The original query parameters.
+///
+/// Returns:
+///   - A new map with validated query parameters.
 Map<String, dynamic> serializerQueryParams(Map<String, dynamic>? queryParams) {
   Map<String, dynamic> validatedParams = {};
 

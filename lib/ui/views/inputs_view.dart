@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/ui/widgets/shared/shared.dart';
+import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
 
 class InputsWidget extends StatelessWidget {
   const InputsWidget({super.key});

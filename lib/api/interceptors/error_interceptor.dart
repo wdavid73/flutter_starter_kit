@@ -1,7 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 
+/// Interceptor for handling API errors.
+///
+/// Intercepts `DioException`s and converts them into specific exceptions
+/// based on the status code or the type of the error.
 class ApiErrorsInterceptor extends Interceptor {
+  /// Creates an [ApiErrorsInterceptor].
   ApiErrorsInterceptor();
 
   @override
@@ -27,11 +32,23 @@ class ApiErrorsInterceptor extends Interceptor {
     );
   }
 
+  /// Handles unauthorized errors (401).
+  ///
+  /// TODO: Clear shared preferences.
+  /// TODO: Navigate back to login screen.
   Future<void> _handlerUnauthorizedError(ErrorHandler errorHandler) async {
     // TODO: Clear shared preferences
     // TODO: navigate back to login screen
   }
 
+  /// Converts a status code into a specific `DioException`.
+  ///
+  /// Parameters:
+  ///   - [statusCode]: The HTTP status code.
+  ///   - [errorHandler]: The error handler containing additional information.
+  ///
+  /// Returns:
+  ///   - A specific `DioException` based on the status code.
   DioException _getExceptionForStatusCode(
     int statusCode,
     ErrorHandler errorHandler,
@@ -75,25 +92,32 @@ class ApiErrorsInterceptor extends Interceptor {
         );
     }
   }
-}
 
-DioException _getExceptionForDioType(DioException err) {
-  switch (err.type) {
-    case DioExceptionType.connectionTimeout:
-      return ConnectionTimeout(err.requestOptions);
-    case DioExceptionType.sendTimeout:
-      return SendTimeout(err.requestOptions);
-    case DioExceptionType.receiveTimeout:
-      return DeadlineExceeded(err.requestOptions);
-    case DioExceptionType.connectionError:
-      return NoInternetConnection(err.requestOptions);
-    case DioExceptionType.badCertificate:
-      return BadCertificate(err.requestOptions);
-    case DioExceptionType.badResponse:
-      return BadResponse(err.requestOptions);
-    case DioExceptionType.unknown:
-      return Unknown(err.requestOptions);
-    case DioExceptionType.cancel:
-      return ApiException(err.requestOptions);
+  /// Converts a `DioExceptionType` into a specific `DioException`.
+  ///
+  /// Parameters:
+  ///   - [err]: The `DioException`.
+  ///
+  /// Returns:
+  ///   - A specific `DioException` based on the type.
+  DioException _getExceptionForDioType(DioException err) {
+    switch (err.type) {
+      case DioExceptionType.connectionTimeout:
+        return ConnectionTimeout(err.requestOptions);
+      case DioExceptionType.sendTimeout:
+        return SendTimeout(err.requestOptions);
+      case DioExceptionType.receiveTimeout:
+        return DeadlineExceeded(err.requestOptions);
+      case DioExceptionType.connectionError:
+        return NoInternetConnection(err.requestOptions);
+      case DioExceptionType.badCertificate:
+        return BadCertificate(err.requestOptions);
+      case DioExceptionType.badResponse:
+        return BadResponse(err.requestOptions);
+      case DioExceptionType.unknown:
+        return Unknown(err.requestOptions);
+      case DioExceptionType.cancel:
+        return ApiException(err.requestOptions);
+    }
   }
 }
