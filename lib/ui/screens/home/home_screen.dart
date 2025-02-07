@@ -18,12 +18,12 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            ListTile(
+            /*ListTile(
               leading: Icon(Icons.login),
               trailing: Icon(Icons.adaptive.arrow_forward),
               title: Text("go to login"),
               onTap: () => context.push('/login'),
-            ),
+            ),*/
             ListTile(
               leading: Icon(Icons.widgets),
               trailing: Icon(Icons.adaptive.arrow_forward),

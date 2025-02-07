@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_scaffold_flutter_v2/config/config.dart';
 
 class AppTypography {
   // Font Family
@@ -32,7 +33,7 @@ class AppTypography {
       TextStyle(
         fontFamily: fontFamilyDefault,
         fontSize: fontSize ?? fontSizeDefault,
-        color: color,
+        color: color ?? ColorTheme.textPrimary,
         fontWeight: fontWeightDefault,
         fontStyle: fontStyle,
         decoration: textDecoration,
@@ -45,7 +46,7 @@ class AppTypography {
     FontStyle? fontStyle,
   }) =>
       _textStyleDefault(
-        color: color,
+        color: color ?? ColorTheme.textPrimary,
         fontWeightDefault: lightWeight,
         fontStyle: fontStyle,
         textDecoration: textDecoration,
@@ -59,7 +60,7 @@ class AppTypography {
     FontStyle? fontStyle,
   }) =>
       _textStyleDefault(
-        color: color,
+        color: color ?? ColorTheme.textPrimary,
         fontWeightDefault: regularWeight,
         fontStyle: fontStyle,
         textDecoration: textDecoration,
@@ -73,7 +74,7 @@ class AppTypography {
     FontStyle? fontStyle,
   }) =>
       _textStyleDefault(
-        color: color,
+        color: color ?? ColorTheme.textPrimary,
         fontWeightDefault: mediumWeight,
         fontStyle: fontStyle,
         textDecoration: textDecoration,
@@ -87,7 +88,7 @@ class AppTypography {
     FontStyle? fontStyle,
   }) =>
       _textStyleDefault(
-        color: color,
+        color: color ?? ColorTheme.textPrimary,
         fontWeightDefault: semiBoldWeight,
         fontStyle: fontStyle,
         textDecoration: textDecoration,
@@ -101,7 +102,7 @@ class AppTypography {
     FontStyle? fontStyle,
   }) =>
       _textStyleDefault(
-        color: color,
+        color: color ?? ColorTheme.textPrimary,
         fontWeightDefault: boldWeight,
         fontStyle: fontStyle,
         textDecoration: textDecoration,

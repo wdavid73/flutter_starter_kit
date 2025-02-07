@@ -21,6 +21,7 @@ dependencies:
   formz: ^0.8.0
   google_fonts: ^6.2.1
   shared_preferences: ^2.5.1
+  flutter_svg: ^2.0.17
   flutter_localizations:
     sdk: flutter
 

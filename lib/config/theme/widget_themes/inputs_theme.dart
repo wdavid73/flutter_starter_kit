@@ -53,6 +53,7 @@ final baseInputDecorationDarkTheme = baseInputDecorationTheme.copyWith(
   helperStyle: baseTextThemeDark.bodySmall,
   counterStyle: baseTextThemeDark.bodySmall,
   suffixIconColor: ColorTheme.lightPrimaryColor,
+  prefixIconColor: ColorTheme.white,
   enabledBorder: _baseOutlineInputBorder.copyWith(
     borderSide: _baseBorderSideInput.copyWith(
       color: ColorTheme.lightPrimaryColor,

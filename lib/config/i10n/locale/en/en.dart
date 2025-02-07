@@ -4,10 +4,12 @@ Map<String, String> enBase = {
   'email_address': 'Email Address',
   'home': 'Home',
   // AUTH
+  'sign_in_account': 'Sign in to your account',
   'login': 'Login',
   'sign_up': 'Sign up',
   'logout': 'Log Out',
-  'not_user_yet': 'Not a user yet?',
+  'not_have_account': "Don't have an account?",
+  'create_one_here': "create one here",
   'password': 'Password',
   'confirm_password': 'Confirm Password',
   'new_password': 'New Password',

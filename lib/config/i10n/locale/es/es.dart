@@ -4,10 +4,12 @@ Map<String, String> esBase = {
   'email_address': 'Correo electrónico',
   'home': 'Inicio',
   // AUTH
+  'sign_in_account': 'Acceda a su cuenta',
   'login': 'Iniciar Sesión',
   'sign_up': 'Regístrate',
   'logout': 'Cerrar Sesión',
-  'not_user_yet': '¿No eres usuario todavía?',
+  'not_have_account': "¿No tienes cuenta?",
+  'create_one_here': "Crea una aquí",
   'password': 'Contraseña',
   'new_password': 'Nueva Contraseña',
   'confirm_password': 'Confirmar contraseña',

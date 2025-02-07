@@ -7,14 +7,13 @@ class InputsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Responsive responsive = Responsive(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Inputs Widget"),
       ),
       body: SafeArea(
         child: SizedBox(
-          width: responsive.width,
+          width: context.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,

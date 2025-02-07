@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
+import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -8,17 +10,251 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         title: Text(
           context.translate('login'),
+          style: context.textTheme.titleLarge,
         ),
       ),
-      body: SafeArea(
-        child: Center(
-          child: Text(
-            context.translate('login'),
+      extendBodyBehindAppBar: true,
+      body: _LoginView(),
+    );
+  }
+}
+
+class _LoginView extends StatelessWidget {
+  const _LoginView();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/login_background.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: SafeArea(
+        child: Container(
+          width: context.width,
+          height: context.height,
+          alignment: Alignment.center,
+          child: _LoginBody(),
+        ),
+      ),
+    );
+  }
+}
+
+class _LoginBody extends StatelessWidget {
+  const _LoginBody({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Card(
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 20,
+                ),
+                child: Column(
+                  children: [
+                    _LogoContainer(),
+                    const SizedBox(height: 10),
+                    Text(
+                      context.translate('sign_in_account'),
+                      style: context.textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: 10),
+                    _ButtonsOtherSignIn(),
+                    const SizedBox(height: 10),
+                    _DividerBody(
+                      text: "Or use email",
+                    ),
+                    const SizedBox(height: 10),
+                    _FormLogIn(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 5,
+                      children: [
+                        Text(
+                          "${context.translate("not_have_account")},",
+                          style: context.textTheme.labelMedium,
+                        ),
+                        TextButton(
+                          style: ButtonStyle(
+                            padding: WidgetStatePropertyAll<EdgeInsets>(
+                              EdgeInsets.all(0),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            context.translate("create_one_here"),
+                            style: context.textTheme.labelMedium?.copyWith(
+                              decoration: TextDecoration.underline,
+                              fontWeight: AppTypography.semiBoldWeight,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LogoContainer extends StatelessWidget {
+  const _LogoContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: FlutterLogo(
+        size: context.dp(7),
+      ),
+    );
+  }
+}
+
+class _ButtonsOtherSignIn extends StatelessWidget {
+  const _ButtonsOtherSignIn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    TextStyle textStyle = AppTypography.getSemiBoldStyle(
+      color: ColorTheme.textPrimary,
+    );
+
+    ButtonStyle buttonStyle = ButtonStyle(
+      backgroundColor:
+          WidgetStatePropertyAll<Color>(ColorTheme.backgroundLight),
+    );
+
+    double iconSize = context.dp(3);
+
+    return Wrap(
+      children: [
+        FilledButton(
+          onPressed: () {},
+          style: buttonStyle,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Spacer(),
+              SvgPicture.asset(
+                'assets/icon/icon_google.svg',
+                width: iconSize,
+                height: iconSize,
+              ),
+              const Spacer(),
+              Text(
+                "Sign in with Google",
+                style: textStyle,
+              ),
+              const Spacer(),
+            ],
           ),
         ),
-      ),
+        FilledButton(
+          onPressed: () {},
+          style: buttonStyle,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Spacer(),
+              SvgPicture.asset(
+                'assets/icon/icon_apple.svg',
+                width: iconSize,
+                height: iconSize,
+              ),
+              const Spacer(),
+              Text(
+                "Sign in with Apple",
+                style: textStyle,
+              ),
+              const Spacer(),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class _DividerBody extends StatelessWidget {
+  final String text;
+  const _DividerBody({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(child: Divider()),
+        const SizedBox(width: 10),
+        Text(text),
+        const SizedBox(width: 10),
+        Expanded(child: Divider()),
+      ],
+    );
+  }
+}
+
+class _FormLogIn extends StatelessWidget {
+  const _FormLogIn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      spacing: 10,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CustomTextFormField(
+          label: "Email",
+          hint: "Input your email",
+          iconPrefix: Icon(Icons.email_rounded),
+          onChanged: (val) {},
+        ),
+        CustomTextFormField(
+          label: "Password",
+          hint: "Input your password",
+          obscureText: true,
+          iconPrefix: Icon(Icons.password),
+          onChanged: (val) {},
+        ),
+        SizedBox(
+          width: context.width,
+          child: FilledButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.login_rounded),
+            label: Text("Sign in"),
+          ),
+        )
+      ],
     );
   }
 }
