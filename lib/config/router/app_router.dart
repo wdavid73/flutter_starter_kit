@@ -1,67 +1,29 @@
 import 'package:go_router/go_router.dart';
-import 'package:front_scaffold_flutter_v2/ui/screens/screens.dart';
-import 'package:front_scaffold_flutter_v2/ui/views/views.dart';
+import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
+import 'go_router_notifier.dart';
+import 'redirect_handler.dart';
+import 'routes.dart';
 
-final appRouter = GoRouter(
-  initialLocation: '/',
-  routes: [
-    ///* INITIAL ROUTE
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const HomeScreen(),
-    ),
+/// Creates and configures the application's [GoRouter] instance.
+///
+/// This function initializes the [GoRouter] with the application's routes,
+/// initial location, refresh listener, and redirection logic. It uses a
+/// [GoRouterNotifier] to listen for changes in the authentication state and
+/// the [appRedirect] function to handle redirection based on the current
+/// authentication status and route.
+///
+/// Parameters:
+///   - [authBloc]: The [AuthBloc] instance used to manage the authentication state.
+///
+/// Returns:
+///   - A configured [GoRouter] instance ready to be used in the application.
+GoRouter createAppRouter(AuthBloc authBloc) {
+  final goRouterNotifier = GoRouterNotifier(authBloc);
 
-    ///* WIDGET SCREEN
-    GoRoute(
-      path: '/widgets',
-      builder: (context, state) => const WidgetsScreen(),
-      routes: [
-        GoRoute(
-          path: 'text_styles_view',
-          name: 'text_styles_view',
-          builder: (context, state) => TextStylesView(),
-        ),
-        GoRoute(
-          path: 'inputs_view',
-          name: 'inputs_view',
-          builder: (context, state) => InputsWidget(),
-        ),
-        GoRoute(
-          path: 'selectable_widget_view',
-          name: 'selectable_widget_view',
-          builder: (context, state) => SelectableWidgetView(),
-        ),
-        GoRoute(
-          path: 'drawer_view',
-          name: 'drawer_view',
-          builder: (context, state) => DrawerView(),
-        ),
-        GoRoute(
-          path: 'buttons_view',
-          name: 'buttons_view',
-          builder: (context, state) => ButtonsView(),
-        ),
-        GoRoute(
-          path: 'bottom_sheet_view',
-          name: 'bottom_sheet_view',
-          builder: (context, state) => BottomSheetView(),
-        ),
-      ],
-    ),
-
-    GoRoute(
-      path: '/example_service',
-      builder: (context, state) => const ExampleServiceScreen(),
-    ),
-
-    ///* AUTH ROUTES
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginScreen(),
-    ),
-  ],
-  redirect: (context, state) {
-    // TODO: IMPLEMENT LOGIC TO REDIRECT IF NOT AUTHENTICATED
-    return null;
-  },
-);
+  return GoRouter(
+    initialLocation: Routes.splash,
+    refreshListenable: goRouterNotifier,
+    routes: Routes.getAppRoutes(),
+    redirect: (context, state) => appRedirect(goRouterNotifier, state),
+  );
+}
