@@ -1,3 +1,5 @@
+import 'en_form_validation.dart';
+
 Map<String, String> enBase = {
   'name': 'Name',
   'email': 'Email',
@@ -20,6 +22,8 @@ Map<String, String> enBase = {
   "confirm_email_msg":
       "Please enter your email address to verify it exists and continue with the password reset process.",
   "password_update": "Password Updated Successfully",
+  'sign_in_with_google': 'Sign in with Google',
+  'sign_in_with_apple': 'Sign in with Apple ID',
   "accept__btn": "Accept",
   "cancel__btn": "Cancel",
   // NOT FOUND
@@ -50,6 +54,9 @@ Map<String, String> enBase = {
   'register_success': 'Register Successfully',
   'register_error': 'An error occurred during registration!',
   'not_user': 'Not User',
+  'end_list': 'You have reached the end of the list.',
+  'image_not_found': 'Image not found.',
+  // * NETWORK ERRORS
   'connection_time_out':
       'The connection request took a long time and was aborted.',
   'send_time_out': 'The connection request took a long time and was aborted.',
@@ -61,11 +68,10 @@ Map<String, String> enBase = {
   'unknown': 'An unknown error occurred processing the request.',
   'cancel': 'The request was manually cancelled by the user.',
   'not_internet': 'No internet connection detected, please try again.',
-  'image_not_found': 'Image not found.',
   'error_get_image': 'Error getting image.',
-  'end_list': 'You have reached the end of the list.'
 };
 
 Map<String, String> enMap = {
   ...enBase,
+  ...formValidations,
 };

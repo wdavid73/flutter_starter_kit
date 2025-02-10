@@ -64,4 +64,7 @@ final baseInputDecorationDarkTheme = baseInputDecorationTheme.copyWith(
       color: ColorTheme.white,
     ),
   ),
+  errorStyle: baseTextThemeDark.bodySmall?.copyWith(
+    color: ColorTheme.error,
+  ),
 );

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/shared.dart';
+import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
 
 /// Interceptor for adding and managing API tokens.
 ///

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
+import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,11 +13,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           context.translate('home'),
+          style: context.textTheme.titleLarge,
         ),
       ),
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             /*ListTile(
@@ -35,7 +38,14 @@ class HomeScreen extends StatelessWidget {
               trailing: Icon(Icons.adaptive.arrow_forward),
               title: Text("go to example api service implementation"),
               onTap: () => context.push('/example_service'),
-            )
+            ),
+            const Spacer(),
+            FilledButton.icon(
+              onPressed: () => context.read<AuthBloc>().logout(),
+              label: Text("LogOut"),
+              icon: Icon(Icons.logout_rounded),
+            ),
+            const SizedBox(height: 30)
           ],
         ),
       ),

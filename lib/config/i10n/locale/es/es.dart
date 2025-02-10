@@ -1,3 +1,5 @@
+import 'es_form_validation.dart';
+
 Map<String, String> esBase = {
   'name': 'Nombre',
   'email': 'Correo',
@@ -20,6 +22,8 @@ Map<String, String> esBase = {
   "confirm_email_msg":
       "Por favor ingrese su correo electrónico, para verificar que existe y seguir con su proceso de restablecimiento de contraseña",
   "password_update": "Contraseña actualizada correctamente",
+  'sign_in_with_google': 'Iniciar sesión con Google',
+  'sign_in_with_apple': 'Iniciar sesión con ID de Apple',
   "accept__btn": "Aceptar",
   "cancel__btn": "Cancelar",
   // FOUND
@@ -70,4 +74,5 @@ Map<String, String> esBase = {
 
 Map<String, String> esMap = {
   ...esBase,
+  ...formValidations,
 };

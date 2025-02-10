@@ -38,7 +38,8 @@ class ApiErrorsInterceptor extends Interceptor {
   /// TODO: Navigate back to login screen.
   Future<void> _handlerUnauthorizedError(ErrorHandler errorHandler) async {
     // TODO: Clear shared preferences
-    // TODO: navigate back to login screen
+    // TODO: navigate back to login screen if the screen is not the login screen
+    // TODO: Add return no finish the request
   }
 
   /// Converts a status code into a specific `DioException`.
@@ -101,23 +102,56 @@ class ApiErrorsInterceptor extends Interceptor {
   /// Returns:
   ///   - A specific `DioException` based on the type.
   DioException _getExceptionForDioType(DioException err) {
+    final String message = err.message ?? '';
     switch (err.type) {
       case DioExceptionType.connectionTimeout:
-        return ConnectionTimeout(err.requestOptions);
+        return ConnectionTimeout(
+          err.requestOptions,
+          error: err,
+          message: 'connection_time_out',
+        );
       case DioExceptionType.sendTimeout:
-        return SendTimeout(err.requestOptions);
+        return SendTimeout(
+          err.requestOptions,
+          error: err,
+          message: 'send_time_out',
+        );
       case DioExceptionType.receiveTimeout:
-        return DeadlineExceeded(err.requestOptions);
+        return DeadlineExceeded(
+          err.requestOptions,
+          error: err,
+          message: 'receive_time_out',
+        );
       case DioExceptionType.connectionError:
-        return NoInternetConnection(err.requestOptions);
+        return NoInternetConnection(
+          err.requestOptions,
+          error: err,
+          message: 'connection_error',
+        );
       case DioExceptionType.badCertificate:
-        return BadCertificate(err.requestOptions);
+        return BadCertificate(
+          err.requestOptions,
+          error: err,
+          message: 'bad_certificate',
+        );
       case DioExceptionType.badResponse:
-        return BadResponse(err.requestOptions);
+        return BadResponse(
+          err.requestOptions,
+          error: err,
+          message: 'bad_response',
+        );
       case DioExceptionType.unknown:
-        return Unknown(err.requestOptions);
+        return Unknown(
+          err.requestOptions,
+          error: err,
+          message: 'unknown',
+        );
       case DioExceptionType.cancel:
-        return ApiException(err.requestOptions);
+        return ApiException(
+          err.requestOptions,
+          error: err,
+          message: 'unknown',
+        );
     }
   }
 }

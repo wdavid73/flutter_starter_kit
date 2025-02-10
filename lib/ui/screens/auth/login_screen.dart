@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
+import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -14,11 +16,16 @@ class LoginScreen extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         title: Text(
           context.translate('login'),
-          style: context.textTheme.titleLarge,
+          style: context.textTheme.titleLarge?.copyWith(
+            color: ColorTheme.white,
+          ),
         ),
       ),
       extendBodyBehindAppBar: true,
-      body: _LoginView(),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: _LoginView(),
+      ),
     );
   }
 }
@@ -48,9 +55,7 @@ class _LoginView extends StatelessWidget {
 }
 
 class _LoginBody extends StatelessWidget {
-  const _LoginBody({
-    super.key,
-  });
+  const _LoginBody();
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +88,7 @@ class _LoginBody extends StatelessWidget {
                       text: "Or use email",
                     ),
                     const SizedBox(height: 10),
-                    _FormLogIn(),
+                    _FormSignIn(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       spacing: 5,
@@ -121,9 +126,7 @@ class _LoginBody extends StatelessWidget {
 }
 
 class _LogoContainer extends StatelessWidget {
-  const _LogoContainer({
-    super.key,
-  });
+  const _LogoContainer();
 
   @override
   Widget build(BuildContext context) {
@@ -137,17 +140,20 @@ class _LogoContainer extends StatelessWidget {
 }
 
 class _ButtonsOtherSignIn extends StatelessWidget {
-  const _ButtonsOtherSignIn({super.key});
+  const _ButtonsOtherSignIn();
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = AppTypography.getSemiBoldStyle(
+    TextStyle? textStyle = context.textTheme.bodyMedium?.copyWith(
       color: ColorTheme.textPrimary,
     );
 
     ButtonStyle buttonStyle = ButtonStyle(
       backgroundColor:
           WidgetStatePropertyAll<Color>(ColorTheme.backgroundLight),
+      padding: WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: 10),
+      ),
     );
 
     double iconSize = context.dp(3);
@@ -161,18 +167,16 @@ class _ButtonsOtherSignIn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(),
               SvgPicture.asset(
                 'assets/icon/icon_google.svg',
                 width: iconSize,
                 height: iconSize,
               ),
-              const Spacer(),
+              const SizedBox(width: 10),
               Text(
-                "Sign in with Google",
+                context.translate('sign_in_with_google'),
                 style: textStyle,
               ),
-              const Spacer(),
             ],
           ),
         ),
@@ -183,18 +187,16 @@ class _ButtonsOtherSignIn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Spacer(),
               SvgPicture.asset(
                 'assets/icon/icon_apple.svg',
                 width: iconSize,
                 height: iconSize,
               ),
-              const Spacer(),
+              const SizedBox(width: 10),
               Text(
-                "Sign in with Apple",
+                context.translate('sign_in_with_apple'),
                 style: textStyle,
               ),
-              const Spacer(),
             ],
           ),
         )
@@ -223,38 +225,64 @@ class _DividerBody extends StatelessWidget {
   }
 }
 
-class _FormLogIn extends StatelessWidget {
-  const _FormLogIn({super.key});
+class _FormSignIn extends StatelessWidget {
+  const _FormSignIn();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 10,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CustomTextFormField(
-          label: "Email",
-          hint: "Input your email",
-          iconPrefix: Icon(Icons.email_rounded),
-          onChanged: (val) {},
-        ),
-        CustomTextFormField(
-          label: "Password",
-          hint: "Input your password",
-          obscureText: true,
-          iconPrefix: Icon(Icons.password),
-          onChanged: (val) {},
-        ),
-        SizedBox(
-          width: context.width,
-          child: FilledButton.icon(
-            onPressed: () {},
-            icon: Icon(Icons.login_rounded),
-            label: Text("Sign in"),
+    final signInForm = context.watch<SignInFormCubit>();
+    final email = signInForm.state.email;
+    final password = signInForm.state.password;
+
+    void listenerShowSnackBar(BuildContext context, AuthState state) async {
+      if (state.authStatus == AuthStatus.notAuthenticated &&
+          state.errorMessage != '') {
+        CustomSnackBar.showSnackBar(
+          context,
+          message: context.translate(state.errorMessage),
+          icon: Icons.warning_rounded,
+          colorIcon: ColorTheme.error,
+        );
+      }
+    }
+
+    return BlocListener<AuthBloc, AuthState>(
+      listener: listenerShowSnackBar,
+      child: Column(
+        spacing: 10,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CustomTextFormField(
+            label: "Email",
+            hint: "Input your email",
+            iconPrefix: Icon(Icons.email_rounded),
+            onChanged: signInForm.emailChanged,
+            errorMessage: context.translate("${email.errorMessage}"),
+            initialValue: signInForm.state.email.value,
           ),
-        )
-      ],
+          CustomTextFormField(
+            label: "Password",
+            hint: "Input your password",
+            obscureText: signInForm.state.isObscure,
+            toggleObscure: signInForm.toggleObscure,
+            iconPrefix: Icon(Icons.password),
+            onChanged: signInForm.passwordChanged,
+            errorMessage: context.translate("${password.errorMessage}"),
+            initialValue: signInForm.state.password.value,
+          ),
+          SizedBox(
+            width: context.width,
+            child: FilledButton.icon(
+              onPressed: signInForm.state.isPosting
+                  ? null
+                  : () => signInForm.onSubmit(),
+              icon: Icon(Icons.login_rounded),
+              label: Text("Sign in"),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

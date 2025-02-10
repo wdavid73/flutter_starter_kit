@@ -16,6 +16,7 @@ extension TranslateExtension on BuildContext {
   /// Returns:
   ///   - The translated string.
   String translate(String key) {
-    return AppLocalizations.of(this).translate(key);
+    if (key != 'null') return AppLocalizations.of(this).translate(key);
+    return '';
   }
 }

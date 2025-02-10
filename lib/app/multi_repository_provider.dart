@@ -5,6 +5,19 @@ import 'package:front_scaffold_flutter_v2/domain/infrastructure.dart';
 
 List<RepositoryProvider> buildRepositories() {
   return [
+    // * AUTH REPOSITORY AND DATASOURCE
+    RepositoryProvider<AuthRepository>(
+      create: (_) => AuthRepositoryImpl(
+        ApiAuthDataSource(ApiClient.instance),
+      ),
+    ),
+    RepositoryProvider<AuthUseCase>(
+      create: (context) => AuthUseCase(
+        context.read<AuthRepository>(),
+      ),
+    ),
+
+    // EXAMPLE REPOSITORY AND DATASOURCE
     RepositoryProvider<ProductsRepository>(
       create: (_) => ProductsRepositoryImpl(
         ApiProductDataSource(ApiClient.instance),

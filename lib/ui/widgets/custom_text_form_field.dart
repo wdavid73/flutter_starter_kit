@@ -27,6 +27,9 @@ class CustomTextFormField extends StatelessWidget {
   /// Whether the text field is enabled for user interaction.
   final bool enabled;
 
+  /// The initial value of the text field.
+  final String? initialValue;
+
   /// A list of autofill hints to help the operating system autofill the field.
   final Iterable<String>? autofillHints;
 
@@ -52,7 +55,7 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String)? onFieldSubmitted;
 
   /// A callback function that is called to toggle password visibility.
-  final void Function()? showPassword;
+  final void Function()? toggleObscure;
 
   /// Creates a [CustomTextFormField].
   const CustomTextFormField({
@@ -60,7 +63,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.validator,
     this.onFieldSubmitted,
-    this.showPassword,
+    this.toggleObscure,
     this.decoration,
     this.label,
     this.hint,
@@ -73,11 +76,12 @@ class CustomTextFormField extends StatelessWidget {
     this.textInputAction,
     this.enabled = true,
     this.autofillHints,
+    this.initialValue,
   });
 
   /// Returns true if the text field is a password field.
-  bool get isPassword {
-    return obscureText == true;
+  bool get hasObscure {
+    return toggleObscure != null;
   }
 
   @override
@@ -92,15 +96,16 @@ class CustomTextFormField extends StatelessWidget {
         textInputAction: textInputAction,
         enabled: enabled,
         autofillHints: autofillHints,
+        initialValue: initialValue,
         decoration: InputDecoration(
           labelText: label,
           hintText: hint,
-          errorText: errorMessage,
+          errorText: errorMessage != '' ? errorMessage : null,
           prefixIcon: iconPrefix,
-          suffixIcon: isPassword
+          suffixIcon: hasObscure
               ? IconButton(
                   onPressed:
-                      showPassword != null ? () => showPassword!() : null,
+                      toggleObscure != null ? () => toggleObscure!() : null,
                   icon: Icon(
                     obscureText ? Icons.visibility : Icons.visibility_off,
                   ),

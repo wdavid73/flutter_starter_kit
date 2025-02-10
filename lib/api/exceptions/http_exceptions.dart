@@ -93,7 +93,8 @@ class UnknownException extends DioException {
 /// Represents a no internet connection error.
 class NoInternetConnection extends DioException {
   /// Creates a [NoInternetConnection].
-  NoInternetConnection(RequestOptions r) : super(requestOptions: r);
+  NoInternetConnection(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -104,7 +105,8 @@ class NoInternetConnection extends DioException {
 /// Represents a deadline exceeded error.
 class DeadlineExceeded extends DioException {
   /// Creates a [DeadlineExceeded].
-  DeadlineExceeded(RequestOptions r) : super(requestOptions: r);
+  DeadlineExceeded(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -115,7 +117,8 @@ class DeadlineExceeded extends DioException {
 /// Represents a bad certificate error.
 class BadCertificate extends DioException {
   /// Creates a [BadCertificate].
-  BadCertificate(RequestOptions r) : super(requestOptions: r);
+  BadCertificate(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -126,7 +129,8 @@ class BadCertificate extends DioException {
 /// Represents a bad response error.
 class BadResponse extends DioException {
   /// Creates a [BadResponse].
-  BadResponse(RequestOptions r) : super(requestOptions: r);
+  BadResponse(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -137,7 +141,8 @@ class BadResponse extends DioException {
 /// Represents an unknown server error.
 class Unknown extends DioException {
   /// Creates an [Unknown].
-  Unknown(RequestOptions r) : super(requestOptions: r);
+  Unknown(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -148,7 +153,8 @@ class Unknown extends DioException {
 /// Represents a connection timeout error.
 class ConnectionTimeout extends DioException {
   /// Creates a [ConnectionTimeout].
-  ConnectionTimeout(RequestOptions r) : super(requestOptions: r);
+  ConnectionTimeout(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -159,7 +165,8 @@ class ConnectionTimeout extends DioException {
 /// Represents a send timeout error.
 class SendTimeout extends DioException {
   /// Creates a [SendTimeout].
-  SendTimeout(RequestOptions r) : super(requestOptions: r);
+  SendTimeout(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {
@@ -170,7 +177,8 @@ class SendTimeout extends DioException {
 /// Represents a generic API exception.
 class ApiException extends DioException {
   /// Creates an [ApiException].
-  ApiException(RequestOptions r) : super(requestOptions: r);
+  ApiException(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() {

@@ -257,7 +257,9 @@ class AppTheme {
         listTileTheme: _baseListTileTheme.copyWith(
           textColor: ColorTheme.white,
         ),
-        snackBarTheme: _baseSnackBarTheme,
+        snackBarTheme: _baseSnackBarTheme.copyWith(
+          contentTextStyle: baseTextThemeDark.bodyLarge,
+        ),
         progressIndicatorTheme: _baseProgressIndicatorTheme,
         bottomSheetTheme: _baseBottomSheetTheme.copyWith(
           backgroundColor: ColorTheme.backgroundColorDark,
