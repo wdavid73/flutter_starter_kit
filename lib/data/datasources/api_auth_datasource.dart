@@ -2,6 +2,18 @@ import 'package:dio/dio.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
 
+/// Example JSON response for login and checkAuthStatus:
+///
+/// ```json
+/// {
+///   "id": "fb0ae2b2-8bd3-448b-8c6b-044b0917db02",
+///   "email": "test1@google.com",
+///   "fullName": "Juan Carlos",
+///   "isActive": true,
+///   "roles": ["admin"],
+///   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+/// }
+/// ```
 /// An implementation of [AuthDataSource] that interacts with a remote API
 /// to perform authentication-related operations.
 ///
