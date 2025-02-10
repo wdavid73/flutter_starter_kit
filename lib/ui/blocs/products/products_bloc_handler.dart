@@ -38,7 +38,7 @@ mixin ProductsBlocHandler on Bloc<ProductsEvent, ProductsState> {
       error: '',
       products: [
         ...state.products,
-        ...response.data as List<Product>,
+        ...response.data as List<ProductModel>,
       ],
     ));
   }

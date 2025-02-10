@@ -19,7 +19,7 @@ class ProductMapper {
   ///
   /// Returns:
   ///   - A [Product] object representing the data in the JSON map.
-  static jsonToEntity(Map<String, dynamic> json) => Product(
+  static jsonToEntity(Map<String, dynamic> json) => ProductModel(
         title: json['title'],
         description: json['description'],
         id: json['id'],

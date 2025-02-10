@@ -5,7 +5,7 @@ part of 'products_bloc.dart';
 /// Contains the list of products, loading status, error, pagination info.
 class ProductsState extends Equatable {
   /// The list of products.
-  final List<Product> products;
+  final List<ProductModel> products;
 
   /// Indicates if products are being loaded.
   final bool isLoading;
@@ -24,7 +24,7 @@ class ProductsState extends Equatable {
 
   /// Creates a [ProductsState].
   const ProductsState({
-    this.products = const <Product>[],
+    this.products = const <ProductModel>[],
     this.isLoading = false,
     this.error = '',
     this.limit = 10,
@@ -37,7 +37,7 @@ class ProductsState extends Equatable {
 
   /// Creates a copy of this [ProductsState] with the given fields replaced.
   ProductsState copyWith({
-    List<Product>? products,
+    List<ProductModel>? products,
     bool? isLoading,
     String? error,
     int? limit,

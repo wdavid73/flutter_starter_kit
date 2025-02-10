@@ -34,7 +34,7 @@ class ApiProductDataSource implements ProductsDataSource {
       );
 
       // Maps the JSON response to a list of products.
-      final List<Product> products = [];
+      final List<ProductModel> products = [];
       for (var product in response.data) {
         products.add(ProductMapper.jsonToEntity(product));
       }

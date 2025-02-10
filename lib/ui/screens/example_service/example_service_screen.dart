@@ -87,7 +87,7 @@ class _ProductViewState extends State<_ProductView> {
 }
 
 class _ProductCard extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   const _ProductCard({required this.product});
 
   @override
