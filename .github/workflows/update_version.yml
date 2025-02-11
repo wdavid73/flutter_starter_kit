@@ -9,7 +9,7 @@ on:
 jobs:
   update-version:
     runs-on: ubuntu-latest
-    # if: github.event.pull_request.merge == true
+    if: github.event.pull_request.merged == true
 
     steps:
       - name: Checkout repository
@@ -28,9 +28,7 @@ jobs:
 
       - name: Determine branch name
         id: branch
-        run: |
-          BRANCH_NAME=${{ github.event.pull_request.head.ref }}
-          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+        run: echo "BRANCH_NAME=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
 
       - name: Display Currrent Branch
         run: |
@@ -42,48 +40,33 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          cd ${{ github.workspace }}
-          git checkout develop
+      # cd ${{ github.workspace }}
+      # git checkout develop
 
       - name: Check version based on branch
         run: |
-          # Define the version level according to the branch name
-          bump_level=none
-          
           if [[ $BRANCH_NAME == feature/* ]]; then
-            bump_level="minor"
+            echo "BUMP_LEVEL=minor" >> $GITHUB_ENV
           elif [[ $BRANCH_NAME == release/* ]]; then
-            bump_level="major"
+            echo "BUMP_LEVEL=major" >> $GITHUB_ENV
           elif [[ $BRANCH_NAME == hotfix/* || $BRANCH_NAME == bugfix/* ]]; then
-            bump_level="patch"
+            echo "BUMP_LEVEL=patch" >> $GITHUB_ENV
           else
-            echo "Branch name does not match any known pattern"
+            echo "BUMP_LEVEL=none" >> $GITHUB_ENV
           fi
-          
-          echo "Increment version of $bump_level"
-          echo "BUMP_LEVEL=$bump_level" >> $GITHUB_ENV
-        env:
-          BRANCH_NAME: ${{ env.BRANCH_NAME }}
 
       - name: Update version
         if: env.BUMP_LEVEL != 'none'
-        run: |
-          cd ${{ github.workspace }}
-          bumpversion ${{ env.BUMP_LEVEL }}
-        env:
-          BUMP_LEVEL: ${{ env.BUMP_LEVEL }}
+        run: bumpversion ${{ env.BUMP_LEVEL }}
 
       - name: List modified files
         run: git status
 
-
       - name: Commit and push changes
+        if: env.BUMP_LEVEL != 'none'
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Action"
-          git push
-          # git add .
-          # git commit -m "Bump version"
-          # git push --follow-tags
+          git add .
+          git commit -m "Bump version: ${{ env.BUMP_LEVEL }}"
+          git push origin develop --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
