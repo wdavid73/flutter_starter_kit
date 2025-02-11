@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
-import 'package:front_scaffold_flutter_v2/domain/infrastructure.dart';
+import 'package:front_scaffold_flutter_v2/domain/repositories/repositories.dart';
+import 'package:front_scaffold_flutter_v2/domain/usecases/usecases.dart';
 
 List<RepositoryProvider> buildRepositories() {
   return [

@@ -1,9 +1,10 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
-import 'package:front_scaffold_flutter_v2/domain/infrastructure.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/service/key_value_storage_service.dart';
+import 'package:front_scaffold_flutter_v2/domain/usecases/auth_usecase.dart';
+import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

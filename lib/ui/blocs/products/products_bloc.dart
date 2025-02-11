@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
-import 'package:front_scaffold_flutter_v2/domain/infrastructure.dart';
+import 'package:front_scaffold_flutter_v2/domain/usecases/products_usecase.dart';
 
 part 'products_bloc_handler.dart';
 part 'products_event.dart';

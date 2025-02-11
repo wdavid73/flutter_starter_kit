@@ -78,7 +78,9 @@ mixin AuthBlocHandler on Bloc<AuthEvent, AuthState> {
     RegisterEvent event,
     Emitter<AuthState> emit,
   ) async {
-    print("handler register");
+    if (kDebugMode) {
+      print("handler register");
+    }
   }
 
   Future<void> _clearTokenAndEmitNotAuthenticated(

@@ -102,7 +102,6 @@ class ApiErrorsInterceptor extends Interceptor {
   /// Returns:
   ///   - A specific `DioException` based on the type.
   DioException _getExceptionForDioType(DioException err) {
-    final String message = err.message ?? '';
     switch (err.type) {
       case DioExceptionType.connectionTimeout:
         return ConnectionTimeout(

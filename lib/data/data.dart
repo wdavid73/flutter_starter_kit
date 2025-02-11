@@ -1,7 +1,3 @@
-// ? DATA SOURCES
-export 'datasources/products_datasource.dart';
-export 'datasources/auth_datasource.dart';
-
 // ? DATA SOURCES IMPLEMENTATION
 export 'datasources/api_products_datasource.dart';
 export 'datasources/api_auth_datasource.dart';

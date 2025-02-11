@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
+import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
 import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
