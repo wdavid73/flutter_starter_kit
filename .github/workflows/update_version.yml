@@ -65,6 +65,10 @@ jobs:
       - name: List modified files
         run: git status
 
+      - name: Mostrar error si Git rechaza el commit
+        run: |
+          git push origin develop --tags || (echo "Push falló, revisa si hay reglas de verificación de commits" && exit 1)
+
       - name: Commit and push changes
         if: env.BUMP_LEVEL != 'none'
         run: |
