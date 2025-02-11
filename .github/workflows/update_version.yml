@@ -62,7 +62,7 @@ jobs:
           
           echo "Increment version of $bump_level"
           echo "BUMP_LEVEL=$bump_level" >> $GITHUB_ENV
-          env:
+        env:
           BRANCH_NAME: ${{ env.BRANCH_NAME }}
 
       - name: Update version
