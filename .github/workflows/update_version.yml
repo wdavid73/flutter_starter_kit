@@ -70,12 +70,6 @@ jobs:
           git push origin develop --tags || (echo "Push falló, revisa si hay reglas de verificación de commits" && exit 1)
 
       - name: Commit and push changes
-        if: env.BUMP_LEVEL != 'none'
-        run: |
-          git add pubspec.yaml
-          git commit -m "Bump version: ${{ env.BUMP_LEVEL }}"
-          git push
-        # git push origin develop --tags
-
+        run: git push origin develop --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
