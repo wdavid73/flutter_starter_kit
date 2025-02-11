@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
               onTap: () => context.push('/example_service'),
             ),
             const Spacer(),
-            Text("texto de prueba 3"),
+            Text("texto de prueba 4"),
             FilledButton.icon(
               onPressed: () => context.read<AuthBloc>().logout(),
               label: Text("LogOut"),
