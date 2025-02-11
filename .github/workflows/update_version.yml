@@ -57,7 +57,10 @@ jobs:
 
       - name: Update version
         if: env.BUMP_LEVEL != 'none'
-        run: bumpversion ${{ env.BUMP_LEVEL }}
+        run: bumpversion --verbose ${{ env.BUMP_LEVEL }}
+
+      - name: Mostrar diferencias después de bumpversion
+        run: git diff
 
       - name: List modified files
         run: git status
@@ -65,7 +68,7 @@ jobs:
       - name: Commit and push changes
         if: env.BUMP_LEVEL != 'none'
         run: |
-          git add .
+          git add pubspec.yaml
           git commit -m "Bump version: ${{ env.BUMP_LEVEL }}"
           git push
         # git push origin develop --tags
