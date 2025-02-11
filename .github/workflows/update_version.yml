@@ -67,6 +67,8 @@ jobs:
         run: |
           git add .
           git commit -m "Bump version: ${{ env.BUMP_LEVEL }}"
-          git push origin develop --tags
+          git push
+        # git push origin develop --tags
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
