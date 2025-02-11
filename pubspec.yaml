@@ -1,7 +1,7 @@
 name: front_scaffold_flutter_v2
 description: "This is a base project in Flutter designed as a template for future developments. It contains essential configurations and packages to quickly start new projects."
 publish_to: 'none'
-version: 1.0.1
+version: 1.0.2
 
 environment:
   sdk: ^3.6.0
