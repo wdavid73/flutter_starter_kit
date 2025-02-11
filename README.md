@@ -6,6 +6,11 @@ This is a base project in Flutter designed as a template for future developments
 
 ---
 
+## 📄 Branch Guide
+Refer to the workflow in [BRANCHES.md](BRANCHES.md).
+
+---
+
 ## 📌 Prerequisites
 
 Make sure you have the following items installed:

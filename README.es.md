@@ -4,6 +4,11 @@ Este es un proyecto base en Flutter diseñado como plantilla para futuros desarr
 
 ---
 
+## 📄 Guía de Ramas
+Consulta el flujo de trabajo en [BRANCHES.md](BRANCHES.md).
+
+---
+
 ## 📌 Requisitos Previos
 
 Asegúrate de tener instalados los siguientes elementos:
