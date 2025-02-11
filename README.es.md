@@ -9,6 +9,12 @@ Consulta el flujo de trabajo en [BRANCHES.md](BRANCHES.md).
 
 ---
 
+## 🔥 Configuración de Firebase
+
+La configuración detallada se encuentra en [firebase-setup.md](firebase-setup.md)
+
+---
+
 ## 📌 Requisitos Previos
 
 Asegúrate de tener instalados los siguientes elementos:

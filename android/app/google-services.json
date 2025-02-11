@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "41922227728",
+    "project_id": "flutter-notifications-e8b3b",
+    "storage_bucket": "flutter-notifications-e8b3b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41922227728:android:caa4c9aff5036ac9316495",
+        "android_client_info": {
+          "package_name": "com.example.front_scaffold_flutter_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4D43S2Uv5GCANDuagcXM5xat0uBpsBSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41922227728:android:f37b29bd6d57bcb4316495",
+        "android_client_info": {
+          "package_name": "com.guichodevs.push_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4D43S2Uv5GCANDuagcXM5xat0uBpsBSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
