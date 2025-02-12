@@ -15,6 +15,12 @@ La configuración detallada se encuentra en [firebase-setup.md](firebase-setup.m
 
 ---
 
+## 🔔 Notificaciones Push y Locales
+
+Encontrará documentación y ejemplos en [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging?hl=es-419)
+
+---
+
 ## 📌 Requisitos Previos
 
 Asegúrate de tener instalados los siguientes elementos:
