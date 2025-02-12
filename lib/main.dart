@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:front_scaffold_flutter_v2/app/app.dart';
 import 'package:front_scaffold_flutter_v2/config/constants/environment.dart';
-import 'package:front_scaffold_flutter_v2/firebase_options.dart';
+import 'firebase_options.dart';
 
 /// The main entry point of the Flutter application.
 void main() async {
