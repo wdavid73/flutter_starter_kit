@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
+import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
 import 'multi_bloc_providers.dart';
 import 'multi_repository_provider.dart';
 
@@ -24,6 +25,8 @@ class MainApp extends StatelessWidget {
             darkTheme: AppTheme.getDarkTheme(),
             localizationsDelegates: LocaleConfig.localizationDelegate,
             supportedLocales: LocaleConfig.supportedLocales,
+            builder: (context, child) =>
+                HandleNotificationInteractions(child: child!),
           );
         }),
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
@@ -17,6 +18,8 @@ import 'routes.dart';
 ///
 /// Returns:
 ///   - A configured [GoRouter] instance ready to be used in the application.
+///
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GoRouter createAppRouter(AuthBloc authBloc) {
   final goRouterNotifier = GoRouterNotifier(authBloc);
 
@@ -25,5 +28,6 @@ GoRouter createAppRouter(AuthBloc authBloc) {
     refreshListenable: goRouterNotifier,
     routes: Routes.getAppRoutes(),
     redirect: (context, state) => appRedirect(goRouterNotifier, state),
+    navigatorKey: navigatorKey,
   );
 }
