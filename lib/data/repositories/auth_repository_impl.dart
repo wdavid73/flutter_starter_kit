@@ -61,4 +61,19 @@ class AuthRepositoryImpl extends AuthRepository {
       String email, String password, String fullName) {
     return datasource.register(email, password, fullName);
   }
+
+  /// Signs in a user with Google using the provided [idToken].
+  ///
+  /// Delegates the authentication process to the [AuthDataSource] instance.
+  ///
+  /// Parameters:
+  ///   - [idToken]: The Google ID token obtained from the Google Sign-In process.
+  ///
+  /// Returns:
+  ///   - A [Future] that resolves to a [ResponseState] representing the result
+  ///     of the Google Sign-In attempt.
+  @override
+  Future<ResponseState> googleSignIn(String idToken) {
+    return datasource.googleSignIn(idToken);
+  }
 }

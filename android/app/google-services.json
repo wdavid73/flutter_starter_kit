@@ -12,7 +12,20 @@
           "package_name": "com.example.front_scaffold_flutter_v2"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "41922227728-eo4ca0afk84mp7c2ml82ipqktedv0ajp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.front_scaffold_flutter_v2",
+            "certificate_hash": "7113fb97bf9a5694562d06bc66cae1ac9137eb97"
+          }
+        },
+        {
+          "client_id": "41922227728-b7648oeogstvh669hlpfptquc0aevb7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD4D43S2Uv5GCANDuagcXM5xat0uBpsBSM"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41922227728-b7648oeogstvh669hlpfptquc0aevb7d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41922227728-3ra6b393f8t1f1tq9df5r4lqq4j3alrd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.frontScaffoldFlutterV2"
+              }
+            }
+          ]
         }
       }
     },
@@ -31,7 +56,12 @@
           "package_name": "com.guichodevs.push_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "41922227728-b7648oeogstvh669hlpfptquc0aevb7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD4D43S2Uv5GCANDuagcXM5xat0uBpsBSM"
@@ -39,7 +69,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41922227728-b7648oeogstvh669hlpfptquc0aevb7d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41922227728-3ra6b393f8t1f1tq9df5r4lqq4j3alrd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.frontScaffoldFlutterV2"
+              }
+            }
+          ]
         }
       }
     }

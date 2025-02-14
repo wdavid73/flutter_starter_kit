@@ -187,12 +187,10 @@ class ApiException extends DioException {
 }
 
 /// Represents a Google Sign In error.
-class GoogleSignInError {
-  /// The error message.
-  final String message;
-
+class GoogleSignInError extends DioException {
   /// Creates a [GoogleSignInError].
-  GoogleSignInError(this.message);
+  GoogleSignInError(RequestOptions r, {super.error, super.message})
+      : super(requestOptions: r);
 
   @override
   String toString() => "GoogleSignInError: $message";

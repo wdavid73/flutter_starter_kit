@@ -18,7 +18,7 @@ class UserMapper {
   static UserModel userJsonToModel(Map<String, dynamic> json) => UserModel(
         id: json['id'],
         email: json['email'],
-        fullName: json['fullName'],
+        fullName: json['fullName'] ?? json["displayName"] ?? '',
       );
 
   /// Converts a [UserModel] into a JSON map.

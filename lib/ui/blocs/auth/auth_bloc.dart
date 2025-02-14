@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
 import 'package:front_scaffold_flutter_v2/domain/usecases/auth_usecase.dart';
+import 'package:front_scaffold_flutter_v2/domain/usecases/google_auth_usecase.dart';
 import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
 
 part 'auth_event.dart';
@@ -20,6 +22,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> with AuthBlocHandler {
   /// The [AuthUseCase] used to perform authentication operations.
   final AuthUseCase useCase;
 
+  /// The [GoogleAuthUseCase] used to perform Google authentication operations.
+  final GoogleAuthUseCase googleAuthUseCase;
+
   /// The [KeyValueStorageService] used to manage persistent data.
   final KeyValueStorageService keyValueStorageService;
 
@@ -28,11 +33,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> with AuthBlocHandler {
   /// Parameters:
   ///   - [useCase]: The [AuthUseCase] used to perform authentication operations.
   ///   - [keyValueStorageService]: The [KeyValueStorageService] used to manage persistent data.
-  AuthBloc(this.useCase, this.keyValueStorageService) : super(AuthState()) {
+  AuthBloc({
+    required this.useCase,
+    required this.keyValueStorageService,
+    required this.googleAuthUseCase,
+  }) : super(AuthState()) {
     on<LoginEvent>(handlerLogin);
     on<CheckAuthStatusEvent>(handlerCheckAuthStatus);
     on<LogoutEvent>(handlerLogout);
     on<RegisterEvent>(handlerRegister);
+    on<GoogleSignInEvent>(handlerGoogleSignIn);
 
     Future.delayed(Duration.zero, () => checkAuthStatus());
   }
@@ -72,5 +82,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> with AuthBlocHandler {
   /// This method adds a [LogoutEvent] to the BLoC.
   void logout() {
     add(LogoutEvent());
+  }
+
+  /// Triggers the Google sign-in process.
+  ///
+  /// This method adds a [GoogleSignInEvent] to the BLoC.
+  void googleSignIn() {
+    add(GoogleSignInEvent());
   }
 }
