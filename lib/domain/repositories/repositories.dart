@@ -5,6 +5,7 @@
 ///
 /// By importing this file, all repository interfaces become available
 /// for use in the domain layer.
+library;
 
 // ? REPOSITORY INTERFACES
 export 'auth_repository.dart'; // Defines authentication-related operations

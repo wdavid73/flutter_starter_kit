@@ -36,7 +36,7 @@ class CustomFilledButton extends StatelessWidget {
 }
 
 class _LoadingButton extends StatelessWidget {
-  const _LoadingButton({super.key});
+  const _LoadingButton();
 
   @override
   Widget build(BuildContext context) {

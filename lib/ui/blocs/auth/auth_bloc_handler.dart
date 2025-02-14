@@ -164,7 +164,7 @@ mixin AuthBlocHandler on Bloc<AuthEvent, AuthState> {
     // final token = await (this as AuthBloc).googleAuthUseCase.getToken();
 
     // final AdditionalUserInfo userInfo = response.data.additionalUserInfo;
-    final UserCredential user = response.data['userCredential'];
+    // final UserCredential user = response.data['userCredential'];
     final String? idToken = response.data['idToken'];
 
     /// From this point on you can modify the google login interaction as you see fit.
