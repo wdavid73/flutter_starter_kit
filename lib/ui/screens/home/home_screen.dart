@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
@@ -9,12 +10,27 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final notificationBloc = context.read<NotificationsBloc>();
+    final notificationsStatus = context.watch<NotificationsBloc>().state;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
           context.translate('home'),
           style: context.textTheme.titleLarge,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              notificationBloc.requestPermission();
+            },
+            icon: Icon(
+              notificationsStatus.status == AuthorizationStatus.authorized
+                  ? Icons.notifications_active
+                  : Icons.notifications_off,
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Column(

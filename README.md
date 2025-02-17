@@ -11,6 +11,18 @@ Refer to the workflow in [BRANCHES.md](BRANCHES.md).
 
 ---
 
+## 🔥 Firebase Setup
+
+Detailed configuration can be found in [firebase-setup.md](firebase-setup.md)
+
+---
+
+## 🔔 Push and Local Notifications
+
+Documentation and examples can be found in [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging?hl=es-419)
+
+---
+
 ## 📌 Prerequisites
 
 Make sure you have the following items installed:
@@ -265,3 +277,6 @@ This project is under the MIT license. Feel free to modify it and adapt it to yo
 
 ### 💡 Happy coding with Flutter! 🚀
 This `README.md` is clear, modular and adaptable for any project you use as a base. You can modify it according to the specific needs of your template. 🚀
+
+
+fvm dart pub global run flutterfire_cli:flutterfire configure
