@@ -47,4 +47,27 @@ abstract class AuthRepository {
   ///   - [token]: The authentication token to verify.
   ///
   Future<ResponseState> checkAuthStatus(String token);
+
+  /// Signs out the currently authenticated user.
+  ///
+  /// Returns:
+  ///  - [ResponseSuccess]: If the sign out is successful.
+  ///  - [ResponseFailed]: If the sign out fails.
+  ///
+  /// Parameters:
+  ///   - [token]: The authentication token to verify.
+  ///
+  /// Signs in a user with Google using the provided [idToken].
+  ///
+  /// This method handles the Google Sign-In process, typically by sending
+  /// the [idToken] to a backend server for verification and session
+  /// creation.
+  ///
+  /// Parameters:
+  ///   - [idToken]: The Google ID token obtained from the Google Sign-In process.
+  ///
+  /// Returns:
+  ///   - A [Future] that resolves to a [ResponseState] representing the result
+  ///     of the Google Sign-In attempt.
+  Future<ResponseState> googleSignIn(String idToken);
 }

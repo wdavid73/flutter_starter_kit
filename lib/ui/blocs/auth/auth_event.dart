@@ -24,3 +24,5 @@ class RegisterEvent extends AuthEvent {
     required this.fullName,
   });
 }
+
+class GoogleSignInEvent extends AuthEvent {}

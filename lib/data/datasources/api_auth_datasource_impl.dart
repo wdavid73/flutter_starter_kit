@@ -118,4 +118,39 @@ class ApiAuthDataSource implements AuthDataSource {
       );
     }
   }
+
+  /// Attempts to log in a user with the given [idToken].
+  ///
+  /// Sends the [idToken] to the backend to authenticate the user and generate a [JWT].
+  /// If authentication is successful, returns user data wrapped in [ResponseSuccess].
+  /// If an error occurs, catches the exception and returns a [ResponseFailed].
+  ///
+  /// Parameters:
+  ///   - [idToken]: The Google ID token obtained from the Google Sign-In process.
+  ///
+  /// Returns:
+  ///   - A [Future] that resolves to a [ResponseState], either:
+  ///     - [ResponseSuccess] with the authenticated user data.
+  ///     - [ResponseFailed] if authentication fails.
+  ///
+  /// Example for google login sending the [idToken] to the backend to generate a [JWT] from backend
+  @override
+  Future<ResponseState> googleSignIn(String idToken) async {
+    try {
+      final response = await _client.post(
+        ApiEndpoint.authGoogle,
+        {'idToken': idToken},
+      );
+      final AuthResponseModel user = AuthResponseModel.fromJson(response.data);
+      return ResponseSuccess(user, 200);
+    } catch (e) {
+      return ResponseFailed(
+        DioException(
+          requestOptions: RequestOptions(path: ApiEndpoint.authGoogle),
+          error: e,
+          message: e.toString(),
+        ),
+      );
+    }
+  }
 }

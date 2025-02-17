@@ -24,6 +24,8 @@ Map<String, String> esBase = {
   "password_update": "Contraseña actualizada correctamente",
   'sign_in_with_google': 'Iniciar sesión con Google',
   'sign_in_with_apple': 'Iniciar sesión con ID de Apple',
+  'user_cancel_sign_in_with_google':
+      'El usuario canceló el inicio de sesión con Google',
   "accept__btn": "Aceptar",
   "cancel__btn": "Cancelar",
   // FOUND

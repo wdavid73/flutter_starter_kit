@@ -1,18 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
 import 'package:front_scaffold_flutter_v2/domain/repositories/repositories.dart';
 import 'package:front_scaffold_flutter_v2/domain/usecases/usecases.dart';
 
-/// Builds and returns a list of [RepositoryProvider] widgets.
+/// Builds and provides a list of `RepositoryProvider` instances.
 ///
-/// This function is responsible for creating and configuring the different
-/// [Repository] and [UseCase] providers used throughout the application.
-/// Each [RepositoryProvider] is configured with its respective dependencies
-/// and instantiated with the necessary data sources or other repositories.
+/// This function initializes all repositories and use cases required for the app,
+/// ensuring that they are available for dependency injection via `RepositoryProvider`.
 ///
 /// Returns:
-///   - A [List] of [RepositoryProvider] widgets.
+///   - A `List<RepositoryProvider>` containing all repositories and use cases.
 List<RepositoryProvider> buildRepositories() {
   return [
     /// Provides the [AuthRepository] and its corresponding [AuthUseCase].
@@ -25,22 +24,42 @@ List<RepositoryProvider> buildRepositories() {
         ApiAuthDataSource(ApiClient.instance),
       ),
     ),
+
+    // * GOOGLE SIGN-IN REPOSITORY AND DATASOURCE
+    /// Provides `GoogleSignInRepository`, which manages Google authentication.
+    RepositoryProvider<GoogleSignInRepository>(
+      create: (_) => GoogleSignInRepositoryImpl(
+        GoogleSignInDataSourceImpl(
+          FirebaseAuth.instance,
+        ),
+      ),
+    ),
+
+    // * AUTH USE CASE
+    /// Provides `AuthUseCase`, which contains authentication-related business logic.
     RepositoryProvider<AuthUseCase>(
       create: (context) => AuthUseCase(
         context.read<AuthRepository>(),
       ),
     ),
 
-    /// Provides the [ProductsRepository] and its corresponding [ProductsUseCase].
-    ///
-    /// The [ProductsRepository] is implemented by [ProductsRepositoryImpl] and
-    /// depends on [ApiProductDataSource] for data access.
-    /// The [ProductsUseCase] depends on the [ProductsRepository] for its logic.
+    // * GOOGLE SIGN-IN USE CASE
+    /// Provides `GoogleAuthUseCase`, which manages Google Sign-In logic.
+    RepositoryProvider<GoogleAuthUseCase>(
+      create: (context) => GoogleAuthUseCase(
+        context.read<GoogleSignInRepository>(),
+      ),
+    ),
+
+    // * PRODUCTS REPOSITORY AND DATASOURCE
+    /// Provides `ProductsRepository`, which handles product-related operations.
     RepositoryProvider<ProductsRepository>(
       create: (_) => ProductsRepositoryImpl(
         ApiProductDataSource(ApiClient.instance),
       ),
     ),
+
+    /// Provides `ProductsUseCase`, which contains business logic for managing products.
     RepositoryProvider<ProductsUseCase>(
       create: (context) => ProductsUseCase(
         context.read(),

@@ -7,6 +7,9 @@ class ApiEndpoint {
   static String authLogin = '$auth/login';
   static String authCheckStatus = '$auth/check-status';
 
+  /// For the example of google auth provider
+  static String authGoogle = '$auth/google';
+
   /// The endpoint for products. (Example)
   static String products = '/products';
 }

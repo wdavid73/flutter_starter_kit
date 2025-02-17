@@ -58,4 +58,17 @@ class AuthUseCase {
       String email, String password, String fullName) {
     return repository.register(email, password, fullName);
   }
+
+  /// Signs in a user with Google using the provided [idToken].
+  ///
+  /// This method delegates the Google Sign-In operation to the [AuthRepository].
+  ///
+  /// Parameters:
+  ///   - [idToken]: The Google ID token obtained from the Google Sign-In process.
+  ///
+  /// Returns:
+  ///   - A [Future] that resolves to a [ResponseState] representing the result of the Google Sign-In attempt.
+  Future<ResponseState> googleSignIn(String idToken) {
+    return repository.googleSignIn(idToken);
+  }
 }

@@ -4,40 +4,35 @@ import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
 import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
 
-/// Builds and returns a list of [BlocProvider] widgets.
+/// Builds and provides a list of `BlocProvider` instances.
 ///
-/// This function is responsible for creating and configuring the different
-/// [Bloc] and [Cubit] providers used throughout the application. Each
-/// [BlocProvider] is configured with its respective dependencies and
-/// instantiated with the necessary services or use cases.
+/// This function initializes all the necessary BLoCs and Cubits used in the app,
+/// ensuring they are available for dependency injection via the `BlocProvider` widget.
 ///
 /// Returns:
-///   - A [List] of [BlocProvider] widgets.
+///   - A `List<BlocProvider>` containing all the required blocs and cubits.
 List<BlocProvider> buildBlocs() {
   return [
-    /// Provides the [AuthBloc] for managing authentication state.
+    /// Provides the `AuthBloc`, responsible for handling authentication logic.
     BlocProvider<AuthBloc>(
       create: (context) => AuthBloc(
-        context.read<AuthUseCase>(),
-        KeyValueStorageServiceImpl(),
+        useCase: context.read<AuthUseCase>(),
+        googleAuthUseCase: context.read<GoogleAuthUseCase>(),
+        keyValueStorageService: KeyValueStorageServiceImpl(),
       ),
     ),
 
-    /// Provides the [SignInFormCubit] for managing the sign-in form state.
-    ///
-    /// This cubit depends on the [AuthBloc] to handle authentication logic.
+    /// Provides the `SignInFormCubit`, which manages the state of the sign-in form.
     BlocProvider<SignInFormCubit>(
       create: (context) => SignInFormCubit(
         authBloc: context.read<AuthBloc>(),
       ),
     ),
 
-    /// Provides the [ProductsBloc] for managing product-related state.
-    ///
-    /// This bloc depends on a service or use case provided by the context.
+    /// Provides the `ProductsBloc`, which manages product-related state.
     BlocProvider<ProductsBloc>(
       create: (context) => ProductsBloc(
-        context.read(),
+        context.read(), // Injects required dependencies automatically.
       ),
     ),
   ];

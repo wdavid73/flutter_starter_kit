@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
+import 'package:front_scaffold_flutter_v2/ui/screens/auth/widgets/apple_sign_in_button.dart';
+import 'package:front_scaffold_flutter_v2/ui/screens/auth/widgets/google_sign_in_button.dart';
 import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -145,62 +148,10 @@ class _ButtonsOtherSignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle? textStyle = context.textTheme.bodyMedium?.copyWith(
-      color: ColorTheme.textPrimary,
-    );
-
-    ButtonStyle buttonStyle = ButtonStyle(
-      backgroundColor:
-          WidgetStatePropertyAll<Color>(ColorTheme.backgroundLight),
-      padding: WidgetStatePropertyAll(
-        EdgeInsets.symmetric(horizontal: 10),
-      ),
-    );
-
-    double iconSize = context.dp(3);
-
     return Wrap(
       children: [
-        FilledButton(
-          onPressed: () {},
-          style: buttonStyle,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                'assets/icon/icon_google.svg',
-                width: iconSize,
-                height: iconSize,
-              ),
-              const SizedBox(width: 10),
-              Text(
-                context.translate('sign_in_with_google'),
-                style: textStyle,
-              ),
-            ],
-          ),
-        ),
-        FilledButton(
-          onPressed: () {},
-          style: buttonStyle,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                'assets/icon/icon_apple.svg',
-                width: iconSize,
-                height: iconSize,
-              ),
-              const SizedBox(width: 10),
-              Text(
-                context.translate('sign_in_with_apple'),
-                style: textStyle,
-              ),
-            ],
-          ),
-        )
+        GoogleSignInButton(),
+        if (Platform.isIOS || Platform.isMacOS) AppleSignInButton(),
       ],
     );
   }

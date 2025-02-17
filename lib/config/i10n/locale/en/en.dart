@@ -24,6 +24,7 @@ Map<String, String> enBase = {
   "password_update": "Password Updated Successfully",
   'sign_in_with_google': 'Sign in with Google',
   'sign_in_with_apple': 'Sign in with Apple ID',
+  'user_cancel_sign_in_with_google': 'User canceled sign in with google',
   "accept__btn": "Accept",
   "cancel__btn": "Cancel",
   // NOT FOUND
