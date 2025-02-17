@@ -75,6 +75,9 @@ class GoogleSignInDataSourceImpl extends GoogleSignInDataSource {
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
+
+        /// check if idToken id null, if it is null add the SHA-1 in your firebase project
+        /// and update the google-service.json for android
         idToken: googleAuth.idToken,
       );
 
