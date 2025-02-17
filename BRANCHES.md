@@ -32,13 +32,14 @@ git push origin --delete feature-branch  # Remote
 
 ## 🌿 Branches and Purpose
 
-| Rama                                     | Descripción                                                         |
+| Branch                                   | Description                                                         |
 |------------------------------------------|---------------------------------------------------------------------|
 | `master`                                 | Stable version ready for production.                                |
 | `develop`                                | Main branch for integrating new features before moving to `master`  |
 | `firebase-implementation`                | Firebase implementation in the project.                             |
 | `push-notifications-implementation`      | Implementation of push and local notifications.                     |
 | `auto-update-version-app-implementation` | Implementation of auto-incrementing the version with `bumpversion`. |
+| `google-sign-in-implementation`          | Implementation of Google Sign-In feature.                           |
 
 ---
 
