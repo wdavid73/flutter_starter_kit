@@ -1,6 +1,6 @@
 name: front_scaffold_flutter_v2
 description: "This is a base project in Flutter designed as a template for future developments. It contains essential configurations and packages to quickly start new projects."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -41,6 +41,7 @@ flutter:
     - assets/icon/
     - assets/fonts/
     - assets/images/
+    - assets/app-icon/
 
   fonts:
     - family: MontserratAlternates
@@ -50,3 +51,29 @@ flutter:
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf
+
+flutter_launcher_icons:
+  # Configuration for the app icons on Android and iOS.
+
+  # Path to the directory where the icon is located for Android.
+  android: "launcher_icon"
+
+  # Enables the creation of an icon for iOS.
+  ios: true
+
+  # Removes the alpha channel from the icon on iOS to avoid transparency issues.
+  remove_alpha_ios: true
+
+  # Path to the image that will be used as the main app icon.
+  image_path: "assets/app-icon/app-icon.png"
+
+  # Sets the background color of the adaptive icon on Android.
+  adaptive_icon_background: "#254550"
+
+  # Path to the image used as the foreground of the adaptive icon on Android.
+  adaptive_icon_foreground: "assets/app-icon/app-icon-foreground.png"
+
+  # Adjustment to slightly inset the adaptive icon foreground on Android.
+  adaptive_icon_foreground_inset: 8
+
+flutter_navite_splash:
