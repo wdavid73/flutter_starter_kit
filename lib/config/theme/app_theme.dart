@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
+import 'package:front_scaffold_flutter_v2/config/theme/widget_themes/date_picker_theme.dart';
 import './widget_themes/widget_themes.dart';
 
 class AppTheme {
@@ -58,7 +59,8 @@ class AppTheme {
     centerTitle: true,
     elevation: 5,
     iconTheme: _baseIconTheme.copyWith(color: ColorTheme.iconsColor),
-    titleTextStyle: baseTextTheme.titleLarge,
+    titleTextStyle:
+        baseTextTheme.titleMedium?.copyWith(color: ColorTheme.white),
   );
 
   /// Base ChipThemeData. Used as a starting point for customizing the chip styles in both light and dark themes.
@@ -222,6 +224,7 @@ class AppTheme {
         radioTheme: _baseRadioTheme,
         checkboxTheme: _baseCheckboxTheme,
         inputDecorationTheme: baseInputDecorationTheme,
+        datePickerTheme: baseDatePickerTheme,
       );
 
   static ThemeData getDarkTheme() => ThemeData(
@@ -289,6 +292,10 @@ class AppTheme {
           side: BorderSide(color: ColorTheme.white),
         ),
         inputDecorationTheme: baseInputDecorationDarkTheme,
+        dropdownMenuTheme: DropdownMenuThemeData(
+          inputDecorationTheme: baseInputDecorationDarkTheme,
+        ),
+        datePickerTheme: baseDatePickerDarkTheme,
       );
 
   static WidgetStateProperty<Color?> _resolveColorWith(
