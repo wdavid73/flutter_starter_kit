@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
-import 'routes.dart';
+import 'routes_constants.dart';
 
 // Defines a type for functions that handle redirection based on the current path.
 ///
@@ -32,7 +32,7 @@ Map<AuthStatus, RedirectHandler> redirectHandlers = {
 /// Returns:
 ///   - The splash screen path if the current path is the splash screen, otherwise `null`.
 String? _handleCheckingRedirect(String currentPath) {
-  return currentPath == Routes.splash ? Routes.splash : null;
+  return currentPath == RouteConstants.splash ? RouteConstants.splash : null;
 }
 
 /// Handles redirection logic when the authentication status is [AuthStatus.notAuthenticated].
@@ -46,10 +46,10 @@ String? _handleCheckingRedirect(String currentPath) {
 /// Returns:
 ///   - `null` if the current path is the login or register screen, otherwise the login screen path.
 String? _handleNotAuthenticatedRedirect(String currentPath) {
-  return (currentPath == Routes.loginScreen ||
-          currentPath == Routes.registerScreen)
+  return (currentPath == RouteConstants.loginScreen ||
+          currentPath == RouteConstants.registerScreen)
       ? null
-      : Routes.loginScreen;
+      : RouteConstants.loginScreen;
 }
 
 /// Handles redirection logic when the authentication status is [AuthStatus.authenticated].
@@ -63,9 +63,12 @@ String? _handleNotAuthenticatedRedirect(String currentPath) {
 /// Returns:
 ///   - The home screen path if the current path is the login, register, or splash screen, otherwise `null`.
 String? _handleAuthenticatedRedirect(String currentPath) {
-  return [Routes.loginScreen, Routes.registerScreen, Routes.splash]
-          .contains(currentPath)
-      ? Routes.home
+  return [
+    RouteConstants.loginScreen,
+    RouteConstants.registerScreen,
+    RouteConstants.splash
+  ].contains(currentPath)
+      ? RouteConstants.home
       : null;
 }
 
