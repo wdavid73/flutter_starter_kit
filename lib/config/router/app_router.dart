@@ -2,7 +2,8 @@ import 'package:go_router/go_router.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
 import 'redirect_handler.dart';
-import 'routes.dart';
+import 'routes_constants.dart';
+import 'routes_generator.dart';
 
 /// Creates and configures the application's [GoRouter] instance.
 ///
@@ -21,9 +22,9 @@ GoRouter createAppRouter(AuthBloc authBloc) {
   final goRouterNotifier = GoRouterNotifier(authBloc);
 
   return GoRouter(
-    initialLocation: Routes.splash,
+    initialLocation: RouteConstants.splash,
     refreshListenable: goRouterNotifier,
-    routes: Routes.getAppRoutes(),
+    routes: AppRoutes.getAppRoutes(),
     redirect: (context, state) => appRedirect(goRouterNotifier, state),
   );
 }
