@@ -73,6 +73,7 @@ class SignInFormCubit extends Cubit<SignInFormState> {
   ///   - [value]: The new password value.
   void passwordChanged(String value) {
     final password = Password.dirty(value: value);
+    final temp = Text.dirty(value: '');
     emit(state.copyWith(
       password: password,
       isValid: Formz.validate([state.email, password]),
