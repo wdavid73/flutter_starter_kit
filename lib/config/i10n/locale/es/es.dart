@@ -1,4 +1,5 @@
 import 'es_form_validation.dart';
+import 'es_form_texts.dart';
 
 Map<String, String> esBase = {
   'name': 'Nombre',
@@ -75,4 +76,5 @@ Map<String, String> esBase = {
 Map<String, String> esMap = {
   ...esBase,
   ...formValidations,
+  ...formTexts,
 };
