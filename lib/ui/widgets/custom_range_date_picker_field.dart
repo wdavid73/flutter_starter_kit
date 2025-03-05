@@ -83,7 +83,6 @@ class _CustomRangeDatePickerFieldState
 
   void _onTapDate() async {
     Locale myLocale = Localizations.localeOf(context);
-    final themeData = Theme.of(context);
     DateTimeRange? rangePicked = await showDateRangePicker(
       context: context,
       locale: myLocale,

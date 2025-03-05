@@ -3,10 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
-import 'package:front_scaffold_flutter_v2/ui/widgets/custom_multi_select_field.dart';
-import 'package:front_scaffold_flutter_v2/ui/widgets/custom_range_date_picker_field.dart';
 import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
-import 'package:image_picker/image_picker.dart';
 
 class InputsWidget extends StatefulWidget {
   const InputsWidget({super.key});
@@ -18,10 +15,10 @@ class InputsWidget extends StatefulWidget {
 class _InputsWidgetState extends State<InputsWidget> {
   String _photoPath = 'no photo picked';
   String _takePhotoPath = 'no photo taked';
-  final TextEditingController _controller = TextEditingController();
+  // final TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final Map<String, Color> _colors = {
+    final Map<String, Color> colors = {
       'red': Colors.red,
       'green': Colors.green,
       'blue': Colors.blue,
@@ -33,7 +30,7 @@ class _InputsWidgetState extends State<InputsWidget> {
       'grey': Colors.grey,
     };
 
-    final List<String> _selectedColors = [];
+    // final List<String> _selectedColors = [];
 
     void pickImage() async {
       final photoPath = await CameraGalleryServiceImpl().selectPhoto();
@@ -68,7 +65,7 @@ class _InputsWidgetState extends State<InputsWidget> {
                 const SizedBox(height: 10),
                 _inputPassword(),
                 const SizedBox(height: 10),
-                _inputDropdown(_colors),
+                _inputDropdown(colors),
                 const SizedBox(height: 10),
                 _inputMultiSelect(context),
                 const SizedBox(height: 10),
@@ -235,7 +232,7 @@ class _InputsWidgetState extends State<InputsWidget> {
     );
   }
 
-  Widget _inputDropdown(Map<String, Color> _colors) {
+  Widget _inputDropdown(Map<String, Color> colors) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -248,17 +245,17 @@ class _InputsWidgetState extends State<InputsWidget> {
             /*helperText: "Texto de ayuda",*/
             /*errorMessage: "Error Message",*/
             /*prefixIcon: Icon(Icons.verified_user),*/
-            options: _colors.keys.toList(),
+            options: colors.keys.toList(),
             itemBuilder: (option) {
               final colorName = option as String;
-              final color = _colors[colorName];
+              final color = colors[colorName];
               return DropdownMenuItem(
                 value: color,
                 child: Text(colorName),
               );
             },
             onChanged: (val) {
-              print("color selected: $val");
+              // print("color selected: $val");
             },
           ),
         )
