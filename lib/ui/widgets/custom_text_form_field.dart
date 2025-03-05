@@ -15,6 +15,9 @@ class CustomTextFormField extends StatelessWidget {
   /// The error message to display below the text field when validation fails.
   final String? errorMessage;
 
+  /// The helper text to display below the text field.
+  final String? helperText;
+
   /// The decoration to apply to the container surrounding the text field.
   final BoxDecoration? decoration;
 
@@ -22,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
 
   /// An optional icon to display at the beginning of the text field.
-  final Icon? iconPrefix;
+  final Icon? prefixIcon;
 
   /// Whether the text field is enabled for user interaction.
   final bool enabled;
@@ -70,13 +73,14 @@ class CustomTextFormField extends StatelessWidget {
     this.errorMessage,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.iconPrefix,
+    this.prefixIcon,
     this.controller,
     this.focusNode,
     this.textInputAction,
     this.enabled = true,
     this.autofillHints,
     this.initialValue,
+    this.helperText,
   });
 
   /// Returns true if the text field is a password field.
@@ -101,7 +105,8 @@ class CustomTextFormField extends StatelessWidget {
           labelText: label,
           hintText: hint,
           errorText: errorMessage != '' ? errorMessage : null,
-          prefixIcon: iconPrefix,
+          helperText: helperText,
+          prefixIcon: prefixIcon,
           suffixIcon: hasObscure
               ? IconButton(
                   onPressed:
@@ -110,7 +115,10 @@ class CustomTextFormField extends StatelessWidget {
                     obscureText ? Icons.visibility : Icons.visibility_off,
                   ),
                 )
-              : const SizedBox.shrink(),
+              : null,
+          hintMaxLines: 1,
+          errorMaxLines: 2,
+          helperMaxLines: 2,
         ),
         textAlign: TextAlign.start,
         onChanged: onChanged,
