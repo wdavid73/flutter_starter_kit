@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           context.translate('home'),
-          style: context.textTheme.titleLarge,
         ),
       ),
       body: SafeArea(
@@ -21,23 +20,17 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            /*ListTile(
-              leading: Icon(Icons.login),
-              trailing: Icon(Icons.adaptive.arrow_forward),
-              title: Text("go to login"),
-              onTap: () => context.push('/login'),
-            ),*/
             ListTile(
               leading: Icon(Icons.widgets),
               trailing: Icon(Icons.adaptive.arrow_forward),
               title: Text("go to widgets"),
-              onTap: () => context.push('/widgets'),
+              onTap: () => context.push(RouteConstants.widgetsScreen),
             ),
             ListTile(
               leading: Icon(Icons.api),
               trailing: Icon(Icons.adaptive.arrow_forward),
               title: Text("go to example api service implementation"),
-              onTap: () => context.push('/example_service'),
+              onTap: () => context.push(RouteConstants.exampleService),
             ),
             const Spacer(),
             FilledButton.icon(
