@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
@@ -80,7 +79,7 @@ class _LoginBody extends StatelessWidget {
                     const SizedBox(height: 10),
                     Text(
                       context.translate('sign_in_account'),
-                      style: context.textTheme.titleLarge,
+                      style: context.textTheme.titleMedium,
                     ),
                     const SizedBox(height: 10),
                     _ButtonsOtherSignIn(),
@@ -150,8 +149,9 @@ class _ButtonsOtherSignIn extends StatelessWidget {
     );
 
     ButtonStyle buttonStyle = ButtonStyle(
-      backgroundColor:
-          WidgetStatePropertyAll<Color>(ColorTheme.backgroundLight),
+      backgroundColor: WidgetStatePropertyAll<Color>(
+        ColorTheme.backgroundLight,
+      ),
       padding: WidgetStatePropertyAll(
         EdgeInsets.symmetric(horizontal: 10),
       ),
@@ -168,10 +168,9 @@ class _ButtonsOtherSignIn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                'assets/icon/icon_google.svg',
-                width: iconSize,
-                height: iconSize,
+              SvgPictureCustom(
+                iconPath: 'assets/icon/icon_google.svg',
+                iconSize: iconSize,
               ),
               const SizedBox(width: 10),
               Text(
@@ -188,10 +187,9 @@ class _ButtonsOtherSignIn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                'assets/icon/icon_apple.svg',
-                width: iconSize,
-                height: iconSize,
+              SvgPictureCustom(
+                iconPath: 'assets/icon/icon_apple.svg',
+                iconSize: iconSize,
               ),
               const SizedBox(width: 10),
               Text(
@@ -257,7 +255,7 @@ class _FormSignIn extends StatelessWidget {
           CustomTextFormField(
             label: "Email",
             hint: "Input your email",
-            iconPrefix: Icon(Icons.email_rounded),
+            prefixIcon: Icon(Icons.email_rounded),
             onChanged: signInForm.emailChanged,
             errorMessage: context.translate("${email.errorMessage}"),
             initialValue: signInForm.state.email.value,
@@ -267,7 +265,7 @@ class _FormSignIn extends StatelessWidget {
             hint: "Input your password",
             obscureText: signInForm.state.isObscure,
             toggleObscure: signInForm.toggleObscure,
-            iconPrefix: Icon(Icons.password),
+            prefixIcon: Icon(Icons.password),
             onChanged: signInForm.passwordChanged,
             errorMessage: context.translate("${password.errorMessage}"),
             initialValue: signInForm.state.password.value,
