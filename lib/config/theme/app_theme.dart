@@ -86,7 +86,7 @@ class AppTheme {
     textColor: ColorTheme.textPrimary,
     selectedTileColor: ColorTheme.accentColor,
     selectedColor: ColorTheme.white,
-    iconColor: ColorTheme.accentColor,
+    iconColor: ColorTheme.secondaryColor,
   );
 
   /// Base CardTheme. Used as a starting point for customizing the card styles in both light and dark themes.
@@ -220,7 +220,21 @@ class AppTheme {
         snackBarTheme: _baseSnackBarTheme,
         progressIndicatorTheme: _baseProgressIndicatorTheme,
         bottomSheetTheme: _baseBottomSheetTheme,
-        switchTheme: _baseSwitchTheme,
+        switchTheme: _baseSwitchTheme.copyWith(
+          /*thumbIcon: WidgetStateProperty.resolveWith<Icon>(
+            (Set<WidgetState> states) {
+              return Icon(
+                states.contains(WidgetState.selected)
+                    ? Icons.check
+                    : Icons.close,
+                color: ColorTheme.primaryColor,
+                size: 10,
+              );
+            },
+          ),*/
+          padding: EdgeInsets.zero,
+          trackOutlineWidth: WidgetStatePropertyAll<double>(1.5),
+        ),
         radioTheme: _baseRadioTheme,
         checkboxTheme: _baseCheckboxTheme,
         inputDecorationTheme: baseInputDecorationTheme,
@@ -235,7 +249,7 @@ class AppTheme {
           backgroundColor: ColorTheme.backgroundColorDark,
         ),
         iconTheme: _baseIconTheme.copyWith(
-          color: ColorTheme.white,
+          color: ColorTheme.lightPrimaryColor,
         ),
         cardTheme: _baseCardTheme.copyWith(
           color: ColorTheme.backgroundColorDark,
@@ -259,6 +273,7 @@ class AppTheme {
         ),
         listTileTheme: _baseListTileTheme.copyWith(
           textColor: ColorTheme.white,
+          iconColor: ColorTheme.lightPrimaryColor,
         ),
         snackBarTheme: _baseSnackBarTheme.copyWith(
           contentTextStyle: baseTextThemeDark.bodyLarge,

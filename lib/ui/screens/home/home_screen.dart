@@ -14,6 +14,16 @@ class HomeScreen extends StatelessWidget {
         title: Text(
           context.translate('home'),
         ),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () => context.push('/settings'),
+            icon: Icon(Icons.settings),
+          )
+        ],
       ),
       body: SafeArea(
         child: Column(

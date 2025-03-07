@@ -9,7 +9,7 @@ extension ResponsiveExtension on BuildContext {
       );
   bool get isTablet => MediaQuery.of(this).size.shortestSide >= 600;
 
-  double wp(double percent) => width * percent / 100;
-  double hp(double percent) => height * percent / 100;
-  double dp(double percent) => diagonal * percent / 100;
+  double wp(double percent) => width * (percent / 100);
+  double hp(double percent) => height * (percent / 100);
+  double dp(double percent) => diagonal * (percent / 100);
 }

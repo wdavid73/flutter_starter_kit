@@ -31,6 +31,12 @@ class AppRoutes {
         builder: (context, state) => const HomeScreen(),
       ),
 
+      /// SETTINGS ROUTE
+      GoRoute(
+        path: RouteConstants.settingsScreen,
+        builder: (context, state) => const SettingsScreen(),
+      ),
+
       ///* WIDGET SCREEN
       GoRoute(
         path: RouteConstants.widgetsScreen,

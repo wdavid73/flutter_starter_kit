@@ -13,6 +13,9 @@ import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
 ///   - A `List<BlocProvider>` containing all the required blocs and cubits.
 List<BlocProvider> buildBlocs() {
   return [
+    /// Provides the `SettingsCubit`, which manages the app's settings.
+    BlocProvider<ThemeModeCubit>(create: (context) => ThemeModeCubit()),
+
     /// Provides the `AuthBloc`, responsible for handling authentication logic.
     BlocProvider<AuthBloc>(
       create: (context) => AuthBloc(
@@ -26,6 +29,7 @@ List<BlocProvider> buildBlocs() {
       create: (context) => SignInFormCubit(
         authBloc: context.read<AuthBloc>(),
       ),
+      lazy: false, // Lazy initialization of the cubit.
     ),
 
     // EXAMPLE BLOC
@@ -34,6 +38,7 @@ List<BlocProvider> buildBlocs() {
       create: (context) => ProductsBloc(
         context.read(), // Injects required dependencies automatically.
       ),
+      lazy: false, // Lazy initialization of the bloc.
     ),
   ];
 }
