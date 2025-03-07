@@ -75,7 +75,10 @@ class WidgetsScreen extends StatelessWidget {
                 const Divider(),
                 _ChipWidget(),
                 const Divider(),
-                Text("SnackBar"),
+                Text(
+                  "SnackBar",
+                  style: context.textTheme.titleMedium,
+                ),
                 FilledButton(
                   onPressed: () {
                     CustomSnackBar.showSnackBar(
@@ -90,7 +93,10 @@ class WidgetsScreen extends StatelessWidget {
                   child: Text("Show SnackBar"),
                 ),
                 const Divider(),
-                Text("Progress Indicators"),
+                Text(
+                  "Progress Indicators",
+                  style: context.textTheme.titleMedium,
+                ),
                 CircularProgressIndicator(),
                 const SizedBox(height: 10),
                 LinearProgressIndicator(),
@@ -114,7 +120,7 @@ class _IconsWidget extends StatelessWidget {
       children: [
         Text(
           "Icons",
-          style: AppTypography.getSemiBoldStyle(fontSize: 16),
+          style: context.textTheme.titleMedium,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,13 +146,29 @@ class _ChipWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text("Chip Widget"),
+        Text(
+          "Chip Widget",
+          style: context.textTheme.titleMedium,
+        ),
         Row(
           spacing: 10,
           children: [
-            Chip(label: Text("Chip #1")),
-            Chip(label: Text("Chip #2")),
-            Chip(label: Text("Chip #3")),
+            Chip(
+              label: Text(
+                "Chip #1",
+                style: context.textTheme.bodyMedium,
+              ),
+            ),
+            Chip(
+                label: Text(
+              "Chip #2",
+              style: context.textTheme.bodyMedium,
+            )),
+            Chip(
+                label: Text(
+              "Chip #3",
+              style: context.textTheme.bodyMedium,
+            )),
           ],
         ),
       ],

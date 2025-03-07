@@ -27,8 +27,8 @@ class MainApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             routerConfig: _router,
             title: 'My App Title',
-            theme: AppTheme.getTheme(),
-            darkTheme: AppTheme.getDarkTheme(),
+            theme: AppTheme.getTheme(context),
+            darkTheme: AppTheme.getDarkTheme(context),
             themeMode: context.select(
               (ThemeModeCubit cubit) =>
                   cubit.state.isDarkMode ? ThemeMode.dark : ThemeMode.light,

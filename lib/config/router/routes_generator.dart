@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:front_scaffold_flutter_v2/ui/screens/screens.dart';
 import 'package:front_scaffold_flutter_v2/ui/views/views.dart';
 import 'routes_constants.dart';
+import 'routes_transitions.dart';
 
 /// A utility class that defines the application's route paths and generates the
 /// [GoRouter] route configuration.
@@ -40,7 +42,12 @@ class AppRoutes {
       ///* WIDGET SCREEN
       GoRoute(
         path: RouteConstants.widgetsScreen,
-        builder: (context, state) => const WidgetsScreen(),
+        pageBuilder: (context, state) => _transitionPage(
+          context,
+          state,
+          const WidgetsScreen(),
+          TransitionType.slideRight,
+        ),
         routes: [
           GoRoute(
             path: RouteConstants.textStylesView,
@@ -92,3 +99,16 @@ class AppRoutes {
     ];
   }
 }
+
+CustomTransitionPage<void> _transitionPage(
+  BuildContext context,
+  GoRouterState state,
+  Widget child,
+  TransitionType transitionType,
+) =>
+    TransitionManager.buildCustomTransitionPage(
+      context,
+      state,
+      child,
+      transitionType,
+    );

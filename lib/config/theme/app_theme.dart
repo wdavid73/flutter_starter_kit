@@ -111,9 +111,6 @@ class AppTheme {
     scrimColor: ColorTheme.backgroundColorDark.withValues(
       alpha: 0.5,
     ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(20),
-    ),
     endShape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20),
     ),
@@ -192,14 +189,17 @@ class AppTheme {
     side: BorderSide(width: 1.5),
   );
 
-  static ThemeData getTheme() => ThemeData(
+  static ThemeData getTheme(BuildContext context) => ThemeData(
         useMaterial3: true,
         colorScheme: _colorScheme,
         fontFamily: AppTypography.fontFamily,
         appBarTheme: _baseAppBarTheme.copyWith(
           backgroundColor: ColorTheme.secondaryColor,
         ),
-        iconTheme: _baseIconTheme.copyWith(color: ColorTheme.secondaryColor),
+        iconTheme: _baseIconTheme.copyWith(
+          color: ColorTheme.secondaryColor,
+          size: context.dp(2.5),
+        ),
         cardTheme: _baseCardTheme.copyWith(
           color: ColorTheme.backgroundColor,
         ),
@@ -221,17 +221,6 @@ class AppTheme {
         progressIndicatorTheme: _baseProgressIndicatorTheme,
         bottomSheetTheme: _baseBottomSheetTheme,
         switchTheme: _baseSwitchTheme.copyWith(
-          /*thumbIcon: WidgetStateProperty.resolveWith<Icon>(
-            (Set<WidgetState> states) {
-              return Icon(
-                states.contains(WidgetState.selected)
-                    ? Icons.check
-                    : Icons.close,
-                color: ColorTheme.primaryColor,
-                size: 10,
-              );
-            },
-          ),*/
           padding: EdgeInsets.zero,
           trackOutlineWidth: WidgetStatePropertyAll<double>(1.5),
         ),
@@ -241,7 +230,7 @@ class AppTheme {
         datePickerTheme: baseDatePickerTheme,
       );
 
-  static ThemeData getDarkTheme() => ThemeData(
+  static ThemeData getDarkTheme(BuildContext context) => ThemeData(
         useMaterial3: true,
         colorScheme: _colorSchemeDark,
         fontFamily: AppTypography.fontFamily,
@@ -250,6 +239,7 @@ class AppTheme {
         ),
         iconTheme: _baseIconTheme.copyWith(
           color: ColorTheme.lightPrimaryColor,
+          size: context.dp(2.5),
         ),
         cardTheme: _baseCardTheme.copyWith(
           color: ColorTheme.backgroundColorDark,
@@ -274,6 +264,10 @@ class AppTheme {
         listTileTheme: _baseListTileTheme.copyWith(
           textColor: ColorTheme.white,
           iconColor: ColorTheme.lightPrimaryColor,
+          titleTextStyle: baseTextThemeDark.labelLarge,
+          subtitleTextStyle: baseTextThemeDark.labelSmall?.copyWith(
+            fontSize: 10,
+          ),
         ),
         snackBarTheme: _baseSnackBarTheme.copyWith(
           contentTextStyle: baseTextThemeDark.bodyLarge,
