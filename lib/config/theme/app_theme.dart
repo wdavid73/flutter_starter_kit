@@ -189,16 +189,55 @@ class AppTheme {
     side: BorderSide(width: 1.5),
   );
 
+  /// Base BottomNavigationBar ThemeData. Used as a starting point for customizing the bottom navigation bar styles in both light and dark themes.
+  static final _baseBottomNavigationBar = BottomNavigationBarThemeData(
+    backgroundColor: ColorTheme.secondaryColor,
+    selectedItemColor: Colors.white,
+    selectedLabelStyle: baseTextTheme.labelMedium,
+    unselectedItemColor: ColorTheme.lightPrimaryColor,
+    unselectedLabelStyle: baseTextTheme.labelSmall,
+    showUnselectedLabels: false,
+  );
+
+  /// Base NavigationRailThemeData. Used as a starting point for customizing the navigation rail styles in both light and dark themes.
+  static final _baseNavigationRail = NavigationRailThemeData(
+    backgroundColor: ColorTheme.secondaryColor,
+    elevation: 2,
+    labelType: NavigationRailLabelType.none,
+    minWidth: 50,
+    selectedIconTheme: _baseIconTheme.copyWith(
+      color: ColorTheme.accentColor,
+    ),
+    unselectedIconTheme: _baseIconTheme.copyWith(
+      color: ColorTheme.lightPrimaryColor,
+    ),
+    selectedLabelTextStyle: baseTextTheme.labelMedium,
+    unselectedLabelTextStyle: baseTextTheme.labelSmall?.copyWith(
+      color: ColorTheme.lightPrimaryColor,
+    ),
+    useIndicator: false,
+  );
+
+  ///
+  static final _baseNavigationDrawer = NavigationDrawerThemeData(
+    backgroundColor: ColorTheme.navigationBackgroundColorLight,
+    surfaceTintColor: ColorTheme.secondaryColor,
+    elevation: 5,
+  );
+
   static ThemeData getTheme(BuildContext context) => ThemeData(
         useMaterial3: true,
         colorScheme: _colorScheme,
         fontFamily: AppTypography.fontFamily,
-        appBarTheme: _baseAppBarTheme.copyWith(
-          backgroundColor: ColorTheme.secondaryColor,
-        ),
         iconTheme: _baseIconTheme.copyWith(
           color: ColorTheme.secondaryColor,
-          size: context.dp(2.5),
+          size: context.dp(1.8),
+        ),
+        appBarTheme: _baseAppBarTheme.copyWith(
+          backgroundColor: ColorTheme.secondaryColor,
+          iconTheme: _baseIconTheme.copyWith(
+            color: ColorTheme.white,
+          ),
         ),
         cardTheme: _baseCardTheme.copyWith(
           color: ColorTheme.backgroundColor,
@@ -228,6 +267,15 @@ class AppTheme {
         checkboxTheme: _baseCheckboxTheme,
         inputDecorationTheme: baseInputDecorationTheme,
         datePickerTheme: baseDatePickerTheme,
+        bottomNavigationBarTheme: _baseBottomNavigationBar,
+        navigationRailTheme: _baseNavigationRail,
+        navigationDrawerTheme: _baseNavigationDrawer.copyWith(
+          iconTheme: WidgetStatePropertyAll(
+            _baseIconTheme.copyWith(
+              size: context.dp(1.8),
+            ),
+          ),
+        ),
       );
 
   static ThemeData getDarkTheme(BuildContext context) => ThemeData(
@@ -239,7 +287,7 @@ class AppTheme {
         ),
         iconTheme: _baseIconTheme.copyWith(
           color: ColorTheme.lightPrimaryColor,
-          size: context.dp(2.5),
+          size: context.dp(1.8),
         ),
         cardTheme: _baseCardTheme.copyWith(
           color: ColorTheme.backgroundColorDark,
@@ -305,6 +353,30 @@ class AppTheme {
           inputDecorationTheme: baseInputDecorationDarkTheme,
         ),
         datePickerTheme: baseDatePickerDarkTheme,
+        bottomNavigationBarTheme: _baseBottomNavigationBar.copyWith(
+          backgroundColor: ColorTheme.navigationBackgroundColorDark,
+        ),
+        navigationRailTheme: _baseNavigationRail.copyWith(
+          backgroundColor: ColorTheme.navigationBackgroundColorDark,
+        ),
+        navigationDrawerTheme: _baseNavigationDrawer.copyWith(
+          backgroundColor: ColorTheme.navigationBackgroundColorDark,
+          iconTheme: _resolveIconThemeDataWith(
+            _baseIconTheme.copyWith(
+              color: ColorTheme.primaryColor,
+              size: context.dp(1.8),
+            ),
+            _baseIconTheme,
+          ),
+          labelTextStyle: _resolveTextStyleWith(
+            baseTextThemeDark.labelLarge!.copyWith(
+              color: ColorTheme.textPrimary,
+            ),
+            baseTextThemeDark.labelLarge!.copyWith(
+              color: ColorTheme.lightPrimaryColor,
+            ),
+          ),
+        ),
       );
 
   static WidgetStateProperty<Color?> _resolveColorWith(
@@ -319,5 +391,29 @@ class AppTheme {
         return unselectedColor;
       },
     );
+  }
+
+  static WidgetStateProperty<TextStyle?> _resolveTextStyleWith(
+    TextStyle selectedText,
+    TextStyle unselectedText,
+  ) {
+    return WidgetStateProperty.resolveWith<TextStyle?>(
+        (Set<WidgetState> states) {
+      return states.contains(WidgetState.selected)
+          ? selectedText
+          : unselectedText;
+    });
+  }
+
+  static WidgetStateProperty<IconThemeData?> _resolveIconThemeDataWith(
+    IconThemeData selectedIcon,
+    IconThemeData unselectedIcon,
+  ) {
+    return WidgetStateProperty.resolveWith<IconThemeData?>(
+        (Set<WidgetState> states) {
+      return states.contains(WidgetState.selected)
+          ? selectedIcon
+          : unselectedIcon;
+    });
   }
 }

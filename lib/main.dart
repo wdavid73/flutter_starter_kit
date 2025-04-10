@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:front_scaffold_flutter_v2/app/app.dart';
@@ -10,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Locks the app orientation to portrait mode.
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  /*SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);*/
 
   /// Initializes environment variables required for the app.
   await Environment.initEnvironment();

@@ -6,7 +6,6 @@ class TextStylesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final brightness = MediaQuery.of(context).platformBrightness;
     final textTheme = context.textTheme;
 
     return Scaffold(

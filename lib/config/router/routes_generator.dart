@@ -36,17 +36,19 @@ class AppRoutes {
       /// SETTINGS ROUTE
       GoRoute(
         path: RouteConstants.settingsScreen,
-        builder: (context, state) => const SettingsScreen(),
+        /*builder: (context, state) => const SettingsScreen(),*/
+        pageBuilder: (_, __) => _transitionPage(
+          child: const SettingsScreen(),
+          transitionType: TransitionType.slideRight,
+        ),
       ),
 
       ///* WIDGET SCREEN
       GoRoute(
         path: RouteConstants.widgetsScreen,
         pageBuilder: (context, state) => _transitionPage(
-          context,
-          state,
-          const WidgetsScreen(),
-          TransitionType.slideRight,
+          child: const WidgetsScreen(),
+          transitionType: TransitionType.slideRight,
         ),
         routes: [
           GoRoute(
@@ -100,15 +102,11 @@ class AppRoutes {
   }
 }
 
-CustomTransitionPage<void> _transitionPage(
-  BuildContext context,
-  GoRouterState state,
-  Widget child,
-  TransitionType transitionType,
-) =>
+CustomTransitionPage<void> _transitionPage({
+  required Widget child,
+  TransitionType? transitionType,
+}) =>
     TransitionManager.buildCustomTransitionPage(
-      context,
-      state,
       child,
       transitionType,
     );

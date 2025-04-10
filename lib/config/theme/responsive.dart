@@ -8,6 +8,7 @@ extension ResponsiveExtension on BuildContext {
         math.pow(width, 2) + math.pow(height, 2),
       );
   bool get isTablet => MediaQuery.of(this).size.shortestSide >= 600;
+  Orientation get orientation => MediaQuery.of(this).orientation;
 
   double wp(double percent) => width * (percent / 100);
   double hp(double percent) => height * (percent / 100);

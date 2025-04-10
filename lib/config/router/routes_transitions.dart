@@ -5,10 +5,8 @@ enum TransitionType { slideRight, slideLeft, fade }
 
 class TransitionManager {
   static CustomTransitionPage<void> buildCustomTransitionPage(
-    BuildContext context,
-    GoRouterState state,
     Widget child,
-    TransitionType transitionType,
+    TransitionType? transitionType,
   ) {
     Duration transitionDuration = Duration(milliseconds: 300);
 
@@ -47,7 +45,9 @@ class TransitionManager {
   }
 
   static FadeTransition _fadeTransition(
-      Animation<double> animation, Widget child) {
+    Animation<double> animation,
+    Widget child,
+  ) {
     return FadeTransition(opacity: animation, child: child);
   }
 }

@@ -22,6 +22,7 @@ GoRouter createAppRouter(AuthBloc authBloc) {
   final goRouterNotifier = GoRouterNotifier(authBloc);
 
   return GoRouter(
+    /*initialLocation: RouteConstants.splash,*/
     initialLocation: RouteConstants.home,
     refreshListenable: goRouterNotifier,
     routes: AppRoutes.getAppRoutes(),

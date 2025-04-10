@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:front_scaffold_flutter_v2/config/theme/responsive.dart';
-import 'package:front_scaffold_flutter_v2/utils/device_info.dart';
 
 enum DeviceType { phone, tablet, other }
 
@@ -40,7 +39,7 @@ class AdaptiveScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      drawer: drawer,
+      drawer: (context.width < 900 && drawer != null) ? drawer : null,
       body: LayoutBuilder(
         builder: (context, constraints) {
           final widthScreen = constraints.maxWidth;
@@ -68,8 +67,12 @@ class AdaptiveScaffold extends StatelessWidget {
     );
   }
 
-  Widget _getLayoutForDevice(DeviceType deviceType, bool isLandscape,
-      Widget? navigationRail, Widget? navigationDrawer) {
+  Widget _getLayoutForDevice(
+    DeviceType deviceType,
+    bool isLandscape,
+    Widget? navigationRail,
+    Widget? navigationDrawer,
+  ) {
     if (deviceType == DeviceType.tablet && isLandscape ||
         deviceType == DeviceType.other) {
       return _ExpandedLayout(

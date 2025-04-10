@@ -16,6 +16,8 @@ class ColorTheme {
   static Color backgroundColor = HexColor.fromHex("#FFFFFF");
   static Color backgroundColorDark = HexColor.fromHex("#272727");
   static Color backgroundLight = HexColor.fromHex("#f4f4f4");
+  static Color navigationBackgroundColorDark = HexColor.fromHex("#272b36");
+  static Color navigationBackgroundColorLight = HexColor.fromHex("#E8EAF6");
 
   // Utils
   static Color error = HexColor.fromHex("#EF5350");
