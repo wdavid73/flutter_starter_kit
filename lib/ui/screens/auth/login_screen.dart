@@ -4,6 +4,7 @@ import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
 import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -75,7 +76,7 @@ class _LoginBody extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    _LogoContainer(),
+                    LogoContainer(),
                     const SizedBox(height: 10),
                     Text(
                       context.translate('sign_in_account'),
@@ -98,12 +99,7 @@ class _LoginBody extends StatelessWidget {
                           style: context.textTheme.labelMedium,
                         ),
                         TextButton(
-                          style: ButtonStyle(
-                            padding: WidgetStatePropertyAll<EdgeInsets>(
-                              EdgeInsets.all(0),
-                            ),
-                          ),
-                          onPressed: () {},
+                          onPressed: () => context.pushNamed("register"),
                           child: Text(
                             context.translate("create_one_here"),
                             style: context.textTheme.labelMedium?.copyWith(
@@ -120,20 +116,6 @@ class _LoginBody extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _LogoContainer extends StatelessWidget {
-  const _LogoContainer();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      child: FlutterLogo(
-        size: context.dp(7),
       ),
     );
   }

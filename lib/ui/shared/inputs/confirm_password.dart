@@ -3,12 +3,12 @@ import 'package:formz/formz.dart';
 /// Input model for validating passwords using [FormzInput].
 ///
 /// Provides validation for non-empty values and minimum length requirements.
-enum PasswordInputError {
+enum ConfirmPasswordInputError {
   /// Error when the input is empty or contains only whitespace.
   empty('is_required'),
 
   /// Error when the input does not meet the minimum length.
-  length('is_password_length'),
+  mismatch('is_not_equal_password'),
 
   /// Error when the input does not match the required pattern.
   pattern('is_invalid_password_pattern');
@@ -17,22 +17,25 @@ enum PasswordInputError {
   final String message;
 
   /// Creates a [PasswordInputError] with an associated message.
-  const PasswordInputError(this.message);
+  const ConfirmPasswordInputError(this.message);
 }
 
 /// Represents a password input with validation rules.
 ///
 /// Supports validation for empty values and a minimum length of 6 characters.
-class Password extends FormzInput<String, PasswordInputError> {
+class ConfirmPassword extends FormzInput<String, ConfirmPasswordInputError> {
+  final String password;
+
   /// Creates a pure (unmodified) password instance.
   ///
   /// Used when the field is initialized without user interaction.
-  const Password.pure() : super.pure('');
+  const ConfirmPassword.pure({this.password = ''}) : super.pure('');
 
   /// Creates a dirty (modified) password instance.
   ///
   /// Used when the field has been modified by the user.
-  const Password.dirty({String value = ''}) : super.dirty(value);
+  const ConfirmPassword.dirty({required this.password, String value = ''})
+      : super.dirty(value);
 
   /// Returns the error message associated with the input.
   ///
@@ -48,10 +51,14 @@ class Password extends FormzInput<String, PasswordInputError> {
   /// - Not empty or containing only whitespace.
   /// - Minimum length of 6 characters.
   @override
-  PasswordInputError? validator(String value) {
-    if (value.isEmpty || value.trim().isEmpty) return PasswordInputError.empty;
-    if (value.length < 6) return PasswordInputError.length;
-    if (!_passwordRegex.hasMatch(value)) return PasswordInputError.pattern;
+  ConfirmPasswordInputError? validator(String value) {
+    if (value.isEmpty || value.trim().isEmpty) {
+      return ConfirmPasswordInputError.empty;
+    }
+    if (value != password) return ConfirmPasswordInputError.mismatch;
+    if (!_passwordRegex.hasMatch(value)) {
+      return ConfirmPasswordInputError.pattern;
+    }
     return null;
   }
 

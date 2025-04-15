@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:front_scaffold_flutter_v2/api/api.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
@@ -56,7 +55,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> with AuthBlocHandler {
   ///   - [email]: The user's email address.
   ///   - [password]: The user's password.
   ///   - [fullName]: The user's full name.
-  void register(String email, String password, String fullName) {
+  void register({
+    required String email,
+    required String password,
+    required String fullName,
+  }) {
     add(RegisterEvent(email: email, password: password, fullName: fullName));
   }
 

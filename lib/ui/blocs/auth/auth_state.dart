@@ -27,6 +27,9 @@ class AuthState extends Equatable {
   /// An error message, if any, that occurred during authentication.
   final String errorMessage;
 
+  /// Whether the user is currently creating an account.
+  final bool isCreating;
+
   /// Creates an [AuthState] instance.
   ///
   /// Parameters:
@@ -37,10 +40,11 @@ class AuthState extends Equatable {
     this.authStatus = AuthStatus.checking,
     this.user,
     this.errorMessage = '',
+    this.isCreating = false,
   });
 
   @override
-  List<Object?> get props => [user, errorMessage, authStatus];
+  List<Object?> get props => [user, errorMessage, authStatus, isCreating];
 
   /// Creates a new [AuthState] instance with some properties changed.
   ///
@@ -58,11 +62,13 @@ class AuthState extends Equatable {
     AuthStatus? authStatus,
     UserModel? user,
     String? errorMessage,
+    bool? isCreating,
   }) {
     return AuthState(
       authStatus: authStatus ?? this.authStatus,
       user: user ?? this.user,
       errorMessage: errorMessage ?? this.errorMessage,
+      isCreating: isCreating ?? this.isCreating,
     );
   }
 }

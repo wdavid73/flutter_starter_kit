@@ -103,9 +103,19 @@ class ApiAuthDataSource implements AuthDataSource {
   ///   - A [Future] that resolves to a [ResponseState] representing the result of the registration attempt.
   @override
   Future<ResponseState> register(
-      String email, String password, String fullName) async {
+    String email,
+    String password,
+    String fullName,
+  ) async {
     try {
-      return ResponseSuccess(null, 200);
+      final response = await _client.post(ApiEndpoint.authRegister, {
+        'email': email,
+        'password': password,
+        'fullName': fullName,
+      });
+
+      final AuthResponseModel user = AuthResponseModel.fromJson(response.data);
+      return ResponseSuccess(user, 200);
     } on DioException catch (e) {
       return ResponseFailed(e);
     } catch (e) {

@@ -55,6 +55,7 @@ mixin AuthBlocHandler on Bloc<AuthEvent, AuthState> {
       await (this as AuthBloc)
           .keyValueStorageService
           .setKeyValue('token', authResponse.token);
+
       emit(state.copyWith(
         authStatus: AuthStatus.authenticated,
         user: authResponse.user,
@@ -78,9 +79,33 @@ mixin AuthBlocHandler on Bloc<AuthEvent, AuthState> {
     RegisterEvent event,
     Emitter<AuthState> emit,
   ) async {
-    if (kDebugMode) {
-      print("handler register");
+    emit(state.copyWith(isCreating: true));
+
+    final response = await (this as AuthBloc)
+        .useCase
+        .register(event.email, event.password, event.fullName);
+
+    if (response is ResponseFailed) {
+      emit(state.copyWith(
+        authStatus: AuthStatus.notAuthenticated,
+        user: null,
+        errorMessage: response.error!.message.toString(),
+      ));
+      return;
     }
+
+    AuthResponseModel authResponse = response.data;
+
+    await (this as AuthBloc)
+        .keyValueStorageService
+        .setKeyValue("token", authResponse.token);
+
+    emit(state.copyWith(
+      isCreating: false,
+      authStatus: AuthStatus.authenticated,
+      user: authResponse.user,
+      errorMessage: '',
+    ));
   }
 
   Future<void> _clearTokenAndEmitNotAuthenticated(

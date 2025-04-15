@@ -7,6 +7,8 @@ Map<String, String> formValidations = {
   'is_not_equal': 'Values are not equal',
   'is_not_equal_password': 'Passwords do not match',
   'is_password_length': 'The password must be at least 6 characters long',
+  'is_invalid_password_pattern':
+      'The password must contain between 6 and 20 characters, include uppercase, lowercase and number.'
   /*
   'is_step_empty': 'Please enter at least one step',
   'is_step_name_empty': 'Please enter a name for step #%0',

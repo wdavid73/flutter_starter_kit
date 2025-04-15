@@ -39,6 +39,7 @@ class SignInFormCubit extends Cubit<SignInFormState> {
 
     authBloc.login(state.email.value, state.password.value);
 
+    // Wait for the authentication status to change
     await waitForState(
       stream: authBloc.stream,
       condition: (state) =>
