@@ -23,6 +23,8 @@ final baseElevatedButtonTheme = ElevatedButtonThemeData(
 final baseTextButtonTheme = TextButtonThemeData(
   style: TextButton.styleFrom(
     textStyle: baseTextTheme.bodyMedium,
+    padding: EdgeInsets.zero,
+    overlayColor: Colors.transparent,
   ),
 );
 
@@ -31,6 +33,8 @@ final baseTextButtonDarkTheme = TextButtonThemeData(
   style: TextButton.styleFrom(
     textStyle: baseTextTheme.bodyMedium,
     foregroundColor: ColorTheme.white,
+    padding: EdgeInsets.zero,
+    overlayColor: Colors.transparent,
   ),
 );
 

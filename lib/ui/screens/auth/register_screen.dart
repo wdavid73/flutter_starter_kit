@@ -96,7 +96,7 @@ class _FormSignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     final authBlocState = context.watch<AuthBloc>().state;
     final registerCubit = context.watch<RegisterFormCubit>();
-    final fullname = registerCubit.state.fullname;
+    final fullName = registerCubit.state.fullName;
     final email = registerCubit.state.email;
     final password = registerCubit.state.password;
     final confirmPassword = registerCubit.state.confirmPassword;
@@ -111,8 +111,8 @@ class _FormSignUp extends StatelessWidget {
           hint: context.translate('fullname_hint'),
           prefixIcon: Icon(Icons.person_rounded),
           onChanged: registerCubit.fullNameChanged,
-          errorMessage: context.translate('${fullname.errorMessage}'),
-          initialValue: registerCubit.state.fullname.value,
+          errorMessage: context.translate('${fullName.errorMessage}'),
+          initialValue: registerCubit.state.fullName.value,
         ),
         CustomTextFormField(
           label: context.translate('email_label'),

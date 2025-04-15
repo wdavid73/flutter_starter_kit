@@ -24,18 +24,21 @@ class AppRoutes {
       ///* SPLASH SCREEN
       GoRoute(
         path: RouteConstants.splash,
+        name: "splash",
         builder: (context, state) => const CheckAuthStatusScreen(),
       ),
 
       ///* HOME ROUTE
       GoRoute(
         path: RouteConstants.home,
+        name: "home",
         builder: (context, state) => const HomeScreen(),
       ),
 
       /// SETTINGS ROUTE
       GoRoute(
         path: RouteConstants.settingsScreen,
+        name: "settings",
         /*builder: (context, state) => const SettingsScreen(),*/
         pageBuilder: (_, __) => _transitionPage(
           child: const SettingsScreen(),
@@ -92,10 +95,12 @@ class AppRoutes {
       ///* AUTH ROUTES
       GoRoute(
         path: RouteConstants.loginScreen,
+        name: "login",
         builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
         path: RouteConstants.registerScreen,
+        name: "register",
         builder: (context, state) => const RegisterScreen(),
       ),
     ];

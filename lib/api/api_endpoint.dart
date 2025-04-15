@@ -3,9 +3,10 @@
 /// Provides static strings for each endpoint.
 class ApiEndpoint {
   /// The endpoint for authentication.
-  static String auth = '/auth';
-  static String authLogin = '$auth/login';
-  static String authCheckStatus = '$auth/check-status';
+  static final String _auth = '/auth';
+  static String authLogin = '$_auth/login';
+  static String authCheckStatus = '$_auth/check-status';
+  static String authRegister = "$_auth/register";
 
   /// The endpoint for products. (Example)
   static String products = '/products';

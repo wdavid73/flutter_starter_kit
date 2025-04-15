@@ -56,6 +56,7 @@ class Password extends FormzInput<String, PasswordInputError> {
   }
 
   /// Regular expression pattern for password validation.
-  static final _passwordRegex =
-      RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,20}$');
+  static final _passwordRegex = RegExp(
+    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,20}$',
+  );
 }
