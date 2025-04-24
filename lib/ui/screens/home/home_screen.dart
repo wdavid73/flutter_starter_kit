@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
           ),
           AppSpacing.md,
           Text(
+            key: Key("home_title"),
             context.translate("home"),
             style: context.textTheme.titleLarge,
           ),

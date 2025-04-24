@@ -16,7 +16,7 @@ class RegisterFormState extends Equatable {
   final ConfirmPassword confirmPassword;
 
   /// The current fullName value.
-  final Text fullName;
+  final TextInput fullName;
 
   /// Whether the form is currently valid.
   final bool isValid;
@@ -45,7 +45,7 @@ class RegisterFormState extends Equatable {
     this.email = const Email.pure(),
     this.password = const Password.pure(),
     this.confirmPassword = const ConfirmPassword.pure(),
-    this.fullName = const Text.pure(),
+    this.fullName = const TextInput.pure(),
     this.isValid = false,
     this.isFormPosted = false,
     this.isPosting = false,
@@ -85,7 +85,7 @@ class RegisterFormState extends Equatable {
     Email? email,
     Password? password,
     ConfirmPassword? confirmPassword,
-    Text? fullName,
+    TextInput? fullName,
     bool? isValid,
     bool? isFormPosted,
     bool? isPosting,

@@ -88,7 +88,7 @@ void main() {
       },
       seed: () => RegisterFormState(
         email: Email.dirty(value: "test@example.come"),
-        fullName: Text.dirty(value: "John Doe"),
+        fullName: TextInput.dirty(value: "John Doe"),
         password: Password.dirty(value: "Pass123*"),
         confirmPassword:
             ConfirmPassword.dirty(password: "Pass123*", value: "Pass123*"),
@@ -134,7 +134,7 @@ void main() {
       },
       seed: () => RegisterFormState(
         email: Email.dirty(value: "test@example.come"),
-        fullName: Text.dirty(value: "John Doe"),
+        fullName: TextInput.dirty(value: "John Doe"),
         password: Password.dirty(value: "Pass123*"),
         confirmPassword:
             ConfirmPassword.dirty(password: "Pass123*", value: "Pass123*"),

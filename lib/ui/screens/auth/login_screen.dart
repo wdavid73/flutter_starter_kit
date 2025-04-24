@@ -99,6 +99,7 @@ class _LoginBody extends StatelessWidget {
                           style: context.textTheme.labelMedium,
                         ),
                         TextButton(
+                          key: Key("go_to_register_screen"),
                           onPressed: () => context.pushNamed("register"),
                           child: Text(
                             context.translate("create_one_here"),
@@ -235,6 +236,7 @@ class _FormSignIn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomTextFormField(
+            textFormFieldKey: Key("email_field"),
             label: "Email",
             hint: "Input your email",
             prefixIcon: Icon(Icons.email_rounded),
@@ -243,6 +245,7 @@ class _FormSignIn extends StatelessWidget {
             initialValue: signInForm.state.email.value,
           ),
           CustomTextFormField(
+            textFormFieldKey: Key("password_field"),
             label: "Password",
             hint: "Input your password",
             obscureText: signInForm.state.isObscure,
@@ -255,6 +258,7 @@ class _FormSignIn extends StatelessWidget {
           SizedBox(
             width: context.width,
             child: FilledButton.icon(
+              key: Key("login_button"),
               onPressed: signInForm.state.isPosting
                   ? null
                   : () => signInForm.onSubmit(),

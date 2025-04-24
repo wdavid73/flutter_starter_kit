@@ -21,7 +21,7 @@ enum TextInputError {
 /// Input model for validating text using [FormzInput].
 ///
 /// Supports validation for minimum length and regular expression format.
-class Text extends FormzInput<String, TextInputError> {
+class TextInput extends FormzInput<String, TextInputError> {
   /// Minimum allowed length for the text.
   final int? minLength;
 
@@ -31,12 +31,12 @@ class Text extends FormzInput<String, TextInputError> {
   /// Creates a pure (unmodified) text instance.
   ///
   /// Used when the field is initialized without user interaction.
-  const Text.pure({this.minLength, this.format}) : super.pure('');
+  const TextInput.pure({this.minLength, this.format}) : super.pure('');
 
   /// Creates a dirty (modified) text instance.
   ///
   /// Used when the field has been modified by the user.
-  const Text.dirty({String value = '', this.minLength, this.format})
+  const TextInput.dirty({String value = '', this.minLength, this.format})
       : super.dirty(value);
 
   /// Returns the error message associated with the input.

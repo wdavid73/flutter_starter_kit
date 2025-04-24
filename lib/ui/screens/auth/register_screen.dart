@@ -101,59 +101,79 @@ class _FormSignUp extends StatelessWidget {
     final password = registerCubit.state.password;
     final confirmPassword = registerCubit.state.confirmPassword;
 
-    return Column(
-      spacing: 10,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CustomTextFormField(
-          label: context.translate('fullname_label'),
-          hint: context.translate('fullname_hint'),
-          prefixIcon: Icon(Icons.person_rounded),
-          onChanged: registerCubit.fullNameChanged,
-          errorMessage: context.translate('${fullName.errorMessage}'),
-          initialValue: registerCubit.state.fullName.value,
-        ),
-        CustomTextFormField(
-          label: context.translate('email_label'),
-          hint: context.translate('email_hint'),
-          prefixIcon: Icon(Icons.email_rounded),
-          onChanged: registerCubit.emailChanged,
-          errorMessage: context.translate('${email.errorMessage}'),
-          initialValue: registerCubit.state.email.value,
-        ),
-        CustomTextFormField(
-          label: context.translate('password_label'),
-          hint: context.translate('password_hint'),
-          prefixIcon: Icon(Icons.password),
-          obscureText: registerCubit.state.isObscure,
-          toggleObscure: registerCubit.toggleObscure,
-          onChanged: registerCubit.passwordChanged,
-          errorMessage: context.translate('${password.errorMessage}'),
-          initialValue: registerCubit.state.password.value,
-        ),
-        CustomTextFormField(
-          label: context.translate('confirm_password_label'),
-          hint: context.translate('confirm_password_hint'),
-          prefixIcon: Icon(Icons.password),
-          obscureText: registerCubit.state.isObscure,
-          toggleObscure: registerCubit.toggleObscure,
-          onChanged: registerCubit.confirmPasswordChanged,
-          errorMessage: context.translate('${confirmPassword.errorMessage}'),
-          initialValue: registerCubit.state.confirmPassword.value,
-        ),
-        SizedBox(
-          width: context.width,
-          child: CustomButton(
-            label: context.translate("sign_up"),
-            icon: Icon(Icons.login_rounded),
-            isLoading: authBlocState.isCreating,
-            onPressed: registerCubit.state.isPosting
-                ? null
-                : () => registerCubit.onSubmit(),
+    void listenerShowSnackBar(BuildContext context, AuthState state) async {
+      if (state.authStatus == AuthStatus.notAuthenticated &&
+          state.errorMessage != '') {
+        CustomSnackBar.showSnackBar(
+          context,
+          message: context.translate(state.errorMessage),
+          icon: Icons.warning_rounded,
+          colorIcon: ColorTheme.error,
+        );
+      }
+    }
+
+    return BlocListener<AuthBloc, AuthState>(
+      listener: listenerShowSnackBar,
+      child: Column(
+        spacing: 10,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CustomTextFormField(
+            textFormFieldKey: const Key("fullName_field"),
+            label: context.translate('fullname_label'),
+            hint: context.translate('fullname_hint'),
+            prefixIcon: Icon(Icons.person_rounded),
+            onChanged: registerCubit.fullNameChanged,
+            errorMessage: context.translate('${fullName.errorMessage}'),
+            initialValue: registerCubit.state.fullName.value,
           ),
-        ),
-      ],
+          CustomTextFormField(
+            textFormFieldKey: const Key("email_field"),
+            label: context.translate('email_label'),
+            hint: context.translate('email_hint'),
+            prefixIcon: Icon(Icons.email_rounded),
+            onChanged: registerCubit.emailChanged,
+            errorMessage: context.translate('${email.errorMessage}'),
+            initialValue: registerCubit.state.email.value,
+          ),
+          CustomTextFormField(
+            textFormFieldKey: const Key("password_field"),
+            label: context.translate('password_label'),
+            hint: context.translate('password_hint'),
+            prefixIcon: Icon(Icons.password),
+            obscureText: registerCubit.state.isObscure,
+            toggleObscure: registerCubit.toggleObscure,
+            onChanged: registerCubit.passwordChanged,
+            errorMessage: context.translate('${password.errorMessage}'),
+            initialValue: registerCubit.state.password.value,
+          ),
+          CustomTextFormField(
+            textFormFieldKey: const Key("confirm_password_field"),
+            label: context.translate('confirm_password_label'),
+            hint: context.translate('confirm_password_hint'),
+            prefixIcon: Icon(Icons.password),
+            obscureText: registerCubit.state.isObscure,
+            toggleObscure: registerCubit.toggleObscure,
+            onChanged: registerCubit.confirmPasswordChanged,
+            errorMessage: context.translate('${confirmPassword.errorMessage}'),
+            initialValue: registerCubit.state.confirmPassword.value,
+          ),
+          SizedBox(
+            width: context.width,
+            child: CustomButton(
+              buttonKey: const Key("register_button"),
+              label: context.translate("sign_up"),
+              icon: Icon(Icons.login_rounded),
+              isLoading: authBlocState.isCreating,
+              onPressed: registerCubit.state.isPosting
+                  ? null
+                  : () => registerCubit.onSubmit(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

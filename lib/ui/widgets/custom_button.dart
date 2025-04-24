@@ -6,6 +6,7 @@ class CustomButton extends StatelessWidget {
   final Widget? icon;
   final bool isLoading;
   final void Function()? onPressed;
+  final Key? buttonKey;
 
   const CustomButton({
     super.key,
@@ -13,11 +14,13 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     this.icon,
     this.isLoading = false,
+    this.buttonKey,
   });
 
   @override
   Widget build(BuildContext context) {
     return FilledButton.icon(
+      key: buttonKey,
       onPressed: isLoading ? null : onPressed,
       label: _buttonLabel(context: context, label: label),
       icon: _buttonIcon(icon: icon),

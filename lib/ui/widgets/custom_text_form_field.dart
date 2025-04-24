@@ -60,6 +60,8 @@ class CustomTextFormField extends StatelessWidget {
   /// A callback function that is called to toggle password visibility.
   final void Function()? toggleObscure;
 
+  final Key? textFormFieldKey;
+
   /// Creates a [CustomTextFormField].
   const CustomTextFormField({
     super.key,
@@ -81,6 +83,7 @@ class CustomTextFormField extends StatelessWidget {
     this.autofillHints,
     this.initialValue,
     this.helperText,
+    this.textFormFieldKey,
   });
 
   /// Returns true if the text field is a password field.
@@ -93,6 +96,7 @@ class CustomTextFormField extends StatelessWidget {
     return Container(
       decoration: decoration,
       child: TextFormField(
+        key: textFormFieldKey,
         obscureText: obscureText,
         keyboardType: keyboardType,
         controller: controller,

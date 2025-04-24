@@ -80,7 +80,7 @@ class RegisterFormCubit extends Cubit<RegisterFormState> {
   /// Parameters:
   ///   - [value]: The new full name value.
   void fullNameChanged(String value) {
-    final fullName = Text.dirty(value: value);
+    final fullName = TextInput.dirty(value: value);
     emit(state.copyWith(
       fullName: fullName,
       isValid: Formz.validate(
@@ -141,7 +141,7 @@ class RegisterFormCubit extends Cubit<RegisterFormState> {
   void _touchEveryField() {
     final email = Email.dirty(value: state.email.value);
     final password = Password.dirty(value: state.password.value);
-    final fullName = Text.dirty(value: state.fullName.value);
+    final fullName = TextInput.dirty(value: state.fullName.value);
     final confirmPassword = ConfirmPassword.dirty(
       password: state.password.value,
       value: state.confirmPassword.value,
