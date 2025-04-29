@@ -63,6 +63,13 @@ class AppInjection {
       /// Provides the `SettingsCubit`, which manages the app's settings.
       BlocProvider<ThemeModeCubit>(create: (context) => ThemeModeCubit()),
 
+      /// Provides the `IntroductionCubit`, which introduction screen
+      BlocProvider<IntroductionCubit>(
+        create: (context) => IntroductionCubit(
+          KeyValueStorageServiceImpl(),
+        ),
+      ),
+
       /// Provides the `AuthBloc`, responsible for handling authentication logic.
       BlocProvider<AuthBloc>(
         create: (context) => AuthBloc(

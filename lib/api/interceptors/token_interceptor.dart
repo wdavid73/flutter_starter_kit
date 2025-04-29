@@ -35,7 +35,6 @@ class ApiTokenInterceptor extends Interceptor {
 
   /// Checks if the token is expired.
   ///
-  /// TODO: Add logic to check if the token is expired.
   ///
   /// Parameters:
   ///   - [token]: The token to check.

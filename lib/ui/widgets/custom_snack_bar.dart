@@ -66,7 +66,10 @@ class CustomSnackBar {
                 Flexible(
                   child: Text(
                     "$message",
-                    style: textStyle,
+                    style: textStyle ??
+                        context.textTheme.bodyLarge?.copyWith(
+                          color: ColorTheme.white,
+                        ),
                   ),
                 ),
               ],

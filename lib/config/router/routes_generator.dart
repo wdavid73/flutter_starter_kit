@@ -46,6 +46,16 @@ class AppRoutes {
         ),
       ),
 
+      /// ONBOARDING ROUTE
+      GoRoute(
+        path: RouteConstants.onboardingScreen,
+        name: "onboarding",
+        pageBuilder: (_, __) => _transitionPage(
+          child: const OnBoardingScreen(),
+          transitionType: TransitionType.fade,
+        ),
+      ),
+
       ///* WIDGET SCREEN
       GoRoute(
         path: RouteConstants.widgetsScreen,

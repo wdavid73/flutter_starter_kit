@@ -1,3 +1,5 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:front_scaffold_flutter_v2/ui/cubits/introduction_cubit/introduction_cubit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
@@ -22,10 +24,28 @@ GoRouter createAppRouter(AuthBloc authBloc) {
   final goRouterNotifier = GoRouterNotifier(authBloc);
 
   return GoRouter(
-    initialLocation: RouteConstants.splash,
-    /*initialLocation: RouteConstants.home,*/
+    initialLocation: RouteConstants.onboardingScreen,
     refreshListenable: goRouterNotifier,
     routes: AppRoutes.getAppRoutes(),
-    redirect: (context, state) => appRedirect(goRouterNotifier, state),
+    redirect: (context, state) {
+      final introductionCubit = BlocProvider.of<IntroductionCubit>(
+        context,
+        listen: false,
+      );
+
+      if (introductionCubit.state.isLoading) {
+        return null;
+      }
+
+      final isOnboardingCompleted = introductionCubit.state.hasSeen;
+      final currentPath = state.uri.path;
+
+      if (!isOnboardingCompleted &&
+          currentPath != RouteConstants.onboardingScreen) {
+        return RouteConstants.onboardingScreen;
+      }
+
+      return appRedirect(goRouterNotifier, state, isOnboardingCompleted);
+    },
   );
 }

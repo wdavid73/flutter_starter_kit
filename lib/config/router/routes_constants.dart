@@ -12,8 +12,11 @@ class RouteConstants {
   /// The path for the registration screen.
   static const String registerScreen = '/register';
 
-  /// The path for the settings view.
+  /// The path for the settings screen.
   static const String settingsScreen = '/settings';
+
+  /// The path for the onboarding screen
+  static const String onboardingScreen = '/onboarding';
 
   // ----------- EXAMPLES ----------- //
   /// The path for the example service screen.
