@@ -50,6 +50,7 @@ flutter:
 
   assets:
     - .env
+    - assets/app-icon/
     - assets/loaders/
     - assets/icon/
     - assets/fonts/
