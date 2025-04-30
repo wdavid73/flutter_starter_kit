@@ -64,3 +64,10 @@ flutter:
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app-icon/app-icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#fff"
