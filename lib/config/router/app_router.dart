@@ -1,11 +1,34 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/introduction_cubit/introduction_cubit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
 import 'redirect_handler.dart';
-import 'routes_constants.dart';
 import 'routes_generator.dart';
+
+String? _handleOnboardingRedirect(BuildContext context, GoRouterState state) {
+  if (Environment.showOnboarding == true) {
+    final introductionCubit = BlocProvider.of<IntroductionCubit>(
+      context,
+      listen: false,
+    );
+
+    if (introductionCubit.state.isLoading) {
+      return null;
+    }
+
+    final isOnboardingCompleted = introductionCubit.state.hasSeen;
+    final currentPath = state.uri.path;
+
+    if (!isOnboardingCompleted &&
+        currentPath != RouteConstants.onboardingScreen) {
+      return RouteConstants.onboardingScreen;
+    }
+  }
+  return null;
+}
 
 /// Creates and configures the application's [GoRouter] instance.
 ///
@@ -24,28 +47,28 @@ GoRouter createAppRouter(AuthBloc authBloc) {
   final goRouterNotifier = GoRouterNotifier(authBloc);
 
   return GoRouter(
-    initialLocation: RouteConstants.onboardingScreen,
+    initialLocation: Environment.showOnboarding
+        ? RouteConstants.onboardingScreen
+        : RouteConstants.splash,
     refreshListenable: goRouterNotifier,
     routes: AppRoutes.getAppRoutes(),
     redirect: (context, state) {
-      final introductionCubit = BlocProvider.of<IntroductionCubit>(
-        context,
-        listen: false,
+      final onboardingRedirect = _handleOnboardingRedirect(context, state);
+
+      if (onboardingRedirect != null) {
+        return onboardingRedirect;
+      }
+
+      final isOnboardingCompleted =
+          BlocProvider.of<IntroductionCubit>(context, listen: false)
+              .state
+              .hasSeen;
+
+      return appRedirect(
+        goRouterNotifier,
+        state,
+        Environment.showOnboarding == true ? isOnboardingCompleted : true,
       );
-
-      if (introductionCubit.state.isLoading) {
-        return null;
-      }
-
-      final isOnboardingCompleted = introductionCubit.state.hasSeen;
-      final currentPath = state.uri.path;
-
-      if (!isOnboardingCompleted &&
-          currentPath != RouteConstants.onboardingScreen) {
-        return RouteConstants.onboardingScreen;
-      }
-
-      return appRedirect(goRouterNotifier, state, isOnboardingCompleted);
     },
   );
 }

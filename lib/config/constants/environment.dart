@@ -6,5 +6,6 @@ class Environment {
   }
 
   static String apiUrl = dotenv.env['API_URL'] ?? '';
+  static bool showOnboarding = dotenv.env['SHOW_ONBOARDING'] == 'true';
   static String appName = "My App";
 }

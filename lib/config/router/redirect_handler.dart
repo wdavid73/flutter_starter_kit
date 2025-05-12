@@ -95,7 +95,6 @@ String? appRedirect(
   if (isOnboardingCompleted) {
     final handler = redirectHandlers[authStatus];
     return handler?.call(currentPath);
-    /* return RouteConstants.home; */
   }
 
   return null;
