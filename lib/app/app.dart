@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             routerConfig: _router,
             title: Environment.appName,
-            theme: AppTheme.getTheme(context),
+            theme: AppTheme.getLightTheme(context),
             darkTheme: AppTheme.getDarkTheme(context),
             themeMode: _resolveThemeMode(context),
             localizationsDelegates: LocaleConfig.localizationDelegate,
