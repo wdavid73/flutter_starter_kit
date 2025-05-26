@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
 import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -18,7 +18,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd() {
-    context.read<IntroductionCubit>().markIntroductionAsSeen();
+    getIt.get<IntroductionCubit>().markIntroductionAsSeen();
     context.goNamed('home');
   }
 

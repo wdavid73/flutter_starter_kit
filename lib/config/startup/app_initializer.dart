@@ -1,3 +1,4 @@
+import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
@@ -16,6 +17,8 @@ class AppInitializer {
 
     /// Sets the storage for HydratedBloc.
     HydratedBloc.storage = storage;
+
+    AppDependencyInjection.init();
 
     /// You can add more initialization tasks here.
     /// Example: await Firebase.initializeApp();

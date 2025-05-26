@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
 import 'package:front_scaffold_flutter_v2/ui/widgets/widgets.dart';
@@ -50,14 +51,18 @@ class SettingsScreen extends StatelessWidget {
                 context.translate('theme'),
                 style: context.textTheme.titleSmall,
               ),
-              CustomSwitch(
-                icon: Icon(Icons.dark_mode_outlined),
-                title: context.translate('dark_theme'),
-                switchValue: context.select(
-                  (ThemeModeCubit cubit) => cubit.state.isDarkMode,
-                ),
-                onChanged: (_) {
-                  context.read<ThemeModeCubit>().toggleTheme();
+              BlocSelector<ThemeModeCubit, ThemeModeState, bool>(
+                bloc: getIt.get<ThemeModeCubit>(),
+                selector: (state) => state.isDarkMode,
+                builder: (context, isDarkMode) {
+                  return CustomSwitch(
+                    icon: Icon(Icons.dark_mode_outlined, size: context.dp(2.6)),
+                    title: context.translate('dark_theme'),
+                    switchValue: isDarkMode,
+                    onChanged: (_) {
+                      getIt.get<ThemeModeCubit>().toggleTheme();
+                    },
+                  );
                 },
               ),
             ],

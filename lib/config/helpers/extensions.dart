@@ -20,3 +20,15 @@ extension TranslateExtension on BuildContext {
     return '';
   }
 }
+
+extension GetLocale on BuildContext {
+  String currentLocale() {
+    return AppLocalizations.of(this).locale.toString();
+  }
+}
+
+extension UnFocusScreen on BuildContext {
+  void unfocus() {
+    return FocusScope.of(this).unfocus();
+  }
+}

@@ -1,3 +1,4 @@
+import 'en_auth_error.dart';
 import 'en_form_validation.dart';
 import 'en_form_texts.dart';
 import 'en_introduction.dart';
@@ -78,4 +79,5 @@ Map<String, String> enMap = {
   ...formValidations,
   ...formTexts,
   ...introduction,
+  ...authError,
 };

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/data/data.dart';
 import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
@@ -14,7 +15,9 @@ class ExampleServiceScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Example Service"),
       ),
-      body: const _ProductView(),
+      body: Wrapper(
+        child: const _ProductView(),
+      ),
     );
   }
 }
@@ -132,6 +135,22 @@ class _ImageViewer extends StatelessWidget {
         image: NetworkImage(images.first),
         placeholder: const AssetImage('assets/loaders/loading.gif'),
       ),
+    );
+  }
+}
+
+class Wrapper extends StatelessWidget {
+  final Widget child;
+  const Wrapper({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final productsBloc = getIt.get<ProductsBloc>();
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: productsBloc),
+      ],
+      child: child,
     );
   }
 }

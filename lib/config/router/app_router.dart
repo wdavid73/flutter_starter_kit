@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
 import 'package:front_scaffold_flutter_v2/config/config.dart';
 import 'package:front_scaffold_flutter_v2/ui/cubits/introduction_cubit/introduction_cubit.dart';
 import 'package:go_router/go_router.dart';
@@ -10,10 +10,7 @@ import 'routes_generator.dart';
 
 String? _handleOnboardingRedirect(BuildContext context, GoRouterState state) {
   if (Environment.showOnboarding == true) {
-    final introductionCubit = BlocProvider.of<IntroductionCubit>(
-      context,
-      listen: false,
-    );
+    final introductionCubit = getIt.get<IntroductionCubit>();
 
     if (introductionCubit.state.isLoading) {
       return null;
@@ -60,9 +57,7 @@ GoRouter createAppRouter(AuthBloc authBloc) {
       }
 
       final isOnboardingCompleted =
-          BlocProvider.of<IntroductionCubit>(context, listen: false)
-              .state
-              .hasSeen;
+          getIt.get<IntroductionCubit>().state.hasSeen;
 
       return appRedirect(
         goRouterNotifier,
