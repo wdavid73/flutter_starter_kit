@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/ui/cubits/introduction_cubit/introduction_cubit.dart';
+import 'package:flutter_starter_kit/app/dependency_injection.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:flutter_starter_kit/ui/cubits/introduction_cubit/introduction_cubit.dart';
 import 'package:go_router/go_router.dart';
-import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
+import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
 import 'redirect_handler.dart';
 import 'routes_generator.dart';

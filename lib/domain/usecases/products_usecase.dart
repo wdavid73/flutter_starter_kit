@@ -1,5 +1,5 @@
-import 'package:front_scaffold_flutter_v2/api/api.dart';
-import 'package:front_scaffold_flutter_v2/domain/repositories/products_repository.dart';
+import 'package:flutter_starter_kit/api/api.dart';
+import 'package:flutter_starter_kit/domain/repositories/products_repository.dart';
 
 /// Handles product-related use cases.
 ///

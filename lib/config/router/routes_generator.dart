@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:front_scaffold_flutter_v2/ui/screens/screens.dart';
-import 'package:front_scaffold_flutter_v2/ui/views/views.dart';
+import 'package:flutter_starter_kit/ui/screens/screens.dart';
+import 'package:flutter_starter_kit/ui/views/views.dart';
 import 'routes_constants.dart';
 import 'routes_transitions.dart';
 

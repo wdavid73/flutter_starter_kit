@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:front_scaffold_flutter_v2/api/api.dart';
-import 'package:front_scaffold_flutter_v2/data/data.dart';
-import 'package:front_scaffold_flutter_v2/domain/datasources/products_datasource.dart';
+import 'package:flutter_starter_kit/api/api.dart';
+import 'package:flutter_starter_kit/data/data.dart';
+import 'package:flutter_starter_kit/domain/datasources/products_datasource.dart';
 
 /// Remote data source for retrieving products from the API.
 ///

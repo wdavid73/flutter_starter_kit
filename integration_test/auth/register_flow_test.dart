@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
-import 'package:front_scaffold_flutter_v2/api/api.dart';
-import 'package:front_scaffold_flutter_v2/data/data.dart';
+import 'package:flutter_starter_kit/api/api.dart';
+import 'package:flutter_starter_kit/data/data.dart';
 import 'package:go_router/go_router.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
-import 'package:front_scaffold_flutter_v2/ui/screens/screens.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/inputs/inputs.dart';
-import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
+import 'package:flutter_starter_kit/ui/screens/screens.dart';
+import 'package:flutter_starter_kit/ui/shared/inputs/inputs.dart';
+import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'mocks/auth_flow_dependencies.dart';

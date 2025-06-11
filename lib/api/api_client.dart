@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:front_scaffold_flutter_v2/api/api.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
+import 'package:flutter_starter_kit/api/api.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:flutter_starter_kit/ui/shared/service/service.dart';
 
 /// Handles HTTP requests to the API.
 ///

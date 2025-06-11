@@ -1,9 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:front_scaffold_flutter_v2/api/api.dart';
-import 'package:front_scaffold_flutter_v2/data/data.dart';
-import 'package:front_scaffold_flutter_v2/ui/blocs/auth/auth_bloc.dart';
+import 'package:flutter_starter_kit/api/api.dart';
+import 'package:flutter_starter_kit/data/data.dart';
+import 'package:flutter_starter_kit/ui/blocs/auth/auth_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'mocks/mock_auth_bloc_dependencies.dart';

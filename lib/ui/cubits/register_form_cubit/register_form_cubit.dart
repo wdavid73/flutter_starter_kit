@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/inputs/inputs.dart';
-import 'package:front_scaffold_flutter_v2/utils/utils.dart';
+import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
+import 'package:flutter_starter_kit/ui/shared/inputs/inputs.dart';
+import 'package:flutter_starter_kit/utils/utils.dart';
 
 part 'register_form_state.dart';
 

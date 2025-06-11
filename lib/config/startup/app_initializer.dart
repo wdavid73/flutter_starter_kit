@@ -1,12 +1,12 @@
-import 'package:front_scaffold_flutter_v2/app/dependency_injection.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
+import 'package:flutter_starter_kit/app/dependency_injection.dart';
+import 'package:flutter_starter_kit/config/config.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AppInitializer {
-  static Future<void> init() async {
+  static Future<void> init({required String flavor}) async {
     /// Initializes environment variables required for the app.
-    await Environment.initEnvironment();
+    await Environment.initEnvironment(flavor: flavor);
 
     /// Configures the HydratedBloc storage.
     final storage = await HydratedStorage.build(

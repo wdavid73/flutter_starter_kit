@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/shared.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:flutter_starter_kit/ui/shared/shared.dart';
 
 class HomeScreenMediumLayout extends StatelessWidget {
   const HomeScreenMediumLayout({super.key});

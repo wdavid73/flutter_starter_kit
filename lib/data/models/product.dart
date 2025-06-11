@@ -1,4 +1,4 @@
-import 'package:front_scaffold_flutter_v2/domain/entities/product.dart';
+import 'package:flutter_starter_kit/domain/entities/product.dart';
 
 /// A concrete implementation of the [Product] entity.
 ///

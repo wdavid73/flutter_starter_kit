@@ -1,4 +1,4 @@
-import 'package:front_scaffold_flutter_v2/api/api.dart';
+import 'package:flutter_starter_kit/api/api.dart';
 
 /// Defines the contract for a product repository.
 ///

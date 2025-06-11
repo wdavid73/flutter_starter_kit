@@ -1,10 +1,10 @@
-import 'package:front_scaffold_flutter_v2/api/api.dart';
-import 'package:front_scaffold_flutter_v2/data/data.dart';
-import 'package:front_scaffold_flutter_v2/domain/repositories/repositories.dart';
-import 'package:front_scaffold_flutter_v2/domain/usecases/usecases.dart';
-import 'package:front_scaffold_flutter_v2/ui/blocs/blocs.dart';
-import 'package:front_scaffold_flutter_v2/ui/cubits/cubits.dart';
-import 'package:front_scaffold_flutter_v2/ui/shared/service/service.dart';
+import 'package:flutter_starter_kit/api/api.dart';
+import 'package:flutter_starter_kit/data/data.dart';
+import 'package:flutter_starter_kit/domain/repositories/repositories.dart';
+import 'package:flutter_starter_kit/domain/usecases/usecases.dart';
+import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
+import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
+import 'package:flutter_starter_kit/ui/shared/service/service.dart';
 import 'package:get_it/get_it.dart';
 
 final GetIt getIt = GetIt.instance;

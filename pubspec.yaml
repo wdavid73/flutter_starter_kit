@@ -1,4 +1,4 @@
-name: front_scaffold_flutter_v2
+name: flutter_starter_kit
 description: "This is a base project in Flutter designed as a template for
   future developments. It contains essential configurations and packages to
   quickly start new projects."
@@ -50,10 +50,11 @@ flutter:
   uses-material-design: true
 
   assets:
-    - .env
+    # Flavors Environments
     - flavors/dev.env
     - flavors/staging.env
     - flavors/prod.env
+    # Assets
     - assets/app-icon/
     - assets/loaders/
     - assets/icon/

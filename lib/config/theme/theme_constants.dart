@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/config/theme/widget_themes/widget_themes.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:flutter_starter_kit/config/theme/widget_themes/widget_themes.dart';
 
 /// A utility class that centralizes all constant values and base theme data
 /// used across both light and dark themes in the application.

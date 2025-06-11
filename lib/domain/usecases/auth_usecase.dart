@@ -1,4 +1,4 @@
-import 'package:front_scaffold_flutter_v2/api/api.dart';
+import 'package:flutter_starter_kit/api/api.dart';
 import '../repositories/auth_repository.dart';
 
 /// A use case class for handling authentication-related operations.

@@ -1,5 +1,5 @@
-import 'package:front_scaffold_flutter_v2/config/config.dart';
-import 'package:front_scaffold_flutter_v2/data/data.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:flutter_starter_kit/data/data.dart';
 
 /// Maps JSON data to a [Product] entity.
 ///
@@ -19,7 +19,7 @@ class ProductMapper {
   ///
   /// Returns:
   ///   - A [Product] object representing the data in the JSON map.
-  static jsonToEntity(Map<String, dynamic> json) => ProductModel(
+  static ProductModel jsonToEntity(Map<String, dynamic> json) => ProductModel(
         title: json['title'],
         description: json['description'],
         id: json['id'],

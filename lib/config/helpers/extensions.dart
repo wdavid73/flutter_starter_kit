@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_scaffold_flutter_v2/config/config.dart';
+import 'package:flutter_starter_kit/config/config.dart';
 
 /// Provides a convenient way to translate strings using the [BuildContext].
 ///

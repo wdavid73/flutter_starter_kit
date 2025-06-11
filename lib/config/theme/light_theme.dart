@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front_scaffold_flutter_v2/config/theme/theme.dart';
-import 'package:front_scaffold_flutter_v2/config/theme/theme_constants.dart';
+import 'package:flutter_starter_kit/config/theme/theme.dart';
+import 'package:flutter_starter_kit/config/theme/theme_constants.dart';
 
 import './widget_themes/widget_themes.dart';
 

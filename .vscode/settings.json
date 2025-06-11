@@ -1,4 +1,9 @@
 {
-  "dart.flutterSdkPath": ".fvm/versions/3.29.2",
-  "cSpell.words": ["usecase", "usecases"]
+  "dart.flutterSdkPath": ".fvm/versions/stable",
+  "cSpell.words": ["usecase", "usecases"],
+  "gitHub.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "dart": true
+  }
 }
