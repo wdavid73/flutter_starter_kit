@@ -1,11 +1,15 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Environment {
-  static initEnvironment() async {
-    await dotenv.load(fileName: ".env");
+  static late String _flavor;
+
+  static Future<void> initEnvironment({required String flavor}) async {
+    _flavor = flavor;
+    await dotenv.load(fileName: "flavors/$flavor.env");
   }
 
-  static String apiUrl = dotenv.env['API_URL'] ?? '';
-  static bool showOnboarding = dotenv.env['SHOW_ONBOARDING'] == 'true';
-  static String appName = "My App";
+  static String get flavor => _flavor;
+  static String get apiUrl => dotenv.env['API_URL'] ?? '';
+  static bool get showOnboarding => dotenv.env['SHOW_ONBOARDING'] == 'true';
+  static String get appName => "My App";
 }

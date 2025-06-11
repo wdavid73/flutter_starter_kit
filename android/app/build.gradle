@@ -47,3 +47,22 @@ flutter {
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
 }
+
+flavorDimensions "app"
+productFlavors {
+    dev {
+        dimension "app"
+        applicationIdSuffix ".dev"
+        versionNameSuffix "-dev"
+    }
+
+    staging { 
+        dimension "app"
+        applicationIdSuffix ".staging"
+        versionNameSuffix "-staging"
+    }
+
+    prod {
+        dimension "app"
+    }
+}

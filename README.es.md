@@ -1,6 +1,6 @@
 # 🏗️ Proyecto Base de Flutter
 
-[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/wdavid73/front_scaffold_flutter_v2/blob/master/README.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/wdavid73/flutter_starter_kit/blob/master/README.md)
 
 Este es un proyecto base en Flutter diseñado como una plantilla para desarrollos futuros. Contiene configuraciones y paquetes esenciales para comenzar nuevos proyectos rápidamente.
 
@@ -16,18 +16,18 @@ Consulta el flujo de trabajo en [BRANCHES.md](BRANCHES.md).
 
 Asegúrate de tener los siguientes elementos instalados:
 
--   **Flutter** (Si usas FVM, ejecuta `fvm use <version>` para configurar la versión apropiada).
--   **Dart**
--   **Android Studio o VS Code** (Opcional pero recomendado)
--   **Dispositivo físico o emulador configurado**
--   **Java Versión 17** (Opcional pero recomendado)
+- **Flutter** (Si usas FVM, ejecuta `fvm use <version>` para configurar la versión apropiada).
+- **Dart**
+- **Android Studio o VS Code** (Opcional pero recomendado)
+- **Dispositivo físico o emulador configurado**
+- **Java Versión 17** (Opcional pero recomendado)
 
 ---
 
 ## 🚀 Comandos Útiles
 
 | Comando             | Descripción                                                                        |
-|---------------------|------------------------------------------------------------------------------------|
+| ------------------- | ---------------------------------------------------------------------------------- |
 | `flutter pub get`   | Descarga las dependencias del proyecto                                             |
 | `flutter run`       | Ejecuta la aplicación en el dispositivo/emulador conectado                         |
 | `flutter build apk` | Genera un archivo APK para Android                                                 |
@@ -43,7 +43,7 @@ Asegúrate de tener los siguientes elementos instalados:
 ## 📦 Paquetes Utilizados
 
 | Paquete                       | Versión  | Descripción                                                                                                                                      |
-|-------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `animate_do`                  | ^3.3.4   | Proporciona animaciones simples y listas para usar en Flutter.                                                                                   |
 | `dio`                         | ^5.8.0+1 | Cliente HTTP potente y flexible para realizar peticiones a la API.                                                                               |
 | `flutter_dotenv`              | ^5.2.1   | Carga las variables de entorno desde un archivo `.env`.                                                                                          |
@@ -64,14 +64,14 @@ Asegúrate de tener los siguientes elementos instalados:
 ### 📦 Dependencias de Desarrollo:
 
 | Paquete                   | Versión      | Descripción                                                        |
-|---------------------------|--------------|--------------------------------------------------------------------|
+| ------------------------- | ------------ | ------------------------------------------------------------------ |
 | `flutter_test`            | sdk: flutter | Framework de pruebas para aplicaciones Flutter.                    |
 | `integration_test`        | sdk: flutter | Framework de pruebas para aplicaciones Flutter.                    |
 | `flutter_lints`           | ^5.0.0       | Reglas de linting y buenas prácticas para Flutter.                 |
 | `change_app_package_name` | ^1.4.0       | Cambia fácilmente el identificador del paquete de la aplicación.   |
 | `flutter_launcher_icons`  | ^0.14.3      | Simplifica la configuración del icono de la aplicación en Flutter. |
 
-*(Puedes agregar más paquetes según sea necesario para tu proyecto base).*
+_(Puedes agregar más paquetes según sea necesario para tu proyecto base)._
 
 ---
 
@@ -139,89 +139,89 @@ Para comenzar a trabajar en este proyecto, asegúrate de tener FVM (Flutter Vers
 
 Al crear un proyecto a partir de una plantilla, es necesario cambiar el nombre del paquete de la aplicación para evitar conflictos al subirla a las tiendas de aplicaciones.
 
--   Verifica que el paquete `change_app_package_name` esté en el archivo `pubspec.yaml` en la sección `dev_dependencies`.
--   Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
+- Verifica que el paquete `change_app_package_name` esté en el archivo `pubspec.yaml` en la sección `dev_dependencies`.
+- Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
 
-    ```sh
-    flutter pub get
-    ```
+  ```sh
+  flutter pub get
+  ```
 
--   Ahora ejecuta el siguiente comando para cambiar el nombre de la aplicación:
+- Ahora ejecuta el siguiente comando para cambiar el nombre de la aplicación:
 
-    ```sh
-    dart run change_app_package_name:main com.<tu_dominio>.<nombre_de_la_aplicación>.
-    ```
+  ```sh
+  dart run change_app_package_name:main com.<tu_dominio>.<nombre_de_la_aplicación>.
+  ```
 
--   **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
+- **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
 
-    ```sh
-    fvm dart run change_app_package_name:main com.<tu_dominio>.<nombre_de_la_aplicación>.
-    ```
+  ```sh
+  fvm dart run change_app_package_name:main com.<tu_dominio>.<nombre_de_la_aplicación>.
+  ```
 
--   **(Opcional)** Cuando cambies el nombre de la aplicación, recuerda cambiarlo también en el archivo `pubspec.yaml`.
--   **(Opcional)** Si quieres cambiar el nombre para mostrar de la aplicación (el nombre que ven los usuarios), debes hacerlo en `AndroidManifest.xml` en `android/app/src/main/AndroidManifest.xml`.
+- **(Opcional)** Cuando cambies el nombre de la aplicación, recuerda cambiarlo también en el archivo `pubspec.yaml`.
+- **(Opcional)** Si quieres cambiar el nombre para mostrar de la aplicación (el nombre que ven los usuarios), debes hacerlo en `AndroidManifest.xml` en `android/app/src/main/AndroidManifest.xml`.
 
 ### 3. Cambiar el icono del lanzador de la aplicación (Opcional)
 
 Este paso es opcional. Para cambiar el icono de la aplicación, sigue estos pasos:
 
--   Verifica que el paquete `flutter_launcher_icons` esté en el archivo `pubspec.yaml` en la sección `dev_dependencies`.
--   En el archivo `pubspec.yaml`, ve a la sección `flutter_launcher_icons` y especifica la ruta a tu icono de la aplicación en el campo `image_path`.
--   Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
+- Verifica que el paquete `flutter_launcher_icons` esté en el archivo `pubspec.yaml` en la sección `dev_dependencies`.
+- En el archivo `pubspec.yaml`, ve a la sección `flutter_launcher_icons` y especifica la ruta a tu icono de la aplicación en el campo `image_path`.
+- Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
 
-    ```sh
-    flutter pub get
-    ```
+  ```sh
+  flutter pub get
+  ```
 
--   Ahora ejecuta el siguiente comando para cambiar el icono de la aplicación:
+- Ahora ejecuta el siguiente comando para cambiar el icono de la aplicación:
 
-    ```sh
-    dart run flutter_launcher_icons
-    ```
+  ```sh
+  dart run flutter_launcher_icons
+  ```
 
--   **¡Precaución!** Si cambias la ruta de tu icono de la aplicación, también debes actualizar la ruta en `pubspec.yaml`:
+- **¡Precaución!** Si cambias la ruta de tu icono de la aplicación, también debes actualizar la ruta en `pubspec.yaml`:
 
-    ```
-    flutter:
-      assets:
-        - assets/icon/  #  Modifica la ruta de tu icono aquí
-    ```
+  ```
+  flutter:
+    assets:
+      - assets/icon/  #  Modifica la ruta de tu icono aquí
+  ```
 
--   **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
+- **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
 
-    ```sh
-    fvm dart run flutter_launcher_icons
-    ```
+  ```sh
+  fvm dart run flutter_launcher_icons
+  ```
 
 ### 4. Cambiar la pantalla de bienvenida (splash screen) de la aplicación (Opcional)
 
 Si quieres cambiar la pantalla de bienvenida de la aplicación, sigue estos pasos:
 
--   Verifica en el archivo `pubspec.yaml` que el paquete `flutter_native_splash` esté en la sección `dependencies`.
--   **(Opcional)** Si quieres cambiar el color de la pantalla de bienvenida, haz lo siguiente:
+- Verifica en el archivo `pubspec.yaml` que el paquete `flutter_native_splash` esté en la sección `dependencies`.
+- **(Opcional)** Si quieres cambiar el color de la pantalla de bienvenida, haz lo siguiente:
 
-    ```
-    flutter_native_splash:
-      color: "#252829"  #  Modifica el color de la pantalla de bienvenida aquí
-    ```
+  ```
+  flutter_native_splash:
+    color: "#252829"  #  Modifica el color de la pantalla de bienvenida aquí
+  ```
 
--   Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
+- Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
 
-    ```sh
-    flutter pub get
-    ```
+  ```sh
+  flutter pub get
+  ```
 
--   Ahora ejecuta el siguiente comando para cambiar la pantalla de bienvenida de la aplicación:
+- Ahora ejecuta el siguiente comando para cambiar la pantalla de bienvenida de la aplicación:
 
-    ```sh
-    dart run flutter_native_splash:create
-    ```
+  ```sh
+  dart run flutter_native_splash:create
+  ```
 
--   **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
+- **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
 
-    ```sh
-    fvm dart run flutter_native_splash:create
-    ```
+  ```sh
+  fvm dart run flutter_native_splash:create
+  ```
 
 ---
 
@@ -235,19 +235,85 @@ Si quieres cambiar la pantalla de bienvenida de la aplicación, sigue estos paso
 
 ### Con la línea de comandos
 
--   Si usas FVM:
+- Si usas FVM:
 
-    ```sh
-    fvm flutter pub get
-    fvm flutter run
-    ```
+  ```sh
+  fvm flutter pub get
+  fvm flutter run
+  ```
 
--   Sin FVM:
+- Sin FVM:
 
-    ```sh
-    flutter pub get
-    flutter run
-    ```
+  ```sh
+  flutter pub get
+  flutter run
+  ```
+
+## 🧪 Entornos (Flavors)
+
+Este proyecto soporta **flavors** para manejar múltiples entornos: `dev`, `staging` y `prod`.
+
+### 📁 Estructura de archivos
+
+```bash
+/lib/
+  main_dev.dart
+  main_staging.dart
+  main_prod.dart
+
+/flavors/
+  dev.env
+  staging.env
+  prod.env
+
+/android/app/build.gradle
+  # Contiene la configuración de productFlavors
+```
+
+## 🌱 Archivos de entorno
+
+Ubicados en /flavors/, cada archivo .env define variables específicas del entorno. Ejemplo:
+
+`flavors/dev.env:`
+
+```
+API_URL=https://api.dev.example.com
+SHOW_ONBOARDING=true
+```
+
+## ▶️ Comandos para ejecutar la app por flavor
+
+```bash
+# Desarrollo
+flutter run -t lib/main_dev.dart --flavor dev
+
+# Staging
+flutter run -t lib/main_staging.dart --flavor staging
+
+# Producción
+flutter run -t lib/main_prod.dart --flavor prod
+```
+
+## 🏗️ Comandos para compilar builds por flavor
+
+```bash
+# APK de desarrollo
+fvm flutter build apk -t lib/main_dev.dart --flavor dev
+
+# APK de staging
+fvm flutter build apk -t lib/main_staging.dart --flavor staging
+
+# APK de producción
+fvm flutter build apk -t lib/main_prod.dart --flavor prod
+
+# AAB de producción (requerido para Play Store)
+fvm flutter build appbundle -t lib/main_prod.dart --flavor prod
+```
+
+### 📌 Notas
+
+- Asegúrate de haber definido correctamente los `productFlavors` en `android/app/build.gradle`.
+- Las variables de entorno se cargan automáticamente usando `flutter_dotenv` basado en el flavor.
 
 ## 📦 Crear una compilación (APK o AAB) para Android
 
@@ -296,30 +362,30 @@ Para crear un archivo APK o AAB para Android, sigue estos pasos:
 
 Para crear un archivo IPA para iOS, sigue estos pasos:
 
-
 1. **Requisitos previos**:
-   -   Asegúrate de tener Xcode instalado en macOS.
-   -   Debes tener una cuenta de desarrollador de Apple y estar registrado en el Programa de Desarrolladores de Apple.
+
+   - Asegúrate de tener Xcode instalado en macOS.
+   - Debes tener una cuenta de desarrollador de Apple y estar registrado en el Programa de Desarrolladores de Apple.
 
 2. **Generar compilación para iOS**:
-    Ejecuta el siguiente comando para generar una compilación para iOS:
+   Ejecuta el siguiente comando para generar una compilación para iOS:
 
-    ```sh
-    flutter build ios --release
-    ```
+   ```sh
+   flutter build ios --release
+   ```
 
-    Esto compilará la aplicación en modo de lanzamiento para iOS.
+   Esto compilará la aplicación en modo de lanzamiento para iOS.
 
 3. **Crear IPA**:
-    Para crear un archivo IPA (que puedes instalar en un dispositivo o enviar a la App Store), abre el proyecto en Xcode:
+   Para crear un archivo IPA (que puedes instalar en un dispositivo o enviar a la App Store), abre el proyecto en Xcode:
 
-   -   Abre el archivo `ios/Runner.xcworkspace`.
-   -   En Xcode, selecciona el dispositivo de destino (puede ser un dispositivo físico o un simulador).
-   -   Ve a `Product > Archive` para crear el archivo.
-   -   Una vez que se complete el archivado, se abrirá la ventana del Organizador. Desde allí, puedes exportar el archivo IPA.
+   - Abre el archivo `ios/Runner.xcworkspace`.
+   - En Xcode, selecciona el dispositivo de destino (puede ser un dispositivo físico o un simulador).
+   - Ve a `Product > Archive` para crear el archivo.
+   - Una vez que se complete el archivado, se abrirá la ventana del Organizador. Desde allí, puedes exportar el archivo IPA.
 
 4. **Firmar y configurar el perfil**:
-    Para publicar la aplicación en la App Store, asegúrate de tener un certificado de firma y un perfil de aprovisionamiento configurados en Xcode.
+   Para publicar la aplicación en la App Store, asegúrate de tener un certificado de firma y un perfil de aprovisionamiento configurados en Xcode.
 
 ### 📄 Licencia
 

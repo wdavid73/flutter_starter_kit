@@ -1,4 +1,6 @@
-.env
+flavors/dev.env
+flavors/staging.env
+flavors/prod.env
 
 # Firebase configuration files
 firebase_options.dart
