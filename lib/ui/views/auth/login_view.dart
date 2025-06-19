@@ -54,7 +54,7 @@ class _LoginBody extends StatelessWidget {
                     LogoContainer(),
                     AppSpacing.sm,
                     Text(
-                      context.translate('sign_in_account'),
+                      context.l10n.signInAccount,
                       style: context.textTheme.titleMedium,
                     ),
                     AppSpacing.sm,
@@ -70,14 +70,14 @@ class _LoginBody extends StatelessWidget {
                       spacing: 5,
                       children: [
                         Text(
-                          "${context.translate("not_have_account")},",
+                          "${context.l10n.notHaveAccount},",
                           style: context.textTheme.labelMedium,
                         ),
                         TextButton(
                           key: Key("go_to_register_screen"),
                           onPressed: () => context.pushNamed("register"),
                           child: Text(
-                            context.translate("create_one_here"),
+                            context.l10n.createOneHere,
                             style: context.textTheme.labelMedium?.copyWith(
                               decoration: TextDecoration.underline,
                               fontWeight: AppTypography.semiBoldWeight,
@@ -121,7 +121,7 @@ class _ButtonsOtherSignIn extends StatelessWidget {
       children: [
         FilledButton(
           onPressed: () => CustomSnackBar.showSnackBar(context,
-              message: context.translate("coming_soon")),
+              message: context.l10n.comingSoon),
           style: buttonStyle,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -133,7 +133,7 @@ class _ButtonsOtherSignIn extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               Text(
-                context.translate('sign_in_with_google'),
+                context.l10n.signInWithGoogle,
                 style: textStyle,
               ),
             ],

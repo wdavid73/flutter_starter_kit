@@ -9,7 +9,7 @@ final double _borderRadius = 12;
 
 /// Base theme for ElevatedButton. Used as a starting point for customizing the button styles in both light and dark themes.
 ElevatedButtonThemeData getBaseElevatedButtonTheme(
-        {double? fontSizeFactor = 1}) =>
+        {double? fontSizeFactor = 1, Color fontColor = Colors.white}) =>
     ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: ColorTheme.secondaryColor, // Button background color
@@ -19,8 +19,10 @@ ElevatedButtonThemeData getBaseElevatedButtonTheme(
         ),
         elevation: 5, // Elevation to give the button a shadow effect
         textStyle: fontSizeFactor != null
-            ? baseTextTheme.bodyMedium?.apply(fontSizeFactor: fontSizeFactor)
-            : baseTextTheme.bodyMedium,
+            ? baseTextTheme.bodyMedium
+                ?.apply(fontSizeFactor: fontSizeFactor)
+                .copyWith(color: fontColor)
+            : baseTextTheme.bodyMedium?.copyWith(color: fontColor),
       ),
     );
 

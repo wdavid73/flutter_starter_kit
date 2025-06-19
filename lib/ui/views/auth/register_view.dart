@@ -15,7 +15,7 @@ class RegisterView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/auth_background.jpg'),
+          image: AssetImage('assets/images/login_background.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -76,7 +76,7 @@ class _RegisterBody extends StatelessWidget {
                   ),
                   AppSpacing.sm,
                   Text(
-                    context.translate('sign_up'),
+                    context.l10n.signUp,
                     style: context.textTheme.titleMedium,
                   ),
                   AppSpacing.sm,

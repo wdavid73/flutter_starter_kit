@@ -18,7 +18,7 @@ class HomeScreenExpandedLayout extends StatelessWidget {
         ),
         AppSpacing.md,
         Text(
-          "${context.translate("home")} - Expanded Layout",
+          "${context.l10n.home} - Expanded Layout",
           style: context.textTheme.titleLarge,
         ),
       ],

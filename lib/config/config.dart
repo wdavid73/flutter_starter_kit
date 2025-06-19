@@ -1,7 +1,6 @@
 export 'theme/theme.dart';
 
-export 'i10n/app_localizations.dart';
-export 'i10n/locale_config.dart';
+export 'l10n/app_localizations.dart';
 
 export 'helpers/extensions.dart';
 

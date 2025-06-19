@@ -18,7 +18,7 @@ class FormSignUp extends StatelessWidget {
         state.errorMessage != '') {
       CustomSnackBar.showSnackBar(
         context,
-        message: context.translate(state.errorMessage),
+        message: context.l10n.getByKey(state.errorMessage),
         icon: Icons.warning_rounded,
         colorIcon: ColorTheme.error,
       );
@@ -39,51 +39,50 @@ class FormSignUp extends StatelessWidget {
         children: [
           CustomTextFormField(
             textFormFieldKey: const Key("fullName_field"),
-            label: context.translate('fullname_label'),
-            hint: context.translate('fullname_hint'),
+            label: context.l10n.fullnameLabel,
+            hint: context.l10n.fullnameHint,
             prefixIcon: Icon(Icons.person_rounded),
             onChanged: cubit.fullNameChanged,
-            errorMessage: context.translate('${state.fullName.errorMessage}'),
+            errorMessage: context.l10n.getByKey(state.fullName.errorMessage),
             /* initialValue: state.fullName.value, */
           ),
           CustomTextFormField(
             textFormFieldKey: const Key("email_field"),
-            label: context.translate('email_label'),
-            hint: context.translate('email_hint'),
+            label: context.l10n.emailLabel,
+            hint: context.l10n.emailHint,
             prefixIcon: Icon(Icons.email_rounded),
             onChanged: cubit.emailChanged,
-            errorMessage: context.translate('${state.email.errorMessage}'),
-            /* initialValue: state.email.value, */
+            errorMessage: context.l10n.getByKey(state.email.errorMessage),
             keyboardType: TextInputType.emailAddress,
           ),
           CustomTextFormField(
             textFormFieldKey: const Key("password_field"),
-            label: context.translate('password_label'),
-            hint: context.translate('password_hint'),
+            label: context.l10n.passwordLabel,
+            hint: context.l10n.passwordHint,
             prefixIcon: Icon(Icons.password),
             obscureText: state.isObscure,
             toggleObscure: cubit.toggleObscure,
             onChanged: cubit.passwordChanged,
-            errorMessage: context.translate('${state.password.errorMessage}'),
+            errorMessage: context.l10n.getByKey(state.password.errorMessage),
             /* initialValue: state.password.value, */
           ),
           CustomTextFormField(
             textFormFieldKey: const Key("confirm_password_field"),
-            label: context.translate('confirm_password_label'),
-            hint: context.translate('confirm_password_hint'),
+            label: context.l10n.confirmPasswordLabel,
+            hint: context.l10n.confirmPasswordHint,
             prefixIcon: Icon(Icons.password),
             obscureText: state.isObscure,
             toggleObscure: cubit.toggleObscure,
             onChanged: cubit.confirmPasswordChanged,
             errorMessage:
-                context.translate('${state.confirmPassword.errorMessage}'),
+                context.l10n.getByKey(state.confirmPassword.errorMessage),
             /* initialValue: state.confirmPassword.value, */
           ),
           SizedBox(
             width: context.width,
             child: CustomButton(
               buttonKey: const Key("register_button"),
-              label: context.translate("sign_up"),
+              label: context.l10n.signUp,
               icon: Icon(Icons.login_rounded),
               isLoading: context.select(
                 (AuthBloc bloc) => bloc.state.isCreating,

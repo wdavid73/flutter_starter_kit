@@ -41,7 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       showBackButton: true,
       showSkipButton: true,
       done: Text(
-        context.translate('done'),
+        context.l10n.done,
         style: context.textTheme.bodyLarge?.copyWith(
           color: ColorTheme.white,
         ),
@@ -57,7 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         size: context.dp(3),
       ),
       skip: Text(
-        context.translate('skip'),
+        context.l10n.skip,
         style: context.textTheme.bodyLarge?.copyWith(
           color: ColorTheme.white,
         ),
@@ -72,8 +72,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             iconPath: "assets/images/introduction/startup.svg",
             iconSize: context.dp(20),
           ),
-          title: context.translate('section_one_title'),
-          body: context.translate('section_one_body'),
+          title: "Tittle Section One",
+          body: "Body Section One",
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -81,8 +81,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             iconPath: "assets/images/introduction/dashboard.svg",
             iconSize: context.dp(20),
           ),
-          title: context.translate('section_two_title'),
-          body: context.translate('section_two_body'),
+          title: "Tittle Section Two",
+          body: "Body Section Two",
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -90,8 +90,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             iconPath: "assets/images/introduction/construction.svg",
             iconSize: context.dp(20),
           ),
-          title: context.translate('section_three_title'),
-          body: context.translate('section_three_body'),
+          title: "Tittle Section Three",
+          body: "Body Section Three",
           decoration: pageDecoration,
         ),
       ],

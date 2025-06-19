@@ -231,9 +231,7 @@ class CustomButton extends StatelessWidget {
   Widget _buttonLabelOrChild({required BuildContext context}) {
     if (isLoading) {
       return Text(
-        context.translate(
-          "loading",
-        ),
+        context.l10n.loading,
         /* style: context.textTheme.bodyLarge, */
       );
     }

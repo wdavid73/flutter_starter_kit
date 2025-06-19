@@ -18,7 +18,7 @@ class FormSignIn extends StatelessWidget {
         state.errorMessage != '') {
       CustomSnackBar.showSnackBar(
         context,
-        message: context.translate(state.errorMessage),
+        message: context.l10n.getByKey(state.errorMessage),
         icon: Icons.warning_rounded,
         colorIcon: ColorTheme.error,
       );
@@ -52,7 +52,7 @@ class FormSignIn extends StatelessWidget {
             hint: "Input your email",
             prefixIcon: Icon(Icons.email_rounded),
             onChanged: cubit.emailChanged,
-            errorMessage: context.translate("${state.email.errorMessage}"),
+            errorMessage: context.l10n.getByKey(state.email.errorMessage),
             keyboardType: TextInputType.emailAddress,
           ),
           CustomTextFormField(
@@ -63,13 +63,13 @@ class FormSignIn extends StatelessWidget {
             toggleObscure: cubit.toggleObscure,
             prefixIcon: Icon(Icons.password),
             onChanged: cubit.passwordChanged,
-            errorMessage: context.translate("${state.password.errorMessage}"),
+            errorMessage: context.l10n.getByKey(state.password.errorMessage),
           ),
           SizedBox(
             width: context.width,
             child: CustomButton(
               buttonKey: const Key("login_button"),
-              label: context.translate("login"),
+              label: context.l10n.login,
               icon: Icon(Icons.login_rounded),
               isLoading: false,
               onPressed: state.isPosting ? null : () => _login(context),

@@ -18,7 +18,7 @@ class HomeScreenMediumLayout extends StatelessWidget {
         ),
         AppSpacing.md,
         Text(
-          "${context.translate("home")} - Medium Layout",
+          "${context.l10n.home} - Medium Layout",
           style: context.textTheme.titleLarge,
         ),
       ],

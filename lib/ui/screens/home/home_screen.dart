@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
           AppSpacing.md,
           Text(
             key: Key("home_title"),
-            context.translate("home"),
+            context.l10n.home,
             style: context.textTheme.titleLarge,
           ),
         ],
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
   PreferredSizeWidget? _appBarHome(BuildContext context) {
     return AppBar(
       title: Text(
-        context.translate('home'),
+        context.l10n.home,
       ),
       actions: [
         IconButton(

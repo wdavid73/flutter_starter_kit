@@ -22,33 +22,33 @@ class SettingsScreen extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                context.translate('general'),
+                context.l10n.general,
                 style: context.textTheme.titleSmall,
               ),
               _ItemSettings(
-                title: context.translate('account'),
+                title: context.l10n.account,
                 icon: Icons.person_rounded,
               ),
               _ItemSettings(
-                title: context.translate('delete_account'),
+                title: context.l10n.deleteAccount,
                 icon: Icons.delete_forever_rounded,
               ),
               const SizedBox(height: 20),
               Text(
-                context.translate('feedback'),
+                context.l10n.feedback,
                 style: context.textTheme.titleSmall,
               ),
               _ItemSettings(
-                title: context.translate('report_bug'),
+                title: context.l10n.reportBug,
                 icon: Icons.bug_report,
               ),
               _ItemSettings(
-                title: context.translate('send_feedback'),
+                title: context.l10n.sendFeedback,
                 icon: Icons.send_rounded,
               ),
               const SizedBox(height: 20),
               Text(
-                context.translate('theme'),
+                context.l10n.theme,
                 style: context.textTheme.titleSmall,
               ),
               BlocSelector<ThemeModeCubit, ThemeModeState, bool>(
@@ -57,7 +57,7 @@ class SettingsScreen extends StatelessWidget {
                 builder: (context, isDarkMode) {
                   return CustomSwitch(
                     icon: Icon(Icons.dark_mode_outlined, size: context.dp(2.6)),
-                    title: context.translate('dark_theme'),
+                    title: context.l10n.darkTheme,
                     switchValue: isDarkMode,
                     onChanged: (_) {
                       getIt.get<ThemeModeCubit>().toggleTheme();
