@@ -39,10 +39,11 @@ dev_dependencies:
   change_app_package_name: ^1.4.0
   flutter_driver:
     sdk: flutter
-  icons_launcher: ^3.0.1
   flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.6
   flutter_test:
     sdk: flutter
+  icons_launcher: ^3.0.1
   integration_test:
     sdk: flutter
   mocktail: ^1.0.4
@@ -53,9 +54,9 @@ flutter:
 
   assets:
     # Flavors Environments
-    - flavors/dev.env
-    - flavors/staging.env
-    - flavors/prod.env
+    - flavors/.env.dev
+    - flavors/.env.staging
+    - flavors/.env.prod
     # Assets
     - assets/app-icon/
     - assets/loaders/
@@ -72,3 +73,14 @@ flutter:
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
         - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf
+
+flutter_native_splash:
+  color: "#03A9F4"
+  color_dark: "#272727"
+  image: "assets/app-icon/native_splash_icon.png"
+
+  android_12:
+    color: "#03A9F4"
+    color_dark: "#272727"
+    image: "assets/app-icon/native_splash_icon.png"
+    # branding: "assets/app-icon/native_splash_icon.png"

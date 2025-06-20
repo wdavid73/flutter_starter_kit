@@ -274,7 +274,7 @@ This project supports **flavors** for managing multiple environments: `dev`, `st
 
 Located in `/flavors/`, each `.env` file defines environment-specific variables. Example
 
-`flavors/dev.env:`
+`flavors/.env.dev:`
 
 ```
 API_URL=https://api.dev.example.com

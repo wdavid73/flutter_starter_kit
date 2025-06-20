@@ -6,4 +6,3 @@ export 'settings/settings_screen.dart';
 export 'onboarding/onboarding_screen.dart';
 
 export 'widgets/widgets_screen.dart';
-export 'example_service/example_service_screen.dart';

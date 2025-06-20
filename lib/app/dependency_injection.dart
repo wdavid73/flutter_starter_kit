@@ -18,19 +18,8 @@ class AppDependencyInjection {
       ),
     );
 
-    getIt.registerLazySingleton<ProductsRepository>(
-      () => ProductsRepositoryImpl(
-        ApiProductDataSource(ApiClient.instance),
-      ),
-    );
-
-    /// UseCases
     getIt.registerLazySingleton<AuthUseCase>(
       () => AuthUseCase(getIt<AuthRepository>()),
-    );
-
-    getIt.registerLazySingleton<ProductsUseCase>(
-      () => ProductsUseCase(getIt<ProductsRepository>()),
     );
 
     /// Services
@@ -51,12 +40,6 @@ class AppDependencyInjection {
       () => AuthBloc(
         getIt<AuthUseCase>(),
         getIt<KeyValueStorageService>(),
-      ),
-    );
-
-    getIt.registerLazySingleton<ProductsBloc>(
-      () => ProductsBloc(
-        getIt.get<ProductsUseCase>(),
       ),
     );
 
