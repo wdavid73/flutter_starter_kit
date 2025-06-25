@@ -165,8 +165,8 @@ When creating a project from a template, it's necessary to change the app's pack
 
 This step is optional. To change the app icon, follow these steps:
 
-- Verify that the `flutter_launcher_icons` package is in the `pubspec.yaml` in the `dev_dependencies` section.
-- In the `pubspec.yaml`, go to the `flutter_launcher_icons` section and specify the path to your app icon in the `image_path` field.
+- Verify that the `icons_launcher ` package is in the `pubspec.yaml` in the `dev_dependencies` section.
+- In the `pubspec.yaml`, go to the `icons_launcher.yaml` file and specify the path to your app icon in the `image_path` field.
 - Run the following command to get all the packages that the project needs initially:
 
   ```sh
@@ -176,7 +176,7 @@ This step is optional. To change the app icon, follow these steps:
 - Now run the following command to change the icon of the app:
 
   ```sh
-  dart run flutter_launcher_icons
+  dart run icons_launcher:create
   ```
 
 - **Caution!** If you change the path of your app icon, you must also update the path in `pubspec.yaml`:
@@ -190,7 +190,7 @@ This step is optional. To change the app icon, follow these steps:
 - **(Optional)** If you are using FVM (Flutter Version Manager), the command is:
 
   ```sh
-  fvm dart run flutter_launcher_icons
+  fvm dart run icons_launcher:create
   ```
 
 ### 4. Change the app splash screen (Optional)

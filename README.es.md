@@ -165,8 +165,8 @@ Al crear un proyecto a partir de una plantilla, es necesario cambiar el nombre d
 
 Este paso es opcional. Para cambiar el icono de la aplicación, sigue estos pasos:
 
-- Verifica que el paquete `flutter_launcher_icons` esté en el archivo `pubspec.yaml` en la sección `dev_dependencies`.
-- En el archivo `pubspec.yaml`, ve a la sección `flutter_launcher_icons` y especifica la ruta a tu icono de la aplicación en el campo `image_path`.
+- Verifica que el paquete `icons_launcher` esté en el archivo `pubspec.yaml` en la sección `dev_dependencies`.
+- En el archivo `pubspec.yaml`, ve a la archivo `icons_launcher.yaml` y especifica la ruta a tu icono de la aplicación en el campo `image_path`.
 - Ejecuta el siguiente comando para obtener todos los paquetes que el proyecto necesita inicialmente:
 
   ```sh
@@ -176,7 +176,7 @@ Este paso es opcional. Para cambiar el icono de la aplicación, sigue estos paso
 - Ahora ejecuta el siguiente comando para cambiar el icono de la aplicación:
 
   ```sh
-  dart run flutter_launcher_icons
+  dart run icons_launcher:create
   ```
 
 - **¡Precaución!** Si cambias la ruta de tu icono de la aplicación, también debes actualizar la ruta en `pubspec.yaml`:
@@ -190,7 +190,7 @@ Este paso es opcional. Para cambiar el icono de la aplicación, sigue estos paso
 - **(Opcional)** Si estás usando FVM (Flutter Version Manager), el comando es:
 
   ```sh
-  fvm dart run flutter_launcher_icons
+  fvm dart run icons_launcher:create
   ```
 
 ### 4. Cambiar la pantalla de bienvenida (splash screen) de la aplicación (Opcional)
