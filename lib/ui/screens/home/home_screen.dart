@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/ui/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           AppSpacing.md,
           Text(
             key: Key("home_title"),
-            context.l10n.home,
+            Platform.operatingSystem,
             style: context.textTheme.titleLarge,
           ),
         ],
