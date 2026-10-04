@@ -1,15 +1,15 @@
+import 'package:feature_auth/feature_auth.dart';
 import 'package:platform_session/platform_session.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'mocks/mock_register_dependencies.dart';
+import 'mocks/mock_sign_in_dependencies.dart';
 
 void main() {
   late MockAuthBloc mockAuthBloc;
-  late RegisterFormCubit registerCubit;
+  late SignInFormCubit signInFormCubit;
 
   /// Registers a fallback value for [FakeAuthState]
   setUpAll(() {
@@ -19,41 +19,32 @@ void main() {
   /// Creates a new cubit before each test
   setUp(() {
     mockAuthBloc = MockAuthBloc();
-    registerCubit = RegisterFormCubit(authBloc: mockAuthBloc);
+    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
+    when(() => mockAuthBloc.login(any(), any())).thenReturn(null);
+    signInFormCubit = SignInFormCubit(authBloc: mockAuthBloc);
   });
 
   /// Closes the cubit after each test
   tearDown(() {
-    registerCubit.close();
+    signInFormCubit.close();
   });
 
-  group("RegisterFormCubit", () {
+  /// Tests the [SignInFormCubit]
+  group("SignInFormCubit", () {
     /// Tests the initial state of the cubit
     test("Initial state is correct", () {
-      expect(registerCubit.state, equals(const RegisterFormState()));
+      expect(signInFormCubit.state, equals(const SignInFormState()));
     });
 
     /// Tests the [emailChanged] method
     test("emailChanged emits valid state when email is correct", () {
       const validEmail = "test@example.com";
 
-      registerCubit.emailChanged(validEmail);
+      signInFormCubit.emailChanged(validEmail);
 
-      final state = registerCubit.state;
+      final state = signInFormCubit.state;
       expect(state.email.value, equals(validEmail));
       expect(state.email.isValid, isTrue);
-      expect(state.isValid, isFalse);
-    });
-
-    /// Tests the [fullNameChanged] method
-    test("fullNameChanged emits valid state when fullName is correct", () {
-      const validFullName = "John Doe";
-
-      registerCubit.fullNameChanged(validFullName);
-
-      final state = registerCubit.state;
-      expect(state.fullName.value, equals(validFullName));
-      expect(state.fullName.isValid, isTrue);
       expect(state.isValid, isFalse);
     });
 
@@ -61,16 +52,16 @@ void main() {
     test("passwordChanged emits valid state when password is correct", () {
       const validPassword = "Pass123*";
 
-      registerCubit.passwordChanged(validPassword);
+      signInFormCubit.passwordChanged(validPassword);
 
-      final state = registerCubit.state;
+      final state = signInFormCubit.state;
       expect(state.password.value, equals(validPassword));
       expect(state.password.isValid, isTrue);
       expect(state.isValid, isFalse);
     });
 
     /// Tests the [onSubmit] method
-    blocTest<RegisterFormCubit, RegisterFormState>(
+    blocTest<SignInFormCubit, SignInFormState>(
       "onSubmit sets isPosting true then false after auth completes",
       build: () {
         when(() => mockAuthBloc.stream).thenAnswer((_) => Stream.fromIterable([
@@ -78,35 +69,28 @@ void main() {
               const AuthState(authStatus: AuthStatus.authenticated),
             ]));
 
-        when(() => mockAuthBloc.register(
-              email: "test@example.com",
-              fullName: "John Doe",
-              password: "Pass123*",
-            )).thenAnswer((_) async {});
+        when(() => mockAuthBloc.login(any(), any())).thenReturn(null);
 
-        return registerCubit;
+        return signInFormCubit;
       },
-      seed: () => RegisterFormState(
+      seed: () => SignInFormState(
         email: Email.dirty(value: "test@example.come"),
-        fullName: TextInput.dirty(value: "John Doe"),
         password: Password.dirty(value: "Pass123*"),
-        confirmPassword:
-            ConfirmPassword.dirty(password: "Pass123*", value: "Pass123*"),
         isValid: true,
       ),
       act: (cubit) => cubit.onSubmit(),
       expect: () => [
-        isA<RegisterFormState>().having(
+        isA<SignInFormState>().having(
           (s) => s.isPosting,
           "isPosting",
           isFalse,
-        ),
-        isA<RegisterFormState>().having(
+        ), // touch fields
+        isA<SignInFormState>().having(
           (s) => s.isPosting,
           "isPosting",
           isTrue,
         ), // start posting
-        isA<RegisterFormState>().having(
+        isA<SignInFormState>().having(
           (s) => s.isPosting,
           "isPosting",
           isFalse,
@@ -114,8 +98,7 @@ void main() {
       ],
     );
 
-    /// Tests the [onSubmit] method
-    blocTest(
+    blocTest<SignInFormCubit, SignInFormState>(
       "emits through a state where isPosting is false when AuthStatus is notAuthenticated",
       build: () {
         when(() => mockAuthBloc.stream).thenAnswer(
@@ -124,35 +107,31 @@ void main() {
           ),
         );
 
-        when(() => mockAuthBloc.register(
-              email: "test@example.com",
-              fullName: "John Doe",
-              password: "Pass123*",
-            )).thenAnswer((_) async {});
+        when(() => mockAuthBloc.login(any(), any())).thenReturn(null);
 
-        return registerCubit;
+        return SignInFormCubit(authBloc: mockAuthBloc);
       },
-      seed: () => RegisterFormState(
-        email: Email.dirty(value: "test@example.come"),
-        fullName: TextInput.dirty(value: "John Doe"),
+      seed: () => SignInFormState(
+        email: Email.dirty(value: "test@example.com"),
         password: Password.dirty(value: "Pass123*"),
-        confirmPassword:
-            ConfirmPassword.dirty(password: "Pass123*", value: "Pass123*"),
         isValid: true,
       ),
       act: (cubit) => cubit.onSubmit(),
+      verify: (_) {
+        verify(() => mockAuthBloc.login(any(), any())).called(1);
+      },
       expect: () => [
-        isA<RegisterFormState>().having(
+        isA<SignInFormState>().having(
           (s) => s.isPosting,
           "isPosting",
           isFalse,
-        ),
-        isA<RegisterFormState>().having(
+        ), // touch fields
+        isA<SignInFormState>().having(
           (s) => s.isPosting,
           "isPosting",
           isTrue,
         ), // start posting
-        isA<RegisterFormState>().having(
+        isA<SignInFormState>().having(
           (s) => s.isPosting,
           "isPosting",
           isFalse,

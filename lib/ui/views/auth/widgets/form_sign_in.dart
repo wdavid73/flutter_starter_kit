@@ -1,9 +1,9 @@
+import 'package:feature_auth/feature_auth.dart';
 import 'package:platform_session/platform_session.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 
 class FormSignIn extends StatelessWidget {
   const FormSignIn({super.key});

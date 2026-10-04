@@ -25,7 +25,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T11 — `feature_onboarding`
 - [x] T12 — `feature_settings`
 - [x] T13 — `feature_home`
-- [ ] T14 — `feature_auth` (1/2): cubits y tests
+- [x] T14 — `feature_auth` (1/2): cubits y tests
 - [ ] T15 — `feature_auth` (2/2): pantallas, vistas, assets y l10n
 - [ ] T16 — `feature_showcase`
 - [ ] **Checkpoint C** — features completas

@@ -1,0 +1,24 @@
+name: feature_auth
+description: Sign-in and registration feature.
+publish_to: "none"
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  core_ui: ^0.0.1
+  equatable: ^2.0.7
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.0.0
+  formz: ^0.8.0
+  platform_session: ^0.0.1
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
