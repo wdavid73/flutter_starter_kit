@@ -3,7 +3,7 @@
 Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md`](plan.md).
 
 ## Fase 0: Preparación
-- [ ] T0 — Rama `refactor/packages-architecture`, toolchain de Flutter y línea base
+- [x] T0 — Rama `refactor/packages-architecture`, toolchain de Flutter y línea base
 - [ ] T1 — Esqueleto del monorepo (workspace, melos, check-deps)
 
 ## Fase 1: Paquetes core
