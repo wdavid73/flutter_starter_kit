@@ -1,10 +1,10 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:feature_auth/src/l10n/auth_l10n.dart';
 import 'package:go_router/go_router.dart';
 
-import './widgets/form_sign_up.dart';
-import './widgets/wrapper_bloc_providers.dart';
+import 'package:feature_auth/src/presentation/views/widgets/form_sign_up.dart';
+import 'package:feature_auth/src/presentation/views/widgets/wrapper_bloc_providers.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -14,7 +14,10 @@ class RegisterView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/login_background.jpg'),
+          image: AssetImage(
+            'assets/images/login_background.jpg',
+            package: 'feature_auth',
+          ),
           fit: BoxFit.cover,
         ),
       ),
@@ -75,7 +78,7 @@ class _RegisterBody extends StatelessWidget {
                   ),
                   AppSpacing.sm,
                   Text(
-                    context.l10n.signUp,
+                    context.authL10n.signUp,
                     style: context.textTheme.titleMedium,
                   ),
                   AppSpacing.sm,

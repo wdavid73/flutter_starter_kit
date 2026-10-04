@@ -218,47 +218,11 @@ abstract class AppLocalizations {
   /// **'Account details'**
   String get accountDetails;
 
-  /// No description provided for @comingSoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Coming soon...'**
-  String get comingSoon;
-
-  /// No description provided for @signInAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in to your account'**
-  String get signInAccount;
-
-  /// No description provided for @login.
-  ///
-  /// In en, this message translates to:
-  /// **'Log In'**
-  String get login;
-
-  /// No description provided for @signUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign Up'**
-  String get signUp;
-
   /// No description provided for @logout.
   ///
   /// In en, this message translates to:
   /// **'Log Out'**
   String get logout;
-
-  /// No description provided for @notHaveAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t have an account?'**
-  String get notHaveAccount;
-
-  /// No description provided for @createOneHere.
-  ///
-  /// In en, this message translates to:
-  /// **'Create one here'**
-  String get createOneHere;
 
   /// No description provided for @password.
   ///
@@ -313,12 +277,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password updated successfully'**
   String get passwordUpdate;
-
-  /// No description provided for @signInWithGoogle.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with Google'**
-  String get signInWithGoogle;
 
   /// No description provided for @signInWithApple.
   ///
@@ -398,12 +356,6 @@ abstract class AppLocalizations {
   /// **'Notifications'**
   String get notifications;
 
-  /// No description provided for @connectionTimeOut.
-  ///
-  /// In en, this message translates to:
-  /// **'The connection request timed out.'**
-  String get connectionTimeOut;
-
   /// No description provided for @sendTimeOut.
   ///
   /// In en, this message translates to:
@@ -475,54 +427,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Next'**
   String get next;
-
-  /// No description provided for @fullnameLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Full name'**
-  String get fullnameLabel;
-
-  /// No description provided for @fullnameHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your full name'**
-  String get fullnameHint;
-
-  /// No description provided for @emailLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get emailLabel;
-
-  /// No description provided for @emailHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your email'**
-  String get emailHint;
-
-  /// No description provided for @passwordLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get passwordLabel;
-
-  /// No description provided for @passwordHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your password'**
-  String get passwordHint;
-
-  /// No description provided for @confirmPasswordLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Password'**
-  String get confirmPasswordLabel;
-
-  /// No description provided for @confirmPasswordHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Re-enter your password'**
-  String get confirmPasswordHint;
 
   /// No description provided for @selectAnOption.
   ///
@@ -596,12 +500,6 @@ abstract class AppLocalizations {
   /// **'An unexpected internal error occurred. Please try again later.'**
   String get errorInternalError;
 
-  /// No description provided for @invalidEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid email format.'**
-  String get invalidEmail;
-
   /// No description provided for @errorInvalidEmail.
   ///
   /// In en, this message translates to:
@@ -620,23 +518,11 @@ abstract class AppLocalizations {
   /// **'No user found with this email.'**
   String get errorUserNotFound;
 
-  /// No description provided for @wrongPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Incorrect password.'**
-  String get wrongPassword;
-
   /// No description provided for @errorWrongPassword.
   ///
   /// In en, this message translates to:
   /// **'Incorrect password.'**
   String get errorWrongPassword;
-
-  /// No description provided for @invalidCredential.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid credentials. Check your email and password.'**
-  String get invalidCredential;
 
   /// No description provided for @errorInvalidCredential.
   ///
@@ -668,23 +554,11 @@ abstract class AppLocalizations {
   /// **'Multi‑factor authentication is required to complete this operation.'**
   String get errorMultiFactorAuthRequired;
 
-  /// No description provided for @emailAlreadyInUse.
-  ///
-  /// In en, this message translates to:
-  /// **'This email is already registered.'**
-  String get emailAlreadyInUse;
-
   /// No description provided for @errorEmailAlreadyInUse.
   ///
   /// In en, this message translates to:
   /// **'This email is already registered.'**
   String get errorEmailAlreadyInUse;
-
-  /// No description provided for @weakPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Password is too weak (must be at least 6 characters).'**
-  String get weakPassword;
 
   /// No description provided for @errorWeakPassword.
   ///

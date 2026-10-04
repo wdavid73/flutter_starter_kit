@@ -1,9 +1,9 @@
-import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_auth/src/cubit/sign_in/sign_in_form_cubit.dart';
 import 'package:platform_session/platform_session.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:feature_auth/src/l10n/auth_l10n.dart';
 
 class FormSignIn extends StatelessWidget {
   const FormSignIn({super.key});
@@ -18,7 +18,7 @@ class FormSignIn extends StatelessWidget {
         state.errorMessage != '') {
       CustomSnackBar.showSnackBar(
         context,
-        message: context.l10n.getByKey(state.errorMessage),
+        message: context.authL10n.errorByKey(state.errorMessage),
         icon: Icons.warning_rounded,
         colorIcon: ColorTheme.error,
       );
@@ -71,7 +71,7 @@ class FormSignIn extends StatelessWidget {
             width: context.width,
             child: CustomButton(
               buttonKey: const Key("login_button"),
-              label: context.l10n.login,
+              label: context.authL10n.login,
               icon: Icon(Icons.login_rounded),
               isLoading: false,
               onPressed: state.isPosting ? null : () => _login(context),

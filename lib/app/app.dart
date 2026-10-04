@@ -1,3 +1,4 @@
+import 'package:feature_auth/feature_auth.dart';
 import 'package:feature_home/feature_home.dart';
 import 'package:feature_settings/feature_settings.dart';
 import 'package:feature_onboarding/feature_onboarding.dart';
@@ -36,6 +37,7 @@ class MainApp extends StatelessWidget {
           themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
           localizationsDelegates: const [
             ...AppLocalizations.localizationsDelegates,
+            authLocalizationsDelegate,
             coreUiLocalizationsDelegate,
             homeLocalizationsDelegate,
             onboardingLocalizationsDelegate,

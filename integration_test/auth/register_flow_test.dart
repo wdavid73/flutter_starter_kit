@@ -13,7 +13,6 @@ import 'package:go_router/go_router.dart';
 import 'package:integration_test/integration_test.dart';
 
 import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/screens/screens.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:mocktail/mocktail.dart';
 

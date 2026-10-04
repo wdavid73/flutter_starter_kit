@@ -73,25 +73,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get accountDetails => 'Detalles de cuenta';
 
   @override
-  String get comingSoon => 'Próximamente...';
-
-  @override
-  String get signInAccount => 'Acceda a su cuenta';
-
-  @override
-  String get login => 'Iniciar Sesión';
-
-  @override
-  String get signUp => 'Regístrate';
-
-  @override
   String get logout => 'Cerrar Sesión';
-
-  @override
-  String get notHaveAccount => '¿No tienes cuenta?';
-
-  @override
-  String get createOneHere => 'Crea una aquí';
 
   @override
   String get password => 'Contraseña';
@@ -120,9 +102,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get passwordUpdate => 'Contraseña actualizada correctamente';
-
-  @override
-  String get signInWithGoogle => 'Iniciar sesión con Google';
 
   @override
   String get signInWithApple => 'Iniciar sesión con ID de Apple';
@@ -162,10 +141,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get notifications => 'Notificaciones';
-
-  @override
-  String get connectionTimeOut =>
-      'La solicitud de conexión tardó mucho tiempo y fue abortada.';
 
   @override
   String get sendTimeOut =>
@@ -208,30 +183,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get next => 'Siguiente';
-
-  @override
-  String get fullnameLabel => 'Nombre Completo';
-
-  @override
-  String get fullnameHint => 'Ingresa tu nombre completo';
-
-  @override
-  String get emailLabel => 'Email';
-
-  @override
-  String get emailHint => 'Ingresa tu email';
-
-  @override
-  String get passwordLabel => 'Password';
-
-  @override
-  String get passwordHint => 'Ingresa tu contraseña';
-
-  @override
-  String get confirmPasswordLabel => 'Confirmar contraseña';
-
-  @override
-  String get confirmPasswordHint => 'Confirmar tu contraseña';
 
   @override
   String get selectAnOption => 'Selecciona una opción';
@@ -280,9 +231,6 @@ class AppLocalizationsEs extends AppLocalizations {
       'Ocurrió un error interno inesperado. Intenta de nuevo más tarde.';
 
   @override
-  String get invalidEmail => 'El formato del correo electrónico no es válido.';
-
-  @override
   String get errorInvalidEmail =>
       'El formato del correo electrónico no es válido.';
 
@@ -295,14 +243,7 @@ class AppLocalizationsEs extends AppLocalizations {
       'No se encontró un usuario con este correo electrónico.';
 
   @override
-  String get wrongPassword => 'La contraseña es incorrecta.';
-
-  @override
   String get errorWrongPassword => 'La contraseña es incorrecta.';
-
-  @override
-  String get invalidCredential =>
-      'Credenciales incorrectas. Verifica tu correo y contraseña.';
 
   @override
   String get errorInvalidCredential =>
@@ -325,15 +266,8 @@ class AppLocalizationsEs extends AppLocalizations {
       'Se requiere autenticación de múltiples factores para completar la operación.';
 
   @override
-  String get emailAlreadyInUse => 'Este correo electrónico ya está registrado.';
-
-  @override
   String get errorEmailAlreadyInUse =>
       'Este correo electrónico ya está registrado.';
-
-  @override
-  String get weakPassword =>
-      'La contraseña es demasiado débil (debe tener al menos 6 caracteres).';
 
   @override
   String get errorWeakPassword =>

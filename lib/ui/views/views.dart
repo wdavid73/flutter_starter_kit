@@ -1,6 +1,3 @@
-export 'auth/login_view.dart';
-export 'auth/register_view.dart';
-
 export 'bottom_sheet_view.dart';
 export 'buttons_view.dart';
 export 'drawer_view.dart';

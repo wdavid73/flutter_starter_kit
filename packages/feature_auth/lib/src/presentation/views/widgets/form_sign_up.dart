@@ -1,9 +1,9 @@
-import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_auth/src/cubit/register/register_form_cubit.dart';
 import 'package:platform_session/platform_session.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:feature_auth/src/l10n/auth_l10n.dart';
 
 class FormSignUp extends StatelessWidget {
   const FormSignUp({super.key});
@@ -18,7 +18,7 @@ class FormSignUp extends StatelessWidget {
         state.errorMessage != '') {
       CustomSnackBar.showSnackBar(
         context,
-        message: context.l10n.getByKey(state.errorMessage),
+        message: context.authL10n.errorByKey(state.errorMessage),
         icon: Icons.warning_rounded,
         colorIcon: ColorTheme.error,
       );
@@ -39,8 +39,8 @@ class FormSignUp extends StatelessWidget {
         children: [
           CustomTextFormField(
             textFormFieldKey: const Key("fullName_field"),
-            label: context.l10n.fullnameLabel,
-            hint: context.l10n.fullnameHint,
+            label: context.authL10n.fullnameLabel,
+            hint: context.authL10n.fullnameHint,
             prefixIcon: Icon(Icons.person_rounded),
             onChanged: cubit.fullNameChanged,
             errorMessage: context.coreUiL10n
@@ -49,8 +49,8 @@ class FormSignUp extends StatelessWidget {
           ),
           CustomTextFormField(
             textFormFieldKey: const Key("email_field"),
-            label: context.l10n.emailLabel,
-            hint: context.l10n.emailHint,
+            label: context.authL10n.emailLabel,
+            hint: context.authL10n.emailHint,
             prefixIcon: Icon(Icons.email_rounded),
             onChanged: cubit.emailChanged,
             errorMessage:
@@ -59,8 +59,8 @@ class FormSignUp extends StatelessWidget {
           ),
           CustomTextFormField(
             textFormFieldKey: const Key("password_field"),
-            label: context.l10n.passwordLabel,
-            hint: context.l10n.passwordHint,
+            label: context.authL10n.passwordLabel,
+            hint: context.authL10n.passwordHint,
             prefixIcon: Icon(Icons.password),
             obscureText: state.isObscure,
             toggleObscure: cubit.toggleObscure,
@@ -71,8 +71,8 @@ class FormSignUp extends StatelessWidget {
           ),
           CustomTextFormField(
             textFormFieldKey: const Key("confirm_password_field"),
-            label: context.l10n.confirmPasswordLabel,
-            hint: context.l10n.confirmPasswordHint,
+            label: context.authL10n.confirmPasswordLabel,
+            hint: context.authL10n.confirmPasswordHint,
             prefixIcon: Icon(Icons.password),
             obscureText: state.isObscure,
             toggleObscure: cubit.toggleObscure,
@@ -85,7 +85,7 @@ class FormSignUp extends StatelessWidget {
             width: context.width,
             child: CustomButton(
               buttonKey: const Key("register_button"),
-              label: context.l10n.signUp,
+              label: context.authL10n.signUp,
               icon: Icon(Icons.login_rounded),
               isLoading: context.select(
                 (AuthBloc bloc) => bloc.state.isCreating,

@@ -1,9 +1,9 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_starter_kit/config/config.dart';
-import './widgets/form_sign_in.dart';
-import './widgets/wrapper_bloc_providers.dart';
+import 'package:feature_auth/src/l10n/auth_l10n.dart';
+import 'package:feature_auth/src/presentation/views/widgets/form_sign_in.dart';
+import 'package:feature_auth/src/presentation/views/widgets/wrapper_bloc_providers.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -13,7 +13,10 @@ class LoginView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/login_background.jpg'),
+          image: AssetImage(
+            'assets/images/login_background.jpg',
+            package: 'feature_auth',
+          ),
           fit: BoxFit.cover,
         ),
       ),
@@ -53,7 +56,7 @@ class _LoginBody extends StatelessWidget {
                     LogoContainer(),
                     AppSpacing.sm,
                     Text(
-                      context.l10n.signInAccount,
+                      context.authL10n.signInAccount,
                       style: context.textTheme.titleMedium,
                     ),
                     AppSpacing.sm,
@@ -69,14 +72,14 @@ class _LoginBody extends StatelessWidget {
                       spacing: 5,
                       children: [
                         Text(
-                          "${context.l10n.notHaveAccount},",
+                          "${context.authL10n.notHaveAccount},",
                           style: context.textTheme.labelMedium,
                         ),
                         TextButton(
                           key: Key("go_to_register_screen"),
                           onPressed: () => context.pushNamed("register"),
                           child: Text(
-                            context.l10n.createOneHere,
+                            context.authL10n.createOneHere,
                             style: context.textTheme.labelMedium?.copyWith(
                               decoration: TextDecoration.underline,
                               fontWeight: AppTypography.semiBoldWeight,
@@ -120,19 +123,20 @@ class _ButtonsOtherSignIn extends StatelessWidget {
       children: [
         FilledButton(
           onPressed: () => CustomSnackBar.showSnackBar(context,
-              message: context.l10n.comingSoon),
+              message: context.authL10n.comingSoon),
           style: buttonStyle,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPictureCustom(
+                package: 'feature_auth',
                 iconPath: 'assets/icon/icon_google.svg',
                 iconSize: iconSize,
               ),
               const SizedBox(width: 10),
               Text(
-                context.l10n.signInWithGoogle,
+                context.authL10n.signInWithGoogle,
                 style: textStyle,
               ),
             ],
