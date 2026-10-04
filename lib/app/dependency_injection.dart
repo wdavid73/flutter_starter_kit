@@ -1,4 +1,5 @@
-import 'package:flutter_starter_kit/api/api.dart';
+import 'package:core_network/core_network.dart';
+import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/data/data.dart';
 import 'package:flutter_starter_kit/domain/repositories/repositories.dart';
 import 'package:flutter_starter_kit/domain/usecases/usecases.dart';
@@ -11,6 +12,8 @@ final GetIt getIt = GetIt.instance;
 
 class AppDependencyInjection {
   static void init() {
+    ApiClient.configure(baseUrl: Environment.apiUrl);
+
     /// Repositories
     getIt.registerLazySingleton<AuthRepository>(
       () => AuthRepositoryImpl(

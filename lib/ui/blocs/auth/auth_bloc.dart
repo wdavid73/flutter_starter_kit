@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter_kit/api/api.dart';
+import 'package:core_network/core_network.dart';
 import 'package:flutter_starter_kit/data/data.dart';
 import 'package:flutter_starter_kit/domain/usecases/auth_usecase.dart';
 import 'package:core_storage/core_storage.dart';

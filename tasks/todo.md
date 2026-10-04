@@ -8,7 +8,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 
 ## Fase 1: Paquetes core
 - [x] T2 — `core_storage`
-- [ ] T3 — `core_network`
+- [x] T3 — `core_network`
 - [ ] T4 — `core_ui` (1/3): tema, tipografía y assets base
 - [ ] T5 — `core_ui` (2/3): inputs formz y mensajes genéricos
 - [ ] T6 — `core_ui` (3/3): widgets compartidos

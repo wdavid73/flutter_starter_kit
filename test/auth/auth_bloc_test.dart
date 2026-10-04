@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_starter_kit/api/api.dart';
+import 'package:core_network/core_network.dart';
 import 'package:flutter_starter_kit/data/data.dart';
 import 'package:flutter_starter_kit/ui/blocs/auth/auth_bloc.dart';
 import 'package:mocktail/mocktail.dart';

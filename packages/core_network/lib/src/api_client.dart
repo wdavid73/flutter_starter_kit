@@ -1,7 +1,7 @@
-import 'package:dio/dio.dart';
-import 'package:flutter_starter_kit/api/api.dart';
-import 'package:flutter_starter_kit/config/config.dart';
 import 'package:core_storage/core_storage.dart';
+import 'package:dio/dio.dart';
+
+import 'api.dart';
 
 /// Handles HTTP requests to the API.
 ///
@@ -10,6 +10,15 @@ import 'package:core_storage/core_storage.dart';
 class ApiClient {
   /// The `Dio` client used for making requests.
   final Dio _client;
+
+  static String? _baseUrl;
+
+  /// Sets the base URL used by the singleton [ApiClient].
+  ///
+  /// Must be called once, before the first access to [ApiClient.instance].
+  static void configure({required String baseUrl}) {
+    _baseUrl = baseUrl;
+  }
 
   /// Private constructor for the singleton pattern.
   ApiClient._internal() : _client = createDio();
@@ -24,7 +33,9 @@ class ApiClient {
   ///
   /// Sets the base URL, timeouts, response type, and default headers.
   static BaseOptions createBaseOptions() => BaseOptions(
-        baseUrl: Environment.apiUrl,
+        baseUrl: _baseUrl ??
+            (throw StateError(
+                'ApiClient.configure(baseUrl: ...) must be called first.')),
         receiveTimeout: const Duration(seconds: 10),
         connectTimeout: const Duration(seconds: 10),
         responseType: ResponseType.json,

@@ -1,0 +1,19 @@
+name: core_network
+description: HTTP client, interceptors and HTTP exceptions.
+publish_to: "none"
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  core_storage: ^0.0.1
+  dio: ^5.8.0+1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter

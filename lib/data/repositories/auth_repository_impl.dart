@@ -1,4 +1,4 @@
-import 'package:flutter_starter_kit/api/api.dart';
+import 'package:core_network/core_network.dart';
 import 'package:flutter_starter_kit/domain/datasources/auth_datasource.dart';
 import 'package:flutter_starter_kit/domain/repositories/auth_repository.dart';
 

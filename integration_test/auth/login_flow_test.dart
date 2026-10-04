@@ -13,7 +13,7 @@ import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:flutter_starter_kit/ui/screens/screens.dart';
-import 'package:flutter_starter_kit/api/api.dart';
+import 'package:core_network/core_network.dart';
 import 'package:flutter_starter_kit/data/data.dart';
 import 'package:flutter_starter_kit/ui/shared/inputs/inputs.dart';
 
