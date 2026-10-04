@@ -2,7 +2,7 @@ import 'package:core_ui/core_ui.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/ui/shared/service/service.dart';
+import 'package:platform_media/platform_media.dart';
 
 class InputsWidget extends StatefulWidget {
   const InputsWidget({super.key});

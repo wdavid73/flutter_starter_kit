@@ -16,7 +16,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 
 ## Fase 2: Paquetes platform
 - [x] T7 — `platform_theme`
-- [ ] T8 — `platform_media`
+- [x] T8 — `platform_media`
 - [ ] T9 — `platform_session` (1/2): dominio y data de auth
 - [ ] T10 — `platform_session` (2/2): `AuthBloc` y tests
 - [ ] **Checkpoint B** — platform completo
