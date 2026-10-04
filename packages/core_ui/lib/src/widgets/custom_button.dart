@@ -1,5 +1,5 @@
+import 'package:core_ui/src/l10n/core_ui_l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/config/config.dart';
 
 /// Defines the various types of buttons that [CustomButton] can render.
 enum CustomButtonType {
@@ -231,7 +231,7 @@ class CustomButton extends StatelessWidget {
   Widget _buttonLabelOrChild({required BuildContext context}) {
     if (isLoading) {
       return Text(
-        context.l10n.loading,
+        context.coreUiL10n.loading,
         /* style: context.textTheme.bodyLarge, */
       );
     }

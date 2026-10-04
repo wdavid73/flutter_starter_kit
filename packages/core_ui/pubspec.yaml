@@ -10,10 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.0.0
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.0.17
   formz: ^0.8.0
   intl: any
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0

@@ -151,6 +151,12 @@ abstract class CoreUiLocalizations {
   /// In en, this message translates to:
   /// **'Password must be 6–20 characters with uppercase, lowercase, and a number.'**
   String get isInvalidPasswordPattern;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get loading;
 }
 
 class _CoreUiLocalizationsDelegate

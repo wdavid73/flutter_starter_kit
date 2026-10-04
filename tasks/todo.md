@@ -11,8 +11,8 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T3 — `core_network`
 - [x] T4 — `core_ui` (1/3): tema, tipografía y assets base
 - [x] T5 — `core_ui` (2/3): inputs formz y mensajes genéricos
-- [ ] T6 — `core_ui` (3/3): widgets compartidos
-- [ ] **Checkpoint A** — core completo
+- [x] T6 — `core_ui` (3/3): widgets compartidos
+- [x] **Checkpoint A** — core completo
 
 ## Fase 2: Paquetes platform
 - [ ] T7 — `platform_theme`

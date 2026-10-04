@@ -32,9 +32,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get error => '¡Error!';
 
   @override
-  String get loading => 'Cargando...';
-
-  @override
   String get notFoundItem => '¡No se han encontrado elementos!';
 
   @override

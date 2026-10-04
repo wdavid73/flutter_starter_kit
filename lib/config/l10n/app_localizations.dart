@@ -140,12 +140,6 @@ abstract class AppLocalizations {
   /// **'Error!'**
   String get error;
 
-  /// No description provided for @loading.
-  ///
-  /// In en, this message translates to:
-  /// **'Loading...'**
-  String get loading;
-
   /// No description provided for @notFoundItem.
   ///
   /// In en, this message translates to:

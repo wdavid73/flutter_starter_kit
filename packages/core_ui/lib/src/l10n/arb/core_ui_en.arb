@@ -17,5 +17,7 @@
   "isPasswordLength": "Password must be at least 6 characters long",
   "@isPasswordLength": {},
   "isInvalidPasswordPattern": "Password must be 6–20 characters with uppercase, lowercase, and a number.",
-  "@isInvalidPasswordPattern": {}
+  "@isInvalidPasswordPattern": {},
+  "loading": "Loading...",
+  "@loading": {}
 }

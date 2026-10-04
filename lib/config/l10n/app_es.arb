@@ -7,7 +7,6 @@
   "home": "Inicio",
   "greeting": "Hola {name}!",
   "error": "¡Error!",
-  "loading": "Cargando...",
   "notFoundItem": "¡No se han encontrado elementos!",
   "save": "Guardar",
   "update": "Actualizar",

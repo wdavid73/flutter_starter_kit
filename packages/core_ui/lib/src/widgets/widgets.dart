@@ -12,3 +12,5 @@ export 'svg_picture_custom.dart';
 export 'adaptive_scaffold.dart';
 
 export 'shared/logo_container.dart';
+export 'custom_shimmer.dart';
+export 'generic_search_bar.dart';

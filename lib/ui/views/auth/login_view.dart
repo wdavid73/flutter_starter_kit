@@ -2,7 +2,6 @@ import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/widgets/widgets.dart';
 import './widgets/form_sign_in.dart';
 import './widgets/wrapper_bloc_providers.dart';
 

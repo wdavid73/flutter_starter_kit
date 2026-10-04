@@ -1,4 +1,5 @@
-import 'package:core_ui/core_ui.dart';
+import 'package:core_ui/src/theme/theme.dart';
+import 'package:core_ui/src/styles/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 class CustomSwitch extends StatelessWidget {

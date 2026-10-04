@@ -35,4 +35,7 @@ class CoreUiLocalizationsEn extends CoreUiLocalizations {
   @override
   String get isInvalidPasswordPattern =>
       'Password must be 6–20 characters with uppercase, lowercase, and a number.';
+
+  @override
+  String get loading => 'Loading...';
 }

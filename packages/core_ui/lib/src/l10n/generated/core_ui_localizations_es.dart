@@ -36,4 +36,7 @@ class CoreUiLocalizationsEs extends CoreUiLocalizations {
   @override
   String get isInvalidPasswordPattern =>
       'La contraseña debe contener entre 6 y 20 caracteres, incluir mayúscula, minúscula y número.';
+
+  @override
+  String get loading => 'Cargando...';
 }

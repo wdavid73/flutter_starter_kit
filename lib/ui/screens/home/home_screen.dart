@@ -2,7 +2,6 @@ import 'package:core_ui/core_ui.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/ui/widgets/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/screens/home/expanded_layout/home_screen_expanded_layout.dart';

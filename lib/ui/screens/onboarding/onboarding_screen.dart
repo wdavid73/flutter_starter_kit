@@ -6,7 +6,6 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
-import 'package:flutter_starter_kit/ui/widgets/widgets.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

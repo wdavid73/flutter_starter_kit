@@ -17,5 +17,7 @@
   "isPasswordLength": "La contraseña debe tener al menos 6 caracteres",
   "@isPasswordLength": {},
   "isInvalidPasswordPattern": "La contraseña debe contener entre 6 y 20 caracteres, incluir mayúscula, minúscula y número.",
-  "@isInvalidPasswordPattern": {}
+  "@isInvalidPasswordPattern": {},
+  "loading": "Cargando...",
+  "@loading": {}
 }
