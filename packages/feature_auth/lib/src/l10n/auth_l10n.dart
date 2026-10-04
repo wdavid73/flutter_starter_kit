@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 
 import 'generated/auth_localizations.dart';
 
+/// Locales translated by this package.
+const authSupportedLocales = AuthLocalizations.supportedLocales;
+
 /// Delegate to register in the app. Falls back to English for locales this
 /// package does not translate.
 const authLocalizationsDelegate = FallbackLocalizationsDelegate<AuthLocalizations>(

@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 
 import 'generated/settings_localizations.dart';
 
+/// Locales translated by this package.
+const settingsSupportedLocales = SettingsLocalizations.supportedLocales;
+
 /// Delegate to register in the app. Falls back to English for locales this
 /// package does not translate.
 const settingsLocalizationsDelegate = FallbackLocalizationsDelegate<SettingsLocalizations>(

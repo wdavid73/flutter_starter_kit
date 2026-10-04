@@ -3,6 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'fallback_localizations_delegate.dart';
 import 'generated/core_ui_localizations.dart';
 
+/// Locales translated by this package.
+const coreUiSupportedLocales = CoreUiLocalizations.supportedLocales;
+
 /// Delegate to register in the app. Falls back to English for locales this
 /// package does not translate.
 const coreUiLocalizationsDelegate =
