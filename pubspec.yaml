@@ -16,6 +16,7 @@ workspace:
   - packages/feature_home
   - packages/feature_onboarding
   - packages/feature_settings
+  - packages/feature_showcase
   - packages/platform_media
   - packages/platform_session
   - packages/platform_theme
@@ -31,6 +32,7 @@ dependencies:
   feature_home: ^0.0.1
   feature_onboarding: ^0.0.1
   feature_settings: ^0.0.1
+  feature_showcase: ^0.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0

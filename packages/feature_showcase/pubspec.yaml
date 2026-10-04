@@ -1,0 +1,20 @@
+name: feature_showcase
+description: Demo screens that showcase the design system widgets, inputs and styles.
+publish_to: "none"
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  core_ui: ^0.0.1
+  flutter:
+    sdk: flutter
+  go_router: ^15.1.3
+  platform_media: ^0.0.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter

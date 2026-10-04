@@ -27,8 +27,8 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T13 — `feature_home`
 - [x] T14 — `feature_auth` (1/2): cubits y tests
 - [x] T15 — `feature_auth` (2/2): pantallas, vistas, assets y l10n
-- [ ] T16 — `feature_showcase`
-- [ ] **Checkpoint C** — features completas
+- [x] T16 — `feature_showcase`
+- [x] **Checkpoint C** — features completas
 
 ## Fase 4: App y cierre
 - [ ] T17 — App delgado (DI, router, delegates)
