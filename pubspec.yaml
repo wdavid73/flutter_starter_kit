@@ -12,6 +12,7 @@ workspace:
   - packages/core_network
   - packages/core_storage
   - packages/core_ui
+  - packages/platform_theme
 
 dependencies:
   animate_do: ^4.2.0
@@ -37,6 +38,7 @@ dependencies:
   image_picker: ^1.1.2
   intl: any
   introduction_screen: ^3.1.17
+  platform_theme: ^0.0.1
   path_provider: ^2.1.5
   shimmer: ^3.0.0
 

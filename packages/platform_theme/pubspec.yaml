@@ -1,0 +1,21 @@
+name: platform_theme
+description: Theme mode (light/dark) state, persisted with HydratedBloc.
+publish_to: "none"
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  equatable: ^2.0.7
+  flutter:
+    sdk: flutter
+  hydrated_bloc: ^10.0.0
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4

@@ -1,10 +1,10 @@
+import 'package:platform_theme/platform_theme.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/app/dependency_injection.dart';
 import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
-import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:go_router/go_router.dart';
 
 /// The [GoRouter] instance used for navigation.

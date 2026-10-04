@@ -1,3 +1,4 @@
+import 'package:platform_theme/platform_theme.dart';
 import 'package:core_network/core_network.dart';
 import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/data/data.dart';
