@@ -1,11 +1,11 @@
+import 'package:core_network/core_network.dart';
+import 'package:core_storage/core_storage.dart';
 import 'package:feature_auth/feature_auth.dart';
 import 'package:feature_onboarding/feature_onboarding.dart';
+import 'package:flutter_starter_kit/config/config.dart';
+import 'package:get_it/get_it.dart';
 import 'package:platform_session/platform_session.dart';
 import 'package:platform_theme/platform_theme.dart';
-import 'package:core_network/core_network.dart';
-import 'package:flutter_starter_kit/config/config.dart';
-import 'package:core_storage/core_storage.dart';
-import 'package:get_it/get_it.dart';
 
 final GetIt getIt = GetIt.instance;
 

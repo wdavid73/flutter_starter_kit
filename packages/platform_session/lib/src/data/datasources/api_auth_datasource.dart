@@ -1,5 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:core_network/core_network.dart';
+import 'package:dio/dio.dart';
 import 'package:platform_session/src/data/data.dart';
 import 'package:platform_session/src/domain/datasources/auth_datasource.dart';
 

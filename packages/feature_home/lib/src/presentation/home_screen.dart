@@ -1,13 +1,13 @@
-import 'package:core_ui/core_ui.dart';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:core_ui/core_ui.dart';
 import 'package:feature_home/src/l10n/home_l10n.dart';
 import 'package:feature_home/src/presentation/expanded_layout/home_screen_expanded_layout.dart';
 import 'package:feature_home/src/presentation/medium_layout/home_screen_medium_layout.dart';
 import 'package:feature_home/src/presentation/widgets/drawer_home.dart';
 import 'package:feature_home/src/presentation/widgets/home_drawer_item.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, this.drawerItems = const []});

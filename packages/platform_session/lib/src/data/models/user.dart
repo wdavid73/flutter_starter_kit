@@ -1,5 +1,6 @@
-import 'package:platform_session/src/domain/entities/user.dart';
 import 'package:platform_session/src/data/data.dart';
+import 'package:platform_session/src/domain/entities/user.dart';
+
 import 'json_serializable.dart';
 
 /// A concrete implementation of the [User] entity that can be serialized to JSON.

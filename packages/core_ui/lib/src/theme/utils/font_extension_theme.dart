@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:core_ui/src/theme/utils/responsive.dart';
+import 'package:flutter/material.dart';
 
 /// An extension on [BuildContext] that provides easy access to the current
 /// [TextTheme].

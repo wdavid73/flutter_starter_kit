@@ -31,7 +31,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] **Checkpoint C** — features completas
 
 ## Fase 4: App y cierre
-- [ ] T17 — App delgado (DI, router, delegates)
+- [x] T17 — App delgado (DI, router, delegates)
 - [ ] T18 — Idiomas: unión de `supportedLocales` y test
 - [ ] T19 — Documentación (READMEs, BRANCHES.md)
 - [ ] T20 — Verificación final

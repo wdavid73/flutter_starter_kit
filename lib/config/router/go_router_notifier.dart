@@ -1,7 +1,7 @@
-import 'package:platform_session/platform_session.dart';
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
+import 'package:platform_session/platform_session.dart';
 
 /// A [ChangeNotifier] that listens to changes in the authentication state and
 /// notifies its listeners when the state changes.

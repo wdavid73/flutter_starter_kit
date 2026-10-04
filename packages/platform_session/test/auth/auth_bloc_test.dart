@@ -1,9 +1,9 @@
-import 'package:platform_session/platform_session.dart';
 import 'package:bloc_test/bloc_test.dart';
+import 'package:core_network/core_network.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:core_network/core_network.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:platform_session/platform_session.dart';
 
 import 'mocks/mock_auth_bloc_dependencies.dart';
 

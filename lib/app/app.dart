@@ -1,15 +1,15 @@
+import 'package:core_ui/core_ui.dart';
 import 'package:feature_auth/feature_auth.dart';
 import 'package:feature_home/feature_home.dart';
-import 'package:feature_settings/feature_settings.dart';
 import 'package:feature_onboarding/feature_onboarding.dart';
-import 'package:platform_session/platform_session.dart';
-import 'package:platform_theme/platform_theme.dart';
-import 'package:core_ui/core_ui.dart';
+import 'package:feature_settings/feature_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/app/dependency_injection.dart';
 import 'package:flutter_starter_kit/config/config.dart';
 import 'package:go_router/go_router.dart';
+import 'package:platform_session/platform_session.dart';
+import 'package:platform_theme/platform_theme.dart';
 
 /// The [GoRouter] instance used for navigation.
 GoRouter? _router;

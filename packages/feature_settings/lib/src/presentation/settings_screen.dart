@@ -1,9 +1,9 @@
-import 'package:platform_theme/platform_theme.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:feature_settings/src/l10n/settings_l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:feature_settings/src/l10n/settings_l10n.dart';
 import 'package:get_it/get_it.dart';
+import 'package:platform_theme/platform_theme.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

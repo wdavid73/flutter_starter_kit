@@ -1,6 +1,6 @@
 import 'package:core_ui/core_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:feature_home/src/l10n/home_l10n.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreenMediumLayout extends StatelessWidget {
   const HomeScreenMediumLayout({super.key});

@@ -5,7 +5,6 @@
 // 2. Los imports `package:<interno>/` en `lib/` y `test/` deben estar declarados.
 //
 // Uso: dart run tool/check_deps.dart
-
 import 'dart:io';
 
 /// Grafo permitido: paquete -> paquetes internos de los que puede depender.

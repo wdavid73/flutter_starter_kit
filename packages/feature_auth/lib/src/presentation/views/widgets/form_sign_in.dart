@@ -1,9 +1,9 @@
-import 'package:feature_auth/src/cubit/sign_in/sign_in_form_cubit.dart';
-import 'package:platform_session/platform_session.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:feature_auth/src/cubit/sign_in/sign_in_form_cubit.dart';
+import 'package:feature_auth/src/l10n/auth_l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:feature_auth/src/l10n/auth_l10n.dart';
+import 'package:platform_session/platform_session.dart';
 
 class FormSignIn extends StatelessWidget {
   const FormSignIn({super.key});

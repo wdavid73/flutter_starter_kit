@@ -1,5 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:core_storage/core_storage.dart';
+import 'package:dio/dio.dart';
 
 /// Interceptor for adding and managing API tokens.
 ///

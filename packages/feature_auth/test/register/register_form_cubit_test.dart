@@ -1,9 +1,9 @@
-import 'package:feature_auth/feature_auth.dart';
-import 'package:platform_session/platform_session.dart';
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:feature_auth/feature_auth.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:platform_session/platform_session.dart';
 
 import 'mocks/mock_register_dependencies.dart';
 

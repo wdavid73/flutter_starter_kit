@@ -1,20 +1,19 @@
-import 'package:feature_auth/feature_auth.dart';
-import 'package:feature_home/feature_home.dart';
-import 'package:platform_session/platform_session.dart';
 import 'dart:async';
 
+import 'package:core_network/core_network.dart';
+import 'package:core_ui/core_ui.dart';
 import 'package:dio/dio.dart';
+import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_home/feature_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
-import 'package:core_network/core_network.dart';
 import 'package:go_router/go_router.dart';
 import 'package:integration_test/integration_test.dart';
-
-import 'package:flutter_starter_kit/config/config.dart';
-import 'package:core_ui/core_ui.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:platform_session/platform_session.dart';
 
 import 'mocks/auth_flow_dependencies.dart';
 

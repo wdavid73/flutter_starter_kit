@@ -1,11 +1,10 @@
 import 'package:core_ui/core_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:feature_onboarding/src/cubit/introduction_cubit.dart';
 import 'package:feature_onboarding/src/l10n/onboarding_l10n.dart';
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

@@ -1,9 +1,9 @@
-import 'package:platform_session/src/data/data.dart';
-import 'package:platform_session/src/domain/usecases/usecases.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:core_network/core_network.dart';
 import 'package:core_storage/core_storage.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:platform_session/src/data/data.dart';
+import 'package:platform_session/src/domain/usecases/usecases.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

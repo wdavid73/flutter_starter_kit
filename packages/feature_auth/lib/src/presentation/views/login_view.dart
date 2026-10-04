@@ -1,9 +1,9 @@
 import 'package:core_ui/core_ui.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:feature_auth/src/l10n/auth_l10n.dart';
 import 'package:feature_auth/src/presentation/views/widgets/form_sign_in.dart';
 import 'package:feature_auth/src/presentation/views/widgets/wrapper_bloc_providers.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

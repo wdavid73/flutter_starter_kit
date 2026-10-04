@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:core_ui/src/theme/theme.dart';
+import 'package:flutter/material.dart';
 
 enum DeviceType { phone, tablet, other }
 

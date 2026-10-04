@@ -1,9 +1,9 @@
-import 'package:platform_session/platform_session.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:feature_home/src/presentation/widgets/home_drawer_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:feature_home/src/presentation/widgets/home_drawer_item.dart';
 import 'package:go_router/go_router.dart';
+import 'package:platform_session/platform_session.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({super.key, this.items = const []});

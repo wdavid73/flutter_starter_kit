@@ -1,6 +1,6 @@
 import 'package:core_ui/core_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:feature_auth/src/presentation/views/register_view.dart';
+import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
