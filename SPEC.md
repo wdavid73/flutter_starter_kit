@@ -1,6 +1,6 @@
 # Spec: Refactor a arquitectura de paquetes (core / platform / feature)
 
-Estado: **BORRADOR, pendiente de aprobación**. Este documento define la estructura general. Cada módulo tendrá luego su propio `SPEC-<id>.md`.
+Estado: **IMPLEMENTADO** en la rama `refactor/packages-architecture` (ver `tasks/plan.md` y `tasks/todo.md`). Este documento define la estructura general; las desviaciones respecto al borrador original están en "Decisiones tomadas durante la implementación".
 
 ## Objective
 
@@ -153,7 +153,7 @@ extension AuthL10nX on BuildContext {
 
 ## Success Criteria
 
-- [ ] `packages/` contiene los 10 paquetes del mapa; `lib/` solo tiene composición.
+- [ ] `packages/` contiene los 11 paquetes del mapa (3 core, 3 platform, 5 feature); `lib/` solo tiene composición.
 - [ ] `grep` no encuentra ningún import `feature_x` dentro de `feature_y`, ni imports hacia arriba en la regla de dependencia.
 - [ ] `melos run analyze` sin errores ni warnings nuevos.
 - [ ] Todos los tests actuales pasan, ubicados en su paquete dueño.
@@ -164,7 +164,19 @@ extension AuthL10nX on BuildContext {
 
 ## Open Questions
 
-1. Los tres valores por defecto de "Decisiones tomadas" (sesión, router, showcase).
-2. ¿`custom_button` y otros widgets compartidos usan strings de `AppLocalizations`? Hay que revisarlo en el spec de `core-ui`.
-3. ¿Se quiere un tema (`core_ui`) con tokens por separado, o basta con mover lo actual?
-4. ¿Qué hacer con `BRANCHES.md` cuando se rebasen las ramas?
+1. Las rutas de `feature_showcase` (`/widgets/...`) fueron eliminadas del router en el commit `d9d7f20` y siguen sin registrarse; el drawer del home todavía enlaza a `/widgets`. Decidir si se restauran.
+2. Cómo rebasar las otras ramas de origin sobre la nueva estructura.
+3. `flutter` estable (3.44.6) no compila el tema actual (`InputDecorationThemeData`); la verificación se hizo con Flutter 3.32.0.
+
+## Decisiones tomadas durante la implementación
+
+- `core_ui` conserva sus propios mensajes genéricos (`CoreUiLocalizations`: validaciones y `loading`), y los demás paquetes traen su `.arb` propio.
+- Cada delegate de l10n se envuelve en `FallbackLocalizationsDelegate`: acepta cualquier idioma del app y carga inglés si el paquete no lo traduce. Flutter lanza una advertencia en debug cuando un delegate no soporta un idioma de la app; el wrapper la evita.
+- `appSupportedLocales` se calcula como la unión de los idiomas de todos los paquetes.
+- Las features obtienen sus blocs/cubits con `GetIt.instance` (el contenedor global), sin importar el app.
+- `HomeScreen` recibe `drawerItems` (`HomeDrawerItem`) desde el app para no depender de las constantes de rutas.
+- `ApiClient.configure(baseUrl:)` reemplaza la lectura de `Environment.apiUrl` dentro de `core_network`.
+- `SvgPictureCustom` ganó un parámetro `package` opcional; los assets de cada feature se referencian con `package:`.
+- `unfocus` (extensión de `BuildContext`) pasó a `core_ui`; `waitForState` pasó a `feature_auth`.
+- Los pesos de la fuente Montserrat siguen sin declararse, igual que antes del refactor.
+- Los scripts de Melos usan comandos de una sola línea (`&&`) para funcionar también en Windows.

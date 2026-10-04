@@ -34,5 +34,5 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T17 — App delgado (DI, router, delegates)
 - [x] T18 — Idiomas: unión de `supportedLocales` y test
 - [x] T19 — Documentación (READMEs, BRANCHES.md)
-- [ ] T20 — Verificación final
-- [ ] **Checkpoint final**
+- [x] T20 — Verificación final
+- [x] **Checkpoint final**
