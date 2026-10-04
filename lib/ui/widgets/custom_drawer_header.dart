@@ -1,5 +1,5 @@
+import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/config/config.dart';
 
 class CustomDrawerHeader extends StatelessWidget {
   const CustomDrawerHeader({super.key});

@@ -1,7 +1,7 @@
+import 'package:core_ui/core_ui.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/shared/service/service.dart';
 import 'package:flutter_starter_kit/ui/widgets/widgets.dart';
 

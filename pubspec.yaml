@@ -11,11 +11,13 @@ environment:
 workspace:
   - packages/core_network
   - packages/core_storage
+  - packages/core_ui
 
 dependencies:
   animate_do: ^4.2.0
   core_network: ^0.0.1
   core_storage: ^0.0.1
+  core_ui: ^0.0.1
   dio: ^5.8.0+1
   equatable: ^2.0.7
   flutter:
@@ -85,18 +87,9 @@ flutter:
     - assets/app-icon/
     - assets/loaders/
     - assets/icon/
-    - assets/fonts/
     - assets/images/
     - assets/images/introduction/
 
-  fonts:
-    - family: MontserratAlternates
-      fonts:
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Light.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Regular.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf
 
 flutter_native_splash:
   color: "#03A9F4"

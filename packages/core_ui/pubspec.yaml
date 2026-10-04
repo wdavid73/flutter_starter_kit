@@ -1,0 +1,27 @@
+name: core_ui
+description: Design system - theme, typography, spacing, shared widgets and form inputs.
+publish_to: "none"
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  fonts:
+    - family: MontserratAlternates
+      fonts:
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Light.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Regular.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
+        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf

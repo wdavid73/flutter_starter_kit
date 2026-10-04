@@ -1,6 +1,6 @@
+import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/shared/shared.dart';
 
 class HomeScreenExpandedLayout extends StatelessWidget {
   const HomeScreenExpandedLayout({super.key});

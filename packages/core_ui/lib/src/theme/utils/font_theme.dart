@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:core_ui/src/theme/theme.dart';
 
 class AppTypography {
   // Font Family
-  static const String fontFamily = 'MontserratAlternates';
+  static const String fontFamily = 'packages/core_ui/MontserratAlternates';
 
   // Font Weights
   static const FontWeight lightWeight = FontWeight.w300;
