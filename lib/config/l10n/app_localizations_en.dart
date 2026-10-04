@@ -18,9 +18,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get email => 'Email';
 
   @override
-  String get home => 'Home';
-
-  @override
   String greeting(Object name) {
     return 'Hello $name!';
   }

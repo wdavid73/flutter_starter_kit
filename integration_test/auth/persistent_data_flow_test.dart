@@ -1,3 +1,4 @@
+import 'package:feature_home/feature_home.dart';
 import 'package:platform_session/platform_session.dart';
 import 'dart:async';
 

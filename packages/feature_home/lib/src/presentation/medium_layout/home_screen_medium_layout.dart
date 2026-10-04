@@ -1,9 +1,9 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:feature_home/src/l10n/home_l10n.dart';
 
-class HomeScreenExpandedLayout extends StatelessWidget {
-  const HomeScreenExpandedLayout({super.key});
+class HomeScreenMediumLayout extends StatelessWidget {
+  const HomeScreenMediumLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +13,12 @@ class HomeScreenExpandedLayout extends StatelessWidget {
       children: [
         Center(
           child: FlutterLogo(
-            size: context.dp(25),
+            size: context.dp(20),
           ),
         ),
         AppSpacing.md,
         Text(
-          "${context.l10n.home} - Expanded Layout",
+          "${context.homeL10n.home} - Medium Layout",
           style: context.textTheme.titleLarge,
         ),
       ],

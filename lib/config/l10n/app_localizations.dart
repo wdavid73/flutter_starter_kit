@@ -116,12 +116,6 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get email;
 
-  /// No description provided for @home.
-  ///
-  /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
-
   /// No description provided for @greeting.
   ///
   /// In en, this message translates to:

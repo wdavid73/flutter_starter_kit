@@ -1,0 +1,7 @@
+arb-dir: lib/src/l10n/arb
+template-arb-file: home_en.arb
+output-dir: lib/src/l10n/generated
+output-localization-file: home_localizations.dart
+output-class: HomeLocalizations
+preferred-supported-locales: [en, es]
+synthetic-package: false

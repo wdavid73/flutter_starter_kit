@@ -3,19 +3,23 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/screens/home/expanded_layout/home_screen_expanded_layout.dart';
-import 'package:flutter_starter_kit/ui/screens/home/medium_layout/home_screen_medium_layout.dart';
-import './widgets/drawer_home.dart';
+import 'package:feature_home/src/l10n/home_l10n.dart';
+import 'package:feature_home/src/presentation/expanded_layout/home_screen_expanded_layout.dart';
+import 'package:feature_home/src/presentation/medium_layout/home_screen_medium_layout.dart';
+import 'package:feature_home/src/presentation/widgets/drawer_home.dart';
+import 'package:feature_home/src/presentation/widgets/home_drawer_item.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, this.drawerItems = const []});
+
+  /// Extra navigation entries shown in the drawer.
+  final List<HomeDrawerItem> drawerItems;
 
   @override
   Widget build(BuildContext context) {
     return AdaptiveScaffold(
       appBar: _appBarHome(context),
-      drawer: DrawerHome(),
+      drawer: DrawerHome(items: drawerItems),
       bottomNavigationBar: _BottomNavigationBar(),
       navigationRail: _MediumNavigationRailHome(),
       navigationDrawer: _ExpandedNavigationDrawerHome(),
@@ -44,7 +48,7 @@ class HomeScreen extends StatelessWidget {
   PreferredSizeWidget? _appBarHome(BuildContext context) {
     return AppBar(
       title: Text(
-        context.l10n.home,
+        context.homeL10n.home,
       ),
       actions: [
         IconButton(

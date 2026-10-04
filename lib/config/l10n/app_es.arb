@@ -3,7 +3,6 @@
   "language": "Español",
   "name": "Nombre",
   "email": "Correo",
-  "home": "Inicio",
   "greeting": "Hola {name}!",
   "error": "¡Error!",
   "notFoundItem": "¡No se han encontrado elementos!",

@@ -1,3 +1,4 @@
+import 'package:feature_home/feature_home.dart';
 import 'package:feature_settings/feature_settings.dart';
 import 'package:feature_onboarding/feature_onboarding.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,20 @@ class AppRoutes {
       GoRoute(
         path: RouteConstants.home,
         name: "home",
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => const HomeScreen(
+          drawerItems: [
+            HomeDrawerItem(
+              icon: Icons.widgets,
+              text: "widgets",
+              location: RouteConstants.widgetsScreen,
+            ),
+            HomeDrawerItem(
+              icon: Icons.api,
+              text: "example api service implementation",
+              location: RouteConstants.exampleService,
+            ),
+          ],
+        ),
       ),
 
       /// SETTINGS ROUTE

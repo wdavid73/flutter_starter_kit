@@ -1,3 +1,4 @@
+import 'package:feature_home/feature_home.dart';
 import 'package:feature_settings/feature_settings.dart';
 import 'package:feature_onboarding/feature_onboarding.dart';
 import 'package:platform_session/platform_session.dart';
@@ -36,6 +37,7 @@ class MainApp extends StatelessWidget {
           localizationsDelegates: const [
             ...AppLocalizations.localizationsDelegates,
             coreUiLocalizationsDelegate,
+            homeLocalizationsDelegate,
             onboardingLocalizationsDelegate,
             settingsLocalizationsDelegate,
           ],

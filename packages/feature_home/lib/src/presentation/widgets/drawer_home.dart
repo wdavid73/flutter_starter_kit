@@ -2,11 +2,13 @@ import 'package:platform_session/platform_session.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:feature_home/src/presentation/widgets/home_drawer_item.dart';
 import 'package:go_router/go_router.dart';
 
 class DrawerHome extends StatelessWidget {
-  const DrawerHome({super.key});
+  const DrawerHome({super.key, this.items = const []});
+
+  final List<HomeDrawerItem> items;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class DrawerHome extends StatelessWidget {
         child: Column(
           children: [
             _DrawerHeader(userName: "Joe doe", userEmail: "joe@doe.com"),
-            Expanded(child: _DrawerBody()),
+            Expanded(child: _DrawerBody(items: items)),
             AppSpacing.md,
             _LastDrawerIcon(
               icon: Icons.logout,
@@ -32,29 +34,24 @@ class DrawerHome extends StatelessWidget {
 }
 
 class _DrawerBody extends StatelessWidget {
-  const _DrawerBody();
+  const _DrawerBody({required this.items});
+
+  final List<HomeDrawerItem> items;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
-        _DrawerItem(
-          icon: Icons.widgets,
-          text: "widgets",
-          onTap: () {
-            context.push(RouteConstants.widgetsScreen);
-            Navigator.pop(context);
-          },
-        ),
-        _DrawerItem(
-          icon: Icons.api,
-          text: "example api service implementation",
-          onTap: () {
-            context.push(RouteConstants.exampleService);
-            Navigator.pop(context);
-          },
-        ),
+        for (final item in items)
+          _DrawerItem(
+            icon: item.icon,
+            text: item.text,
+            onTap: () {
+              context.push(item.location);
+              Navigator.pop(context);
+            },
+          ),
       ],
     );
   }

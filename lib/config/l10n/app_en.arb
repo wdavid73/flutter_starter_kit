@@ -6,8 +6,6 @@
   "@name": {},
   "email": "Email",
   "@email": {},
-  "home": "Home",
-  "@home": {},
   "greeting": "Hello {name}!",
   "@greeting": {
     "placeholders": {
