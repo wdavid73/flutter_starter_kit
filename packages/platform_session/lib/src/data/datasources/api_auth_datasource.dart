@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:core_network/core_network.dart';
-import 'package:flutter_starter_kit/data/data.dart';
-import 'package:flutter_starter_kit/domain/datasources/auth_datasource.dart';
+import 'package:platform_session/src/data/data.dart';
+import 'package:platform_session/src/domain/datasources/auth_datasource.dart';
 
 /// Example JSON response for login and checkAuthStatus:
 ///

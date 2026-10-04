@@ -1,3 +1,4 @@
+import 'package:platform_session/platform_session.dart';
 import 'dart:async';
 
 import 'package:dio/dio.dart';
@@ -14,7 +15,6 @@ import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:flutter_starter_kit/ui/screens/screens.dart';
 import 'package:core_network/core_network.dart';
-import 'package:flutter_starter_kit/data/data.dart';
 import 'package:core_ui/core_ui.dart';
 
 import './mocks/auth_flow_dependencies.dart';

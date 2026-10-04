@@ -1,3 +1,4 @@
+import 'package:platform_session/platform_session.dart';
 import 'dart:async';
 
 import 'package:dio/dio.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:core_network/core_network.dart';
-import 'package:flutter_starter_kit/data/data.dart';
 import 'package:go_router/go_router.dart';
 import 'package:integration_test/integration_test.dart';
 

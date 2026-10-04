@@ -1,4 +1,4 @@
-import 'package:flutter_starter_kit/domain/usecases/auth_usecase.dart';
+import 'package:platform_session/platform_session.dart';
 import 'package:core_storage/core_storage.dart';
 import 'package:mocktail/mocktail.dart';
 

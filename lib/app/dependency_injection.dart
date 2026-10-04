@@ -1,9 +1,7 @@
+import 'package:platform_session/platform_session.dart';
 import 'package:platform_theme/platform_theme.dart';
 import 'package:core_network/core_network.dart';
 import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/data/data.dart';
-import 'package:flutter_starter_kit/domain/repositories/repositories.dart';
-import 'package:flutter_starter_kit/domain/usecases/usecases.dart';
 import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:core_storage/core_storage.dart';

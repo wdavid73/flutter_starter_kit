@@ -13,6 +13,7 @@ workspace:
   - packages/core_storage
   - packages/core_ui
   - packages/platform_media
+  - packages/platform_session
   - packages/platform_theme
 
 dependencies:
@@ -40,6 +41,7 @@ dependencies:
   intl: any
   introduction_screen: ^3.1.17
   platform_media: ^0.0.1
+  platform_session: ^0.0.1
   platform_theme: ^0.0.1
   path_provider: ^2.1.5
   shimmer: ^3.0.0
