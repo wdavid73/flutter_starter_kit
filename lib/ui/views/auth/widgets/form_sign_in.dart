@@ -53,7 +53,8 @@ class FormSignIn extends StatelessWidget {
             hint: "Input your email",
             prefixIcon: Icon(Icons.email_rounded),
             onChanged: cubit.emailChanged,
-            errorMessage: context.l10n.getByKey(state.email.errorMessage),
+            errorMessage:
+                context.coreUiL10n.validationMessage(state.email.errorMessage),
             keyboardType: TextInputType.emailAddress,
           ),
           CustomTextFormField(
@@ -64,7 +65,8 @@ class FormSignIn extends StatelessWidget {
             toggleObscure: cubit.toggleObscure,
             prefixIcon: Icon(Icons.password),
             onChanged: cubit.passwordChanged,
-            errorMessage: context.l10n.getByKey(state.password.errorMessage),
+            errorMessage: context.coreUiL10n
+                .validationMessage(state.password.errorMessage),
           ),
           SizedBox(
             width: context.width,

@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "isRequired": "This field is required",
+  "@isRequired": {},
+  "isEmpty": "Please fill out the field",
+  "@isEmpty": {},
+  "isEmptyList": "Please select at least one item",
+  "@isEmptyList": {},
+  "isEmptySelect": "Please select an option",
+  "@isEmptySelect": {},
+  "isEmail": "Please enter a valid email",
+  "@isEmail": {},
+  "isNotEqual": "Values do not match",
+  "@isNotEqual": {},
+  "isNotEqualPassword": "Passwords do not match",
+  "@isNotEqualPassword": {},
+  "isPasswordLength": "Password must be at least 6 characters long",
+  "@isPasswordLength": {},
+  "isInvalidPasswordPattern": "Password must be 6–20 characters with uppercase, lowercase, and a number.",
+  "@isInvalidPasswordPattern": {}
+}

@@ -246,35 +246,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get next => 'Siguiente';
 
   @override
-  String get isRequired => 'El campo es requerido';
-
-  @override
-  String get isEmpty => 'Por favor llene el campo';
-
-  @override
-  String get isEmptyList => 'Por favor seleccione al menos un elemento';
-
-  @override
-  String get isEmptySelect => 'Por favor seleccione un elemento';
-
-  @override
-  String get isEmail => 'Por favor ingrese un correo valido';
-
-  @override
-  String get isNotEqual => 'Los valores no son iguales';
-
-  @override
-  String get isNotEqualPassword => 'Las contraseñas no coinciden';
-
-  @override
-  String get isPasswordLength =>
-      'La contraseña debe tener al menos 6 caracteres';
-
-  @override
-  String get isInvalidPasswordPattern =>
-      'La contraseña debe contener entre 6 y 20 caracteres, incluir mayúscula, minúscula y número.';
-
-  @override
   String get fullnameLabel => 'Nombre Completo';
 
   @override

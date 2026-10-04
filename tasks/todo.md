@@ -10,7 +10,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T2 — `core_storage`
 - [x] T3 — `core_network`
 - [x] T4 — `core_ui` (1/3): tema, tipografía y assets base
-- [ ] T5 — `core_ui` (2/3): inputs formz y mensajes genéricos
+- [x] T5 — `core_ui` (2/3): inputs formz y mensajes genéricos
 - [ ] T6 — `core_ui` (3/3): widgets compartidos
 - [ ] **Checkpoint A** — core completo
 

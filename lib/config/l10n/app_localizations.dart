@@ -548,60 +548,6 @@ abstract class AppLocalizations {
   /// **'Next'**
   String get next;
 
-  /// No description provided for @isRequired.
-  ///
-  /// In en, this message translates to:
-  /// **'This field is required'**
-  String get isRequired;
-
-  /// No description provided for @isEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'Please fill out the field'**
-  String get isEmpty;
-
-  /// No description provided for @isEmptyList.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select at least one item'**
-  String get isEmptyList;
-
-  /// No description provided for @isEmptySelect.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select an option'**
-  String get isEmptySelect;
-
-  /// No description provided for @isEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a valid email'**
-  String get isEmail;
-
-  /// No description provided for @isNotEqual.
-  ///
-  /// In en, this message translates to:
-  /// **'Values do not match'**
-  String get isNotEqual;
-
-  /// No description provided for @isNotEqualPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Passwords do not match'**
-  String get isNotEqualPassword;
-
-  /// No description provided for @isPasswordLength.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be at least 6 characters long'**
-  String get isPasswordLength;
-
-  /// No description provided for @isInvalidPasswordPattern.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be 6–20 characters with uppercase, lowercase, and a number.'**
-  String get isInvalidPasswordPattern;
-
   /// No description provided for @fullnameLabel.
   ///
   /// In en, this message translates to:

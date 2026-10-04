@@ -1,0 +1,7 @@
+arb-dir: lib/src/l10n/arb
+template-arb-file: core_ui_en.arb
+output-dir: lib/src/l10n/generated
+output-localization-file: core_ui_localizations.dart
+output-class: CoreUiLocalizations
+preferred-supported-locales: [en, es]
+synthetic-package: false

@@ -31,7 +31,10 @@ class MainApp extends StatelessWidget {
           theme: AppTheme.getLightTheme(context),
           darkTheme: AppTheme.getDarkTheme(context),
           themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: const [
+            ...AppLocalizations.localizationsDelegates,
+            coreUiLocalizationsDelegate,
+          ],
           supportedLocales: AppLocalizations.supportedLocales,
         );
       },

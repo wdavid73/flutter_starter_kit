@@ -2,7 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_starter_kit/ui/blocs/auth/auth_bloc.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
-import 'package:flutter_starter_kit/ui/shared/inputs/inputs.dart';
+import 'package:core_ui/core_ui.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'mocks/mock_sign_in_dependencies.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_starter_kit/ui/shared/inputs/inputs.dart';
+import 'package:core_ui/core_ui.dart';
 
 void main() {
   group("Email", () {
