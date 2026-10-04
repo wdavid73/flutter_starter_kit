@@ -231,12 +231,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get errorGetImage => 'Error obteniendo la imagen.';
 
   @override
-  String get skip => 'Saltar';
-
-  @override
-  String get done => 'Hecho';
-
-  @override
   String get back => 'Volver';
 
   @override

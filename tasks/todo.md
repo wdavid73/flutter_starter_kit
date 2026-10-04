@@ -22,7 +22,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] **Checkpoint B** — platform completo
 
 ## Fase 3: Paquetes feature
-- [ ] T11 — `feature_onboarding`
+- [x] T11 — `feature_onboarding`
 - [ ] T12 — `feature_settings`
 - [ ] T13 — `feature_home`
 - [ ] T14 — `feature_auth` (1/2): cubits y tests

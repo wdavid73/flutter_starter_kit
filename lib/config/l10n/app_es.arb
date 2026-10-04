@@ -70,8 +70,6 @@
   "notInternet": "No se ha detectado conexión a Internet, inténtelo de nuevo.",
   "imageNotFound": "Imagen no encontrada",
   "errorGetImage": "Error obteniendo la imagen.",
-  "skip": "Saltar",
-  "done": "Hecho",
   "back": "Volver",
   "next": "Siguiente",
   "fullnameLabel": "Nombre Completo",

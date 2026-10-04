@@ -1,11 +1,11 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_kit/app/dependency_injection.dart';
+import 'package:feature_onboarding/src/cubit/introduction_cubit.dart';
+import 'package:feature_onboarding/src/l10n/onboarding_l10n.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -18,7 +18,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd() {
-    getIt.get<IntroductionCubit>().markIntroductionAsSeen();
+    GetIt.instance.get<IntroductionCubit>().markIntroductionAsSeen();
     context.goNamed('home');
   }
 
@@ -41,7 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       showBackButton: true,
       showSkipButton: true,
       done: Text(
-        context.l10n.done,
+        context.onboardingL10n.done,
         style: context.textTheme.bodyLarge?.copyWith(
           color: ColorTheme.white,
         ),
@@ -57,7 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         size: context.dp(3),
       ),
       skip: Text(
-        context.l10n.skip,
+        context.onboardingL10n.skip,
         style: context.textTheme.bodyLarge?.copyWith(
           color: ColorTheme.white,
         ),
@@ -69,6 +69,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       pages: [
         PageViewModel(
           image: SvgPictureCustom(
+            package: 'feature_onboarding',
             iconPath: "assets/images/introduction/startup.svg",
             iconSize: context.dp(20),
           ),
@@ -78,6 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         ),
         PageViewModel(
           image: SvgPictureCustom(
+            package: 'feature_onboarding',
             iconPath: "assets/images/introduction/dashboard.svg",
             iconSize: context.dp(20),
           ),
@@ -87,6 +89,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         ),
         PageViewModel(
           image: SvgPictureCustom(
+            package: 'feature_onboarding',
             iconPath: "assets/images/introduction/construction.svg",
             iconSize: context.dp(20),
           ),

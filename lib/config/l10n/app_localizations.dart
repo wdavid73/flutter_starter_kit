@@ -518,18 +518,6 @@ abstract class AppLocalizations {
   /// **'Error retrieving the image.'**
   String get errorGetImage;
 
-  /// No description provided for @skip.
-  ///
-  /// In en, this message translates to:
-  /// **'Skip'**
-  String get skip;
-
-  /// No description provided for @done.
-  ///
-  /// In en, this message translates to:
-  /// **'Done'**
-  String get done;
-
   /// No description provided for @back.
   ///
   /// In en, this message translates to:

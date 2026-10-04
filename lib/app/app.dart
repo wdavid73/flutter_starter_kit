@@ -1,3 +1,4 @@
+import 'package:feature_onboarding/feature_onboarding.dart';
 import 'package:platform_session/platform_session.dart';
 import 'package:platform_theme/platform_theme.dart';
 import 'package:core_ui/core_ui.dart';
@@ -34,6 +35,7 @@ class MainApp extends StatelessWidget {
           localizationsDelegates: const [
             ...AppLocalizations.localizationsDelegates,
             coreUiLocalizationsDelegate,
+            onboardingLocalizationsDelegate,
           ],
           supportedLocales: AppLocalizations.supportedLocales,
         );

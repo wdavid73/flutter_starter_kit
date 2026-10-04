@@ -1,3 +1,4 @@
+import 'package:feature_onboarding/feature_onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_starter_kit/ui/screens/screens.dart';
