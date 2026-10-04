@@ -75,14 +75,10 @@ melos:
       run: flutter analyze --no-pub
     test:
       description: Corre los tests del app y de cada paquete
-      run: |
-        flutter test --no-pub
-        melos exec -c 1 --dir-exists=test -- flutter test --no-pub
+      run: flutter test --no-pub && dart run melos exec -c 1 --dir-exists=test -- flutter test --no-pub
     gen-l10n:
       description: Genera l10n en el app y en cada paquete con l10n.yaml
-      run: |
-        flutter gen-l10n
-        melos exec -c 1 --file-exists=l10n.yaml -- flutter gen-l10n
+      run: flutter gen-l10n && dart run melos exec -c 1 --file-exists=l10n.yaml -- flutter gen-l10n
 
 flutter:
   uses-material-design: true
