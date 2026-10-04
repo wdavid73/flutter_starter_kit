@@ -7,7 +7,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T1 — Esqueleto del monorepo (workspace, melos, check-deps)
 
 ## Fase 1: Paquetes core
-- [ ] T2 — `core_storage`
+- [x] T2 — `core_storage`
 - [ ] T3 — `core_network`
 - [ ] T4 — `core_ui` (1/3): tema, tipografía y assets base
 - [ ] T5 — `core_ui` (2/3): inputs formz y mensajes genéricos

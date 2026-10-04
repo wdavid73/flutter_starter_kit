@@ -8,8 +8,12 @@ version: 0.0.1
 environment:
   sdk: ^3.6.0
 
+workspace:
+  - packages/core_storage
+
 dependencies:
   animate_do: ^4.2.0
+  core_storage: ^0.0.1
   dio: ^5.8.0+1
   equatable: ^2.0.7
   flutter:
@@ -20,7 +24,6 @@ dependencies:
   flutter_local_notifications: ^19.2.1
   flutter_localizations:
     sdk: flutter
-  flutter_secure_storage: ^9.2.4
   flutter_svg: ^2.0.17
   formz: ^0.8.0
   get_it: ^8.0.3
@@ -31,7 +34,6 @@ dependencies:
   intl: any
   introduction_screen: ^3.1.17
   path_provider: ^2.1.5
-  shared_preferences: ^2.5.1
   shimmer: ^3.0.0
 
 dev_dependencies:

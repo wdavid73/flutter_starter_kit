@@ -4,7 +4,7 @@ import 'package:flutter_starter_kit/domain/repositories/repositories.dart';
 import 'package:flutter_starter_kit/domain/usecases/usecases.dart';
 import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
-import 'package:flutter_starter_kit/ui/shared/service/service.dart';
+import 'package:core_storage/core_storage.dart';
 import 'package:get_it/get_it.dart';
 
 final GetIt getIt = GetIt.instance;
