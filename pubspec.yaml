@@ -13,6 +13,7 @@ workspace:
   - packages/core_storage
   - packages/core_ui
   - packages/feature_onboarding
+  - packages/feature_settings
   - packages/platform_media
   - packages/platform_session
   - packages/platform_theme
@@ -25,6 +26,7 @@ dependencies:
   dio: ^5.8.0+1
   equatable: ^2.0.7
   feature_onboarding: ^0.0.1
+  feature_settings: ^0.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0

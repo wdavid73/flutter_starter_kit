@@ -2,8 +2,8 @@ import 'package:platform_theme/platform_theme.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_starter_kit/app/dependency_injection.dart';
-import 'package:flutter_starter_kit/config/config.dart';
+import 'package:feature_settings/src/l10n/settings_l10n.dart';
+import 'package:get_it/get_it.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -22,45 +22,45 @@ class SettingsScreen extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                context.l10n.general,
+                context.settingsL10n.general,
                 style: context.textTheme.titleSmall,
               ),
               _ItemSettings(
-                title: context.l10n.account,
+                title: context.settingsL10n.account,
                 icon: Icons.person_rounded,
               ),
               _ItemSettings(
-                title: context.l10n.deleteAccount,
+                title: context.settingsL10n.deleteAccount,
                 icon: Icons.delete_forever_rounded,
               ),
               const SizedBox(height: 20),
               Text(
-                context.l10n.feedback,
+                context.settingsL10n.feedback,
                 style: context.textTheme.titleSmall,
               ),
               _ItemSettings(
-                title: context.l10n.reportBug,
+                title: context.settingsL10n.reportBug,
                 icon: Icons.bug_report,
               ),
               _ItemSettings(
-                title: context.l10n.sendFeedback,
+                title: context.settingsL10n.sendFeedback,
                 icon: Icons.send_rounded,
               ),
               const SizedBox(height: 20),
               Text(
-                context.l10n.theme,
+                context.settingsL10n.theme,
                 style: context.textTheme.titleSmall,
               ),
               BlocSelector<ThemeModeCubit, ThemeModeState, bool>(
-                bloc: getIt.get<ThemeModeCubit>(),
+                bloc: GetIt.instance.get<ThemeModeCubit>(),
                 selector: (state) => state.isDarkMode,
                 builder: (context, isDarkMode) {
                   return CustomSwitch(
                     icon: Icon(Icons.dark_mode_outlined, size: context.dp(2.6)),
-                    title: context.l10n.darkTheme,
+                    title: context.settingsL10n.darkTheme,
                     switchValue: isDarkMode,
                     onChanged: (_) {
-                      getIt.get<ThemeModeCubit>().toggleTheme();
+                      GetIt.instance.get<ThemeModeCubit>().toggleTheme();
                     },
                   );
                 },

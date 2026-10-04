@@ -12,9 +12,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get language => 'Español';
 
   @override
-  String get general => 'General';
-
-  @override
   String get name => 'Nombre';
 
   @override
@@ -162,27 +159,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get settings => 'Configuración';
-
-  @override
-  String get reportBug => 'Reportar un error';
-
-  @override
-  String get sendFeedback => 'Enviar feedback';
-
-  @override
-  String get account => 'Cuenta';
-
-  @override
-  String get deleteAccount => 'Borrar cuenta';
-
-  @override
-  String get feedback => 'Feedback';
-
-  @override
-  String get theme => 'Tema';
-
-  @override
-  String get darkTheme => 'Tema oscuro';
 
   @override
   String get permission => 'Permisos';

@@ -23,7 +23,7 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 
 ## Fase 3: Paquetes feature
 - [x] T11 — `feature_onboarding`
-- [ ] T12 — `feature_settings`
+- [x] T12 — `feature_settings`
 - [ ] T13 — `feature_home`
 - [ ] T14 — `feature_auth` (1/2): cubits y tests
 - [ ] T15 — `feature_auth` (2/2): pantallas, vistas, assets y l10n

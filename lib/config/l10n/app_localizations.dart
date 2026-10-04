@@ -104,12 +104,6 @@ abstract class AppLocalizations {
   /// **'English'**
   String get language;
 
-  /// No description provided for @general.
-  ///
-  /// In en, this message translates to:
-  /// **'General'**
-  String get general;
-
   /// No description provided for @name.
   ///
   /// In en, this message translates to:
@@ -397,48 +391,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
-
-  /// No description provided for @reportBug.
-  ///
-  /// In en, this message translates to:
-  /// **'Report a bug'**
-  String get reportBug;
-
-  /// No description provided for @sendFeedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Send feedback'**
-  String get sendFeedback;
-
-  /// No description provided for @account.
-  ///
-  /// In en, this message translates to:
-  /// **'Account'**
-  String get account;
-
-  /// No description provided for @deleteAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete account'**
-  String get deleteAccount;
-
-  /// No description provided for @feedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Feedback'**
-  String get feedback;
-
-  /// No description provided for @theme.
-  ///
-  /// In en, this message translates to:
-  /// **'Theme'**
-  String get theme;
-
-  /// No description provided for @darkTheme.
-  ///
-  /// In en, this message translates to:
-  /// **'Dark theme'**
-  String get darkTheme;
 
   /// No description provided for @permission.
   ///
