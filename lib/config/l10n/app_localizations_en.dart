@@ -12,16 +12,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get language => 'English';
 
   @override
-  String get general => 'General';
-
-  @override
   String get name => 'Name';
 
   @override
   String get email => 'Email';
-
-  @override
-  String get home => 'Home';
 
   @override
   String greeting(Object name) {
@@ -30,9 +24,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error => 'Error!';
-
-  @override
-  String get loading => 'Loading...';
 
   @override
   String get notFoundItem => 'No items found!';
@@ -82,25 +73,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get accountDetails => 'Account details';
 
   @override
-  String get comingSoon => 'Coming soon...';
-
-  @override
-  String get signInAccount => 'Sign in to your account';
-
-  @override
-  String get login => 'Log In';
-
-  @override
-  String get signUp => 'Sign Up';
-
-  @override
   String get logout => 'Log Out';
-
-  @override
-  String get notHaveAccount => 'Don\'t have an account?';
-
-  @override
-  String get createOneHere => 'Create one here';
 
   @override
   String get password => 'Password';
@@ -129,9 +102,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get passwordUpdate => 'Password updated successfully';
-
-  @override
-  String get signInWithGoogle => 'Sign in with Google';
 
   @override
   String get signInWithApple => 'Sign in with Apple ID';
@@ -167,34 +137,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings => 'Settings';
 
   @override
-  String get reportBug => 'Report a bug';
-
-  @override
-  String get sendFeedback => 'Send feedback';
-
-  @override
-  String get account => 'Account';
-
-  @override
-  String get deleteAccount => 'Delete account';
-
-  @override
-  String get feedback => 'Feedback';
-
-  @override
-  String get theme => 'Theme';
-
-  @override
-  String get darkTheme => 'Dark theme';
-
-  @override
   String get permission => 'Permissions';
 
   @override
   String get notifications => 'Notifications';
-
-  @override
-  String get connectionTimeOut => 'The connection request timed out.';
 
   @override
   String get sendTimeOut => 'The connection request timed out.';
@@ -231,68 +177,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorGetImage => 'Error retrieving the image.';
 
   @override
-  String get skip => 'Skip';
-
-  @override
-  String get done => 'Done';
-
-  @override
   String get back => 'Back';
 
   @override
   String get next => 'Next';
-
-  @override
-  String get isRequired => 'This field is required';
-
-  @override
-  String get isEmpty => 'Please fill out the field';
-
-  @override
-  String get isEmptyList => 'Please select at least one item';
-
-  @override
-  String get isEmptySelect => 'Please select an option';
-
-  @override
-  String get isEmail => 'Please enter a valid email';
-
-  @override
-  String get isNotEqual => 'Values do not match';
-
-  @override
-  String get isNotEqualPassword => 'Passwords do not match';
-
-  @override
-  String get isPasswordLength => 'Password must be at least 6 characters long';
-
-  @override
-  String get isInvalidPasswordPattern =>
-      'Password must be 6–20 characters with uppercase, lowercase, and a number.';
-
-  @override
-  String get fullnameLabel => 'Full name';
-
-  @override
-  String get fullnameHint => 'Enter your full name';
-
-  @override
-  String get emailLabel => 'Email';
-
-  @override
-  String get emailHint => 'Enter your email';
-
-  @override
-  String get passwordLabel => 'Password';
-
-  @override
-  String get passwordHint => 'Enter your password';
-
-  @override
-  String get confirmPasswordLabel => 'Confirm Password';
-
-  @override
-  String get confirmPasswordHint => 'Re-enter your password';
 
   @override
   String get selectAnOption => 'Select an option';
@@ -338,9 +226,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'An unexpected internal error occurred. Please try again later.';
 
   @override
-  String get invalidEmail => 'Invalid email format.';
-
-  @override
   String get errorInvalidEmail => 'Invalid email format.';
 
   @override
@@ -350,14 +235,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorUserNotFound => 'No user found with this email.';
 
   @override
-  String get wrongPassword => 'Incorrect password.';
-
-  @override
   String get errorWrongPassword => 'Incorrect password.';
-
-  @override
-  String get invalidCredential =>
-      'Invalid credentials. Check your email and password.';
 
   @override
   String get errorInvalidCredential =>
@@ -380,14 +258,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Multi‑factor authentication is required to complete this operation.';
 
   @override
-  String get emailAlreadyInUse => 'This email is already registered.';
-
-  @override
   String get errorEmailAlreadyInUse => 'This email is already registered.';
-
-  @override
-  String get weakPassword =>
-      'Password is too weak (must be at least 6 characters).';
 
   @override
   String get errorWeakPassword =>

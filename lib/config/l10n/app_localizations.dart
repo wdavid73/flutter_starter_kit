@@ -104,12 +104,6 @@ abstract class AppLocalizations {
   /// **'English'**
   String get language;
 
-  /// No description provided for @general.
-  ///
-  /// In en, this message translates to:
-  /// **'General'**
-  String get general;
-
   /// No description provided for @name.
   ///
   /// In en, this message translates to:
@@ -122,12 +116,6 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get email;
 
-  /// No description provided for @home.
-  ///
-  /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
-
   /// No description provided for @greeting.
   ///
   /// In en, this message translates to:
@@ -139,12 +127,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error!'**
   String get error;
-
-  /// No description provided for @loading.
-  ///
-  /// In en, this message translates to:
-  /// **'Loading...'**
-  String get loading;
 
   /// No description provided for @notFoundItem.
   ///
@@ -236,47 +218,11 @@ abstract class AppLocalizations {
   /// **'Account details'**
   String get accountDetails;
 
-  /// No description provided for @comingSoon.
-  ///
-  /// In en, this message translates to:
-  /// **'Coming soon...'**
-  String get comingSoon;
-
-  /// No description provided for @signInAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in to your account'**
-  String get signInAccount;
-
-  /// No description provided for @login.
-  ///
-  /// In en, this message translates to:
-  /// **'Log In'**
-  String get login;
-
-  /// No description provided for @signUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign Up'**
-  String get signUp;
-
   /// No description provided for @logout.
   ///
   /// In en, this message translates to:
   /// **'Log Out'**
   String get logout;
-
-  /// No description provided for @notHaveAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t have an account?'**
-  String get notHaveAccount;
-
-  /// No description provided for @createOneHere.
-  ///
-  /// In en, this message translates to:
-  /// **'Create one here'**
-  String get createOneHere;
 
   /// No description provided for @password.
   ///
@@ -331,12 +277,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password updated successfully'**
   String get passwordUpdate;
-
-  /// No description provided for @signInWithGoogle.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with Google'**
-  String get signInWithGoogle;
 
   /// No description provided for @signInWithApple.
   ///
@@ -404,48 +344,6 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get settings;
 
-  /// No description provided for @reportBug.
-  ///
-  /// In en, this message translates to:
-  /// **'Report a bug'**
-  String get reportBug;
-
-  /// No description provided for @sendFeedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Send feedback'**
-  String get sendFeedback;
-
-  /// No description provided for @account.
-  ///
-  /// In en, this message translates to:
-  /// **'Account'**
-  String get account;
-
-  /// No description provided for @deleteAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete account'**
-  String get deleteAccount;
-
-  /// No description provided for @feedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Feedback'**
-  String get feedback;
-
-  /// No description provided for @theme.
-  ///
-  /// In en, this message translates to:
-  /// **'Theme'**
-  String get theme;
-
-  /// No description provided for @darkTheme.
-  ///
-  /// In en, this message translates to:
-  /// **'Dark theme'**
-  String get darkTheme;
-
   /// No description provided for @permission.
   ///
   /// In en, this message translates to:
@@ -457,12 +355,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Notifications'**
   String get notifications;
-
-  /// No description provided for @connectionTimeOut.
-  ///
-  /// In en, this message translates to:
-  /// **'The connection request timed out.'**
-  String get connectionTimeOut;
 
   /// No description provided for @sendTimeOut.
   ///
@@ -524,18 +416,6 @@ abstract class AppLocalizations {
   /// **'Error retrieving the image.'**
   String get errorGetImage;
 
-  /// No description provided for @skip.
-  ///
-  /// In en, this message translates to:
-  /// **'Skip'**
-  String get skip;
-
-  /// No description provided for @done.
-  ///
-  /// In en, this message translates to:
-  /// **'Done'**
-  String get done;
-
   /// No description provided for @back.
   ///
   /// In en, this message translates to:
@@ -547,108 +427,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Next'**
   String get next;
-
-  /// No description provided for @isRequired.
-  ///
-  /// In en, this message translates to:
-  /// **'This field is required'**
-  String get isRequired;
-
-  /// No description provided for @isEmpty.
-  ///
-  /// In en, this message translates to:
-  /// **'Please fill out the field'**
-  String get isEmpty;
-
-  /// No description provided for @isEmptyList.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select at least one item'**
-  String get isEmptyList;
-
-  /// No description provided for @isEmptySelect.
-  ///
-  /// In en, this message translates to:
-  /// **'Please select an option'**
-  String get isEmptySelect;
-
-  /// No description provided for @isEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a valid email'**
-  String get isEmail;
-
-  /// No description provided for @isNotEqual.
-  ///
-  /// In en, this message translates to:
-  /// **'Values do not match'**
-  String get isNotEqual;
-
-  /// No description provided for @isNotEqualPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Passwords do not match'**
-  String get isNotEqualPassword;
-
-  /// No description provided for @isPasswordLength.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be at least 6 characters long'**
-  String get isPasswordLength;
-
-  /// No description provided for @isInvalidPasswordPattern.
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be 6–20 characters with uppercase, lowercase, and a number.'**
-  String get isInvalidPasswordPattern;
-
-  /// No description provided for @fullnameLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Full name'**
-  String get fullnameLabel;
-
-  /// No description provided for @fullnameHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your full name'**
-  String get fullnameHint;
-
-  /// No description provided for @emailLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get emailLabel;
-
-  /// No description provided for @emailHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your email'**
-  String get emailHint;
-
-  /// No description provided for @passwordLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get passwordLabel;
-
-  /// No description provided for @passwordHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your password'**
-  String get passwordHint;
-
-  /// No description provided for @confirmPasswordLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Password'**
-  String get confirmPasswordLabel;
-
-  /// No description provided for @confirmPasswordHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Re-enter your password'**
-  String get confirmPasswordHint;
 
   /// No description provided for @selectAnOption.
   ///
@@ -722,12 +500,6 @@ abstract class AppLocalizations {
   /// **'An unexpected internal error occurred. Please try again later.'**
   String get errorInternalError;
 
-  /// No description provided for @invalidEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid email format.'**
-  String get invalidEmail;
-
   /// No description provided for @errorInvalidEmail.
   ///
   /// In en, this message translates to:
@@ -746,23 +518,11 @@ abstract class AppLocalizations {
   /// **'No user found with this email.'**
   String get errorUserNotFound;
 
-  /// No description provided for @wrongPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Incorrect password.'**
-  String get wrongPassword;
-
   /// No description provided for @errorWrongPassword.
   ///
   /// In en, this message translates to:
   /// **'Incorrect password.'**
   String get errorWrongPassword;
-
-  /// No description provided for @invalidCredential.
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid credentials. Check your email and password.'**
-  String get invalidCredential;
 
   /// No description provided for @errorInvalidCredential.
   ///
@@ -794,23 +554,11 @@ abstract class AppLocalizations {
   /// **'Multi‑factor authentication is required to complete this operation.'**
   String get errorMultiFactorAuthRequired;
 
-  /// No description provided for @emailAlreadyInUse.
-  ///
-  /// In en, this message translates to:
-  /// **'This email is already registered.'**
-  String get emailAlreadyInUse;
-
   /// No description provided for @errorEmailAlreadyInUse.
   ///
   /// In en, this message translates to:
   /// **'This email is already registered.'**
   String get errorEmailAlreadyInUse;
-
-  /// No description provided for @weakPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Password is too weak (must be at least 6 characters).'**
-  String get weakPassword;
 
   /// No description provided for @errorWeakPassword.
   ///

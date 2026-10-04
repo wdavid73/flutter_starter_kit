@@ -12,6 +12,63 @@ Consulta el flujo de trabajo en [BRANCHES.md](BRANCHES.md).
 
 ---
 
+## 🧱 Arquitectura
+
+La app es un **monorepo**: el código vive en paquetes dentro de `packages/` y el app en `lib/` solo los compone (inyección de dependencias, router, flavors y los textos propios del app).
+
+```text
+app (lib/)  →  feature_*  →  platform_*  →  core_*
+```
+
+| Capa         | Paquete              | Responsabilidad                                                       |
+| ------------ | -------------------- | --------------------------------------------------------------------- |
+| `core_*`     | `core_storage`       | Servicios de almacenamiento clave-valor y seguro                      |
+|              | `core_network`       | `ApiClient` (Dio), interceptors y excepciones HTTP                    |
+|              | `core_ui`            | Tema, tipografía, espaciados, widgets compartidos e inputs `formz`    |
+| `platform_*` | `platform_theme`     | Modo de tema claro/oscuro (persistido con `HydratedBloc`)             |
+|              | `platform_media`     | Acceso a cámara y galería                                             |
+|              | `platform_session`   | Dominio/datos de auth y `AuthBloc` (sesión compartida entre features) |
+| `feature_*`  | `feature_auth`       | Inicio de sesión y registro                                           |
+|              | `feature_home`       | Pantalla de inicio, layouts adaptativos y drawer                      |
+|              | `feature_onboarding` | Onboarding del primer arranque                                        |
+|              | `feature_settings`   | Pantalla de ajustes                                                   |
+|              | `feature_showcase`   | Pantallas de demostración del sistema de diseño                       |
+
+### Reglas
+
+- Las dependencias solo apuntan **hacia la derecha** del diagrama. Un `feature_*` **nunca** importa otro `feature_*`: lo que dos features comparten baja a `platform_*`.
+- Cada paquete expone un único archivo público (`lib/<paquete>.dart`). Nunca se importa el `src/` de otro paquete.
+- Los paquetes nunca importan el app. Lo que pertenece al app (constantes de rutas, `Environment`) se recibe por parámetro, por ejemplo `ApiClient.configure(baseUrl: ...)` o `HomeScreen(drawerItems: ...)`.
+- `dart run tool/check_deps.dart` (o `dart run melos run check-deps`) verifica que cada `pubspec.yaml` y cada import respete el grafo permitido (definido en `tool/check_deps.dart`).
+
+### Localización
+
+Cada paquete con textos tiene su propio `l10n.yaml`, sus archivos `.arb` y su clase generada (`AuthLocalizations`, `HomeLocalizations`...), y **puede soportar idiomas distintos a los demás**. El app soporta la unión de todos (`appSupportedLocales`) y cada paquete usa inglés como respaldo para un idioma que no traduce. `test/localization_test.dart` falla si un paquete traduce un idioma que el app no lista.
+
+Para agregar un idioma a un paquete, agrega su archivo `.arb` (por ejemplo `settings_ja.arb`) y corre `dart run melos run gen-l10n`.
+
+### Agregar un paquete nuevo
+
+1.  Crea `packages/<capa>_<nombre>/` con un `pubspec.yaml` que tenga `resolution: workspace`, y agrégalo en `workspace:` del `pubspec.yaml` raíz.
+2.  Agrega el paquete y los paquetes de los que puede depender al mapa `allowed` de `tool/check_deps.dart`.
+3.  Exporta su API pública desde `lib/<paquete>.dart` y deja el resto en `lib/src/`.
+4.  Agrega sus tests en `packages/<nombre>/test/`.
+
+### Comandos del workspace
+
+Los paquetes se resuelven juntos: basta con `flutter pub get` en la raíz. Los scripts de Melos se ejecutan con `dart run melos run <script>` (o `melos run <script>` si lo instalaste globalmente):
+
+| Script       | Descripción                                           |
+| ------------ | ----------------------------------------------------- |
+| `analyze`    | Analiza el app y todos los paquetes                   |
+| `test`       | Corre los tests del app y los de cada paquete         |
+| `gen-l10n`   | Genera las localizaciones en el app y en cada paquete |
+| `check-deps` | Verifica la regla de dependencia entre paquetes       |
+
+> Requiere Flutter 3.27 o superior (workspaces de pub). Algunas versiones de Flutter borran los archivos generados `lib/config/l10n/app_localizations*.dart` al correr `flutter pub get`; si pasa, ejecuta `dart run melos run gen-l10n`.
+
+---
+
 ## 📌 Requisitos Previos
 
 Asegúrate de tener los siguientes elementos instalados:

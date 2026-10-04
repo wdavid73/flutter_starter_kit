@@ -40,6 +40,7 @@ git push origin --delete feature-branch  # Remote
 | `push-notifications-implementation`      | Implementation of push and local notifications.                     |
 | `auto-update-version-app-implementation` | Implementation of auto-incrementing the version with `bumpversion`. |
 | `google-sign-in-implementation`          | Implementation of Google Sign-In feature.                           |
+| `refactor/packages-architecture`         | Refactor to a packages architecture (`core_*`, `platform_*`, `feature_*`). Other implementation branches are based on the previous `lib/` layout and must be rebased onto it. |
 
 ---
 

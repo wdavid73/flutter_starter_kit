@@ -1,0 +1,33 @@
+name: feature_onboarding
+description: Onboarding flow shown on first launch.
+publish_to: "none"
+version: 0.0.1
+resolution: workspace
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  core_storage: ^0.0.1
+  core_ui: ^0.0.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.0.0
+  flutter_localizations:
+    sdk: flutter
+  get_it: ^8.0.3
+  go_router: ^15.1.3
+  intl: any
+  introduction_screen: ^3.1.17
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/introduction/

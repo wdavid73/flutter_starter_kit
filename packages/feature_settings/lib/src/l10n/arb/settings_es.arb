@@ -1,0 +1,19 @@
+{
+  "@@locale": "es",
+  "general": "General",
+  "@general": {},
+  "account": "Cuenta",
+  "@account": {},
+  "deleteAccount": "Borrar cuenta",
+  "@deleteAccount": {},
+  "feedback": "Feedback",
+  "@feedback": {},
+  "theme": "Tema",
+  "@theme": {},
+  "reportBug": "Reportar un error",
+  "@reportBug": {},
+  "sendFeedback": "Enviar feedback",
+  "@sendFeedback": {},
+  "darkTheme": "Tema oscuro",
+  "@darkTheme": {}
+}

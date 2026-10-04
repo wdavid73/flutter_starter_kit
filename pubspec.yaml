@@ -8,10 +8,30 @@ version: 0.0.1
 environment:
   sdk: ^3.6.0
 
+workspace:
+  - packages/core_network
+  - packages/core_storage
+  - packages/core_ui
+  - packages/feature_auth
+  - packages/feature_home
+  - packages/feature_onboarding
+  - packages/feature_settings
+  - packages/feature_showcase
+  - packages/platform_media
+  - packages/platform_session
+  - packages/platform_theme
+
 dependencies:
   animate_do: ^4.2.0
+  core_network: ^0.0.1
+  core_storage: ^0.0.1
+  core_ui: ^0.0.1
   dio: ^5.8.0+1
-  equatable: ^2.0.7
+  feature_auth: ^0.0.1
+  feature_home: ^0.0.1
+  feature_onboarding: ^0.0.1
+  feature_settings: ^0.0.1
+  feature_showcase: ^0.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
@@ -20,19 +40,15 @@ dependencies:
   flutter_local_notifications: ^19.2.1
   flutter_localizations:
     sdk: flutter
-  flutter_secure_storage: ^9.2.4
-  flutter_svg: ^2.0.17
   formz: ^0.8.0
   get_it: ^8.0.3
   go_router: ^15.1.3
   google_fonts: ^6.2.1
   hydrated_bloc: ^10.0.0
-  image_picker: ^1.1.2
   intl: any
-  introduction_screen: ^3.1.17
   path_provider: ^2.1.5
-  shared_preferences: ^2.5.1
-  shimmer: ^3.0.0
+  platform_session: ^0.0.1
+  platform_theme: ^0.0.1
 
 dev_dependencies:
   bloc_test: ^10.0.0
@@ -46,7 +62,23 @@ dev_dependencies:
   icons_launcher: ^3.0.1
   integration_test:
     sdk: flutter
+  melos: ^7.0.0
   mocktail: ^1.0.4
+
+melos:
+  scripts:
+    check-deps:
+      description: Verifica la regla de dependencia entre paquetes
+      run: dart run tool/check_deps.dart
+    analyze:
+      description: Analiza el app y todos los paquetes
+      run: flutter analyze --no-pub
+    test:
+      description: Corre los tests del app y de cada paquete
+      run: flutter test --no-pub && dart run melos exec -c 1 --dir-exists=test -- flutter test --no-pub
+    gen-l10n:
+      description: Genera l10n en el app y en cada paquete con l10n.yaml
+      run: flutter gen-l10n && dart run melos exec -c 1 --file-exists=l10n.yaml -- flutter gen-l10n
 
 flutter:
   uses-material-design: true
@@ -61,18 +93,8 @@ flutter:
     - assets/app-icon/
     - assets/loaders/
     - assets/icon/
-    - assets/fonts/
     - assets/images/
-    - assets/images/introduction/
 
-  fonts:
-    - family: MontserratAlternates
-      fonts:
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Light.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Regular.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Medium.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-SemiBold.ttf
-        - asset: assets/fonts/montserrat_alternates/MontserratAlternates-Bold.ttf
 
 flutter_native_splash:
   color: "#03A9F4"

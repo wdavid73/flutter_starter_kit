@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
+import 'package:platform_session/platform_session.dart';
+
 import 'go_router_notifier.dart';
 import 'routes_constants.dart';
 

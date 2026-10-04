@@ -1,0 +1,23 @@
+{
+  "@@locale": "es",
+  "isRequired": "El campo es requerido",
+  "@isRequired": {},
+  "isEmpty": "Por favor llene el campo",
+  "@isEmpty": {},
+  "isEmptyList": "Por favor seleccione al menos un elemento",
+  "@isEmptyList": {},
+  "isEmptySelect": "Por favor seleccione un elemento",
+  "@isEmptySelect": {},
+  "isEmail": "Por favor ingrese un correo valido",
+  "@isEmail": {},
+  "isNotEqual": "Los valores no son iguales",
+  "@isNotEqual": {},
+  "isNotEqualPassword": "Las contraseñas no coinciden",
+  "@isNotEqualPassword": {},
+  "isPasswordLength": "La contraseña debe tener al menos 6 caracteres",
+  "@isPasswordLength": {},
+  "isInvalidPasswordPattern": "La contraseña debe contener entre 6 y 20 caracteres, incluir mayúscula, minúscula y número.",
+  "@isInvalidPasswordPattern": {},
+  "loading": "Cargando...",
+  "@loading": {}
+}

@@ -1,10 +1,11 @@
+import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/app/dependency_injection.dart';
 import 'package:flutter_starter_kit/config/config.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
-import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:go_router/go_router.dart';
+import 'package:platform_session/platform_session.dart';
+import 'package:platform_theme/platform_theme.dart';
 
 /// The [GoRouter] instance used for navigation.
 GoRouter? _router;
@@ -30,8 +31,8 @@ class MainApp extends StatelessWidget {
           theme: AppTheme.getLightTheme(context),
           darkTheme: AppTheme.getDarkTheme(context),
           themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: appLocalizationsDelegates,
+          supportedLocales: appSupportedLocales,
         );
       },
     );

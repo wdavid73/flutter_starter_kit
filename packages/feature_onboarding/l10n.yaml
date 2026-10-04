@@ -1,0 +1,7 @@
+arb-dir: lib/src/l10n/arb
+template-arb-file: onboarding_en.arb
+output-dir: lib/src/l10n/generated
+output-localization-file: onboarding_localizations.dart
+output-class: OnboardingLocalizations
+preferred-supported-locales: [en, es]
+synthetic-package: false

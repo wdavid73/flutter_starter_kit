@@ -1,16 +1,18 @@
-import 'package:flutter_starter_kit/api/api.dart';
-import 'package:flutter_starter_kit/data/data.dart';
-import 'package:flutter_starter_kit/domain/repositories/repositories.dart';
-import 'package:flutter_starter_kit/domain/usecases/usecases.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
-import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
-import 'package:flutter_starter_kit/ui/shared/service/service.dart';
+import 'package:core_network/core_network.dart';
+import 'package:core_storage/core_storage.dart';
+import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_onboarding/feature_onboarding.dart';
+import 'package:flutter_starter_kit/config/config.dart';
 import 'package:get_it/get_it.dart';
+import 'package:platform_session/platform_session.dart';
+import 'package:platform_theme/platform_theme.dart';
 
 final GetIt getIt = GetIt.instance;
 
 class AppDependencyInjection {
   static void init() {
+    ApiClient.configure(baseUrl: Environment.apiUrl);
+
     /// Repositories
     getIt.registerLazySingleton<AuthRepository>(
       () => AuthRepositoryImpl(
