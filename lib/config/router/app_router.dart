@@ -1,9 +1,9 @@
+import 'package:platform_session/platform_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/app/dependency_injection.dart';
 import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/cubits/introduction_cubit/introduction_cubit.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'go_router_notifier.dart';
 import 'redirect_handler.dart';
 import 'routes_generator.dart';

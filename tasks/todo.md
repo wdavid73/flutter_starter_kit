@@ -18,8 +18,8 @@ Detalle de cada tarea (aceptación, verificación, archivos, riesgos): [`plan.md
 - [x] T7 — `platform_theme`
 - [x] T8 — `platform_media`
 - [x] T9 — `platform_session` (1/2): dominio y data de auth
-- [ ] T10 — `platform_session` (2/2): `AuthBloc` y tests
-- [ ] **Checkpoint B** — platform completo
+- [x] T10 — `platform_session` (2/2): `AuthBloc` y tests
+- [x] **Checkpoint B** — platform completo
 
 ## Fase 3: Paquetes feature
 - [ ] T11 — `feature_onboarding`

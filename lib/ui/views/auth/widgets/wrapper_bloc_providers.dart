@@ -1,7 +1,7 @@
+import 'package:platform_session/platform_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/app/dependency_injection.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 
 class WrapperBlocProvidersAuth extends StatelessWidget {

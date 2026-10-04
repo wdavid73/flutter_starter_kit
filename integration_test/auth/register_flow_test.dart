@@ -14,7 +14,6 @@ import 'package:flutter_starter_kit/config/config.dart';
 import 'package:flutter_starter_kit/ui/cubits/cubits.dart';
 import 'package:flutter_starter_kit/ui/screens/screens.dart';
 import 'package:core_ui/core_ui.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'mocks/auth_flow_dependencies.dart';

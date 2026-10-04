@@ -1,7 +1,7 @@
+import 'package:platform_session/platform_session.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:flutter_starter_kit/ui/blocs/blocs.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter_starter_kit/utils/utils.dart';
 
